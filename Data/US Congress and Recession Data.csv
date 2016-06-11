@@ -95,11 +95,11 @@ date,pres,pres_ctrl,cong_ctrl,house_ctrl,senate_ctrl,house_dems,house_repub,sena
 2000-10-01,Clinton,Democrat,Republican,Republican,Republican,211,223,45,55,0
 2000-11-01,Clinton,Democrat,Republican,Republican,Republican,211,223,45,55,0
 2000-12-01,Clinton,Democrat,Republican,Republican,Republican,211,223,45,55,0
-2001-01-01,Bush,Republican,Republican,Republican,Democrat,212,221,51,49,0
-2001-02-01,Bush,Republican,Republican,Republican,Democrat,212,221,51,49,0
-2001-03-01,Bush,Republican,Republican,Republican,Democrat,212,221,51,49,1
-2001-04-01,Bush,Republican,Republican,Republican,Democrat,212,221,51,49,1
-2001-05-01,Bush,Republican,Republican,Republican,Democrat,212,221,51,49,1
+2001-01-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,0
+2001-02-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,0
+2001-03-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
+2001-04-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
+2001-05-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
 2001-06-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
 2001-07-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
 2001-08-01,Bush,Republican,Split,Republican,Democrat,212,221,51,49,1
