@@ -3,7 +3,8 @@
 #### Team Members and Responsibilities (edit as you wish)
 
 - **Joseph**: Graphs, Analysis, Code Management
-- **Alison**: Write up?
+- **Alison**: Write up
+              I'd be happy to do writing.  For the June 14th presentation, do you want slides in Beemer format?
 - **Sean**: Presentor, Write up?
 - **Travis**:
 - **Akarshan**:
