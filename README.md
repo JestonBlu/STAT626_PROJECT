@@ -6,7 +6,7 @@
 - **Alison**: Write up
               I'd be happy to do writing.  For the June 14th presentation, do you want slides in Beemer format?
 - **Sean**: Presentor, Write up?
-- **Travis**:
+- **Travis**: I can do the diagnostics.
 - **Akarshan**:
 - **Bo**:
 
