@@ -9,6 +9,7 @@ econ = read.csv("Data/Unemployment.csv")
 usa  = read.csv("Data/US Congress and Recession Data.csv")
 
 ## Subset data from Jan 1993 to Dec 2015
+econ = na.omit(econ)
 dta = na.omit(join(econ, usa, by = "date"))
 dta$date = as.Date(dta$date)
 
@@ -53,17 +54,37 @@ geom_line(aes(x = date, y = unem_rate/100)) +
   theme_stat()
 
 ## Remove seasonal component, plot trend
-unem.sa = decompose(ts(data = dta$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
+unem.decom = decompose(ts(data = dta$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
 
 g4 = g2 + 
-  geom_line(aes(x = date, y = unem.sa$trend/100)) +
+  geom_line(aes(x = date, y = unem.decom$trend/100)) +
   scale_x_date("Year", expand = c(0,0)) +
   scale_y_continuous("Unemployment Rate", labels = percent, expand=c(0,0)) +
   scale_fill_discrete("President") +
   ggtitle("Seasonally Adjusted Unemployment Rate\n(Jan 93' - Dec 15')") +
   theme_stat()
 
+## Lag Plot
+## Borrowed from StackOverflow: http://stackoverflow.com/questions/21524600/
+lag.plot1 = function(data1, max.lag = 1, corr = TRUE, smooth = FALSE) { 
+  name1 = paste(deparse(substitute(data1)), "(t-", sep = "")
+  name2 = paste(deparse(substitute(data1)), "(t)", sep = "")
+  data1 = as.ts(data1)
+  max.lag = as.integer(max.lag)
+  prow = ceiling(sqrt(max.lag))
+  pcol = ceiling(max.lag / prow)
+  a = acf(data1, max.lag, plot = FALSE)$acf[-1]
+  par(mfrow = c(prow, pcol), mar = c(2.5, 4, 2.5, 1), cex.main = 1.1, font.main = 1)
+  for(h in 1:max.lag) {                       
+    plot(lag(data1, -h), data1, xy.labels = FALSE, main = paste(name1, h, ")",sep = ""), 
+         ylab = name2, xlab = "") 
+    if (smooth == TRUE) 
+      lines(lowess(ts.intersect(lag(data1, -h), data1)[, 1], ts.intersect(lag(data1, -h), data1)[, 2],
+                   f = 1), col = "red")
+    if (corr == TRUE)
+      legend("topright", legend = round(a[h], digits = 2), text.col = "blue", bg = "white", x.intersp = 0)
+  }
+}
 
-## Predictor Variable Plots
-
+with(econ, lag.plot1(unem_rate, 12, smooth = TRUE))
 
