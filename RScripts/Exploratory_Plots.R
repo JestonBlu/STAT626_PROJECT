@@ -88,3 +88,12 @@ lag.plot1 = function(data1, max.lag = 1, corr = TRUE, smooth = FALSE) {
 
 with(econ, lag.plot1(unem_rate, 12, smooth = TRUE))
 
+## Predictor Variable Plots
+econ2 = ts(econ[, 2:7], start = c(1993, 1), frequency = 12)
+plot.ts(econ2, main = "Unemployment Rate with Predictor Variables")
+
+## Scatterplot
+plot(econ[,2:7])
+
+
+

@@ -4,7 +4,7 @@ econ = read.csv("Data/Unemployment.csv")
 ## Format Date as Date
 econ$date = as.Date(econ$date)
 
-## Omit missing date, date range kept (Jan 1993 - Oct 2015)
+## Omit missing date, date range kept (Jan 1993 - Dec 2015)
 econ = na.omit(econ)
 
 ## Scale variable that are measured in dollars
