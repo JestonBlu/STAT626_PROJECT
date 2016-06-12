@@ -7,7 +7,7 @@
 - **Sean**: Presentor, Write up?
 - **Travis**: I can do the diagnostics.
 - **Akarshan**:
-- **Bo**:
+- **Bo**: Model fitting, plots, final write up
 
 
 #### We can use this section to keep track of due dates and items to be completed
