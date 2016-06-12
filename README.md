@@ -6,7 +6,7 @@
 - **Alison**: Write up. I'd be happy to do writing.
 - **Sean**: Presentor, Write up?
 - **Travis**: I can do the diagnostics.
-- **Akarshan**:
+- **Akarshan**: Final Write up and Model selection and fitting.
 - **Bo**: Model fitting, plots, final write up
 
 
