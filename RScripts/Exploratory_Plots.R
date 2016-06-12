@@ -3,6 +3,7 @@ library(ggplot2)
 library(plyr)
 library(scales)
 
+
 ## Read in data
 econ = read.csv("Data/Unemployment.csv")
 usa  = read.csv("Data/US Congress and Recession Data.csv")
@@ -44,3 +45,15 @@ geom_line(aes(x = date, y = unem_rate/100)) +
   scale_fill_discrete("President") +
   ggtitle("Unemployment Rate\n(Jan 93' - Dec 15')") +
   theme_stat()
+
+## Remove seasonal component
+unem.sa = decompose(ts(data = dta$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
+
+g4 = g2 + 
+  geom_line(aes(x = date, y = unem.sa$trend/100)) +
+  scale_x_date("Year", expand = c(0,0)) +
+  scale_y_continuous("Unemployment Rate", labels = percent, expand=c(0,0)) +
+  scale_fill_discrete("President") +
+  ggtitle("Seasonally Adjusted Unemployment Rate\n(Jan 93' - Dec 15')") +
+  theme_stat()
+
