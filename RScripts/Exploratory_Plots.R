@@ -26,18 +26,24 @@ theme_stat = function() {
   )
 }
 
+## Base plot
 g0 = ggplot(dta)
 
+## Summarise dates of office 
 pres = ddply(dta, .(pres), summarise, enter = min(date), exit = max(date))
 
+## Plot presidential terms
 g1 = g0 + geom_rect(aes(xmin = enter, xmax = exit, ymin = 0, ymax = .12, fill = pres), 
             alpha = .2, data = pres)
 
+## Plot recession dates
 g2 = g1 + 
   geom_rect(aes(xmin = as.Date("2001-03-01"), xmax = as.Date("2001-11-01"), 
                 ymin = 0, ymax = .12), color = NA, fill = "gray", alpha = .2) +
   geom_rect(aes(xmin = as.Date("2007-12-01"), xmax = as.Date("2009-06-01"), 
                 ymin = 0, ymax = .12), color = NA, fill = "gray", alpha = .2)
+
+## Overlay unemployment rate
 g3 = g2 + 
 geom_line(aes(x = date, y = unem_rate/100)) +
   scale_x_date("Year", expand = c(0,0)) +
@@ -46,7 +52,7 @@ geom_line(aes(x = date, y = unem_rate/100)) +
   ggtitle("Unemployment Rate\n(Jan 93' - Dec 15')") +
   theme_stat()
 
-## Remove seasonal component
+## Remove seasonal component, plot trend
 unem.sa = decompose(ts(data = dta$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
 
 g4 = g2 + 
@@ -56,4 +62,8 @@ g4 = g2 +
   scale_fill_discrete("President") +
   ggtitle("Seasonally Adjusted Unemployment Rate\n(Jan 93' - Dec 15')") +
   theme_stat()
+
+
+## Predictor Variable Plots
+
 
