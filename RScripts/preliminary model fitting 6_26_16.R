@@ -1,14 +1,10 @@
-# 
 library(astsa)
-library(tsa)
-library(xlsx)
-data <- read.xlsx("C:\\Users\\Travis\\Desktop\\STAT 626\\Group Project\\Unemployment.xlsx", 
-	           sheetName = "unem")[1:276, ]
+library(TSA)
 
-data_2016 <- read.xlsx("C:\\Users\\Travis\\Desktop\\STAT 626\\Group Project\\Unemployment.xlsx", 
-	           sheetName = "unem")[277, 281, ]
 
-data <- ts(data)
+load("Data/Data_Prep.rda")
+
+data <- ts(econ)
 
 # Is raw data stationary?
 # No
@@ -49,5 +45,21 @@ fit5$AICc
 fit6$AICc
 
 # Seems that ARMA with p = q = 2 is best
+acf(diff(log(econ$unem_rate)))
+pacf(diff(log(econ$unem_rate)))
 
 
+# ADF on seasonally adjusted data
+adf.test(na.omit(econ$unem_rate_sa))
+adf.test(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 2))
+
+# Differencing Plots
+par(mfrow = c(2,2))
+plot.ts(diff(na.omit(econ$unem_rate), lag = 1, differences = 1), 
+        main = "Unem 1st Order Differencing", ylab = "")
+plot.ts(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 1), 
+        main = "Unem SA 1st Order Differencing", ylab = "")
+plot.ts(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 2), 
+        main = "Unem SA 2nd Order Differencing", ylab = "")
+plot.ts(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 3), 
+        main = "Unem SA 3rd Order Differencing", ylab = "")
