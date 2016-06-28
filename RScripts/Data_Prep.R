@@ -1,3 +1,5 @@
+library(fpp)
+
 ## Import original Data
 econ = read.csv("Data/Unemployment.csv")
 
@@ -16,7 +18,8 @@ econ$retail_sales = scale(econ$retail_sales)
 unem.decom = decompose(ts(data = econ$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
 
 ## Add seasonally adjusted rate
-econ$unem_rate_sa = unem.decom$trend
+econ$unem_rate_sa = unem.decom$x - unem.decom$sea
+
 
 ## Export data to be used for modeling
 save(econ, file = "Data/Data_Prep.rda")
