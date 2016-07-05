@@ -63,3 +63,11 @@ plot.ts(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 2),
         main = "Unem SA 2nd Order Differencing", ylab = "")
 plot.ts(diff(na.omit(econ$unem_rate_sa), lag = 1, differences = 3), 
         main = "Unem SA 3rd Order Differencing", ylab = "")
+
+econ = na.omit(econ)
+Acf(diff(na.omit(econ$unem_rate_sa), differences = 2))
+Acf(diff(na.omit(econ$unem_rate_sa), differences = 3))
+Pacf(diff(na.omit(econ$unem_rate_sa), differences = 2))
+Pacf(diff(na.omit(econ$unem_rate_sa), differences = 3))
+
+par(mfrow = c(1,1))
