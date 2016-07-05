@@ -1,4 +1,3 @@
-setwd("C:\\Users\\BoT440s\\Documents\\GitHub\\STAT626_PROJECT\\Data")
 load("Data_Prep.rda")
 library(astsa)
 
