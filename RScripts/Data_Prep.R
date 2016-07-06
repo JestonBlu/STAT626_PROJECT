@@ -1,16 +1,14 @@
 ## Import original Data
 econ = read.csv("Data/Unemployment.csv")
+poly = read.csv("Data/US Congress and Recession Data.csv")
+
+poly = poly[, c("date", "recession_ind")]
+econ = merge(econ, poly, by = "date")
 
 ## Format Date as Date
 econ$date = as.Date(econ$date)
-
-## Omit missing date, date range kept (Jan 1993 - Dec 2015)
-econ = na.omit(econ)
-econ = subset(econ, date <= '2015-12-01')
-
 row.names(econ) = econ$date
 econ = econ[, -1]
-
 
 ## Change the measurements to billions
 econ$manufacturers_new_orders = econ$manufacturers_new_orders / 1000 
@@ -39,7 +37,8 @@ econ.sa = data.frame(
   manufacturers_new_orders_sa = econ$manufacturers_new_orders - decom.mno$sea,
   house_price_sa = econ$purchase_house_price_index - decom.hpi$sea,
   construction_spend_sa = econ$construction_spending - decom.con$sea,
-  retail_sales_sa = econ$retail_sales - decom.rts$sea
+  retail_sales_sa = econ$retail_sales - decom.rts$sea,
+  recession_ind = econ$recession_ind
 )
 
 
