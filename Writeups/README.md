@@ -1,0 +1,1 @@
+I made a file for the LaTex code.  If you are interested in modifying and you haven't used LaTeX before you might want to try http://www.xm1math.net/texmaker/ as an editor. Or http://texstudio.sourceforge.net.
