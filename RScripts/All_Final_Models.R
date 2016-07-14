@@ -1,6 +1,7 @@
 library(astsa)
 library(xtable)
 library(knitr)
+library(tseries)
 
 load("Data/Data_Prep.rda")
 
@@ -11,6 +12,13 @@ unem = ts(unem, start = c(1993,1), frequency = 12)
 ## Seasonally adjusted unemployment
 unem.sa = econ.sa$unem_rate_sa
 
+##Plotting first differences also (for write-up)
+unem1 = diff(diff(unem1), lag = 12)
+unem1.sa = diff(unem1.sa)
+par(mfrow = c(1, 2))
+plot.ts(unem1, main = "First differences, Seasonal")
+plot.ts(unem1.sa, main = "First differences, Seasonally Adjusted")
+
 ## Everyone seems to agree that 2 differences gets us stationarity... since we specify differencing
 ## in the arima model parameters, it feels like we should not be differencing the data beforehand
 ##
@@ -18,10 +26,19 @@ unem.sa = econ.sa$unem_rate_sa
 unem = diff(diff(unem, differences = 2), lag = 12)
 unem.sa = diff(unem.sa, differences = 2)
 
+
+
+
 ## Stationary plots
 par(mfrow = c(1, 2))
-plot.ts(unem, main = "Seasonal Data\ndiff(diff(unem, differences = 2), lag = 12)")
-plot.ts(unem.sa, main = "Seasonally Adjusted Data\ndiff(unem.sa, differences = 2)")
+plot.ts(unem, main = "Second differences, Seasonal")
+plot.ts(unem.sa, main = "Second differences, Seasonally Adjusted")
+
+#ADF of differenced data
+adf.test(unem1)
+adf.test(unem1.sa)
+adf.test(unem)
+adf.test(unem.sa)
 
 ## ACF/PACF Plots
 par(mfrow = c(2,2))

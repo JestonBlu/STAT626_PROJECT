@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  13 JUL 2016 21:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  13 JUL 2016 22:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -331,6 +331,14 @@ Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
 \f@ncyO@olf=\skip60
 \f@ncyO@orf=\skip61
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count119
+\float@exts=\toks34
+\float@box=\box56
+\@float@everytoks=\toks35
+\@floatcapt=\box57
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
@@ -345,9 +353,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count119
-\Gm@cntv=\count120
-\c@Gm@tempcnt=\count121
+\Gm@cnth=\count120
+\Gm@cntv=\count121
+\c@Gm@tempcnt=\count122
 \Gm@bindingoffset=\dimen121
 \Gm@wd@mp=\dimen122
 \Gm@odd@mp=\dimen123
@@ -356,7 +364,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen126
 \Gm@layouthoffset=\dimen127
 \Gm@layoutvoffset=\dimen128
-\Gm@dimlist=\toks34
+\Gm@dimlist=\toks36
 )
 (./main.beamer.snm) (./main.tex (./group4.sty
 Package: group4 
@@ -369,12 +377,12 @@ Language: greek 2016/02/04 v1.9f Greek support for the babel system
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count122
+\babel@savecnt=\count123
 \U@D=\dimen129
 )
-\bbl@monogreek=\count123
-\bbl@polygreek=\count124
-\bbl@ancientgreek=\count125
+\bbl@monogreek=\count124
+\bbl@polygreek=\count125
+\bbl@ancientgreek=\count126
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
 File: lgrenc.def 2015/12/07 v0.13.1 LGR Greek font encoding definitions
@@ -404,14 +412,6 @@ Package graphics Info: Driver file: pdftex.def on input line 95.
 )
 \Gin@req@height=\dimen130
 \Gin@req@width=\dimen131
-)
-(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
-Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count126
-\float@exts=\toks35
-\float@box=\box56
-\@float@everytoks=\toks36
-\@floatcapt=\box57
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
@@ -845,36 +845,36 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 353.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 247.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 353
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 247
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 353
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 247
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 353.
+(Font)              <12> on input line 247.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 353.
+(Font)              <8> on input line 247.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 353.
-LaTeX Font Info:    Try loading font information for U+msa on input line 353.
+(Font)              <6> on input line 247.
+LaTeX Font Info:    Try loading font information for U+msa on input line 247.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 353.
+LaTeX Font Info:    Try loading font information for U+msb on input line 247.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -882,12 +882,12 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 247--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 247--247
 
  []
 
@@ -895,88 +895,84 @@ Underfull \hbox (badness 10000) in paragraph at lines 353--353
 File: images/Unemployment.png Graphic file (type png)
 
 <use images/Unemployment.png>
-Package pdftex.def Info: images/Unemployment.png used on input line 353.
+Package pdftex.def Info: images/Unemployment.png used on input line 247.
 (pdftex.def)             Requested size: 354.12144pt x 216.12769pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 247--247
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--353
+Underfull \hbox (badness 10000) in paragraph at lines 247--247
 
  []
 
 [2
 
  <./images/Unemployment.png>]
-<images/stationarity.png, id=17, 1937.2375pt x 1182.4175pt>
-File: images/stationarity.png Graphic file (type png)
-
-<use images/stationarity.png>
-Package pdftex.def Info: images/stationarity.png used on input line 353.
-(pdftex.def)             Requested size: 354.12144pt x 216.12769pt.
- [3 <./images/stationarity.png>]
-<images/firstdiff.png, id=22, 555.07375pt x 554.07pt>
+<images/firstdiff.png, id=17, 2409.0pt x 1365.1pt>
 File: images/firstdiff.png Graphic file (type png)
+ <use images/firstdiff.png>
+Package pdftex.def Info: images/firstdiff.png used on input line 247.
+(pdftex.def)             Requested size: 303.53708pt x 171.99101pt.
 
-<use images/firstdiff.png>
-Package pdftex.def Info: images/firstdiff.png used on input line 353.
-(pdftex.def)             Requested size: 148.7685pt x 148.50182pt.
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 353.
+<images/secdiff.png, id=18, 2409.0pt x 1365.1pt>
+File: images/secdiff.png Graphic file (type png)
+ <use images/secdiff.png>
+Package pdftex.def Info: images/secdiff.png used on input line 247.
+(pdftex.def)             Requested size: 303.53708pt x 171.99101pt.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10> on input line 247.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <7> on input line 247.
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <5> on input line 247.
 
+Underfull \hbox (badness 10000) in paragraph at lines 247--247
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+ []
 
-LaTeX Warning: Reference `fig:secdiff' on page 4 undefined on input line 353.
-
-<images/acfpacf.png, id=23, 1937.2375pt x 1182.4175pt>
+<images/acfpacf.png, id=19, 1937.2375pt x 1182.4175pt>
 File: images/acfpacf.png Graphic file (type png)
 
 <use images/acfpacf.png>
-Package pdftex.def Info: images/acfpacf.png used on input line 353.
+Package pdftex.def Info: images/acfpacf.png used on input line 247.
 (pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [4 <./images/firstdiff.png>] [5 <./images/acfpacf.png>]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 353.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 353.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 353.
- (./main.article.bbl) [6] (./main.article.aux)
+ [3 <./images/firstdiff.png> <./images/secdiff.png>]
+<images/mod5.png, id=27, 2409.0pt x 1365.1pt>
+File: images/mod5.png Graphic file (type png)
+ <use images/mod5.png>
+Package pdftex.def Info: images/mod5.png used on input line 247.
+(pdftex.def)             Requested size: 505.89pt x 286.65863pt.
+ [4 <./images/acfpacf.png>] <images/mod7.png, id=32, 2409.0pt x 1365.1pt>
+File: images/mod7.png Graphic file (type png)
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) ) 
+<use images/mod7.png>
+Package pdftex.def Info: images/mod7.png used on input line 247.
+(pdftex.def)             Requested size: 505.89pt x 286.65863pt.
+ (./main.article.bbl [5 <./images/mod5.png> <./images/mod7.png>]) [6] (./main.a
+rticle.aux) ) ) 
 Here is how much of TeX's memory you used:
- 9121 strings out of 493027
- 149958 string characters out of 6134069
- 219243 words of memory out of 5000000
- 12366 multiletter control sequences out of 15000+600000
- 53189 words of font info for 54 fonts, out of 8000000 for 9000
+ 9097 strings out of 493027
+ 149209 string characters out of 6134069
+ 214713 words of memory out of 5000000
+ 12344 multiletter control sequences out of 15000+600000
+ 52824 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,12n,48p,951b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
-l/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
-2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf
--dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
-ype1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi1
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/lm/lmsy10.pfb>
-Output written on main.article.pdf (6 pages, 788289 bytes).
+ 56i,12n,48p,899b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
+}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/loc
+al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr
+12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
+Output written on main.article.pdf (6 pages, 1689588 bytes).
 PDF statistics:
- 74 PDF objects out of 1000 (max. 8388607)
- 48 compressed objects within 1 object stream
+ 70 PDF objects out of 1000 (max. 8388607)
+ 41 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
