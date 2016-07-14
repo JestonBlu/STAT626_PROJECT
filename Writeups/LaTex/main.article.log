@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  10 JUL 2016 12:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  13 JUL 2016 21:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -245,22 +245,48 @@ Package: amsthm 2015/03/04 v2.20.2
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/beamerbasethemes.sty
 Package: beamerbasethemes 2010/05/01 (rcs-revision efa082c6111d)
 )))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks29
+\inpenc@posthook=\toks30
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/utf8x.def
+File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
+))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucs.sty
+Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-global.def
+File: uni-global.def 2013/05/13 UCS: Unicode global data
+)
+\uc@secondtry=\count108
+\uc@combtoks=\toks31
+\uc@combtoksb=\toks32
+\uc@temptokena=\toks33
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip49
+\bibsep=\skip50
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count109
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
-\c@tracingmulticols=\count108
+\c@tracingmulticols=\count110
 \mult@box=\box30
 \multicol@leftmargin=\dimen112
-\c@unbalance=\count109
-\c@collectmore=\count110
-\doublecol@number=\count111
-\multicoltolerance=\count112
-\multicolpretolerance=\count113
+\c@unbalance=\count111
+\c@collectmore=\count112
+\doublecol@number=\count113
+\multicoltolerance=\count114
+\multicolpretolerance=\count115
 \full@width=\dimen113
 \page@free=\dimen114
 \premulticols=\dimen115
 \postmulticols=\dimen116
-\multicolsep=\skip49
-\multicolbaselineskip=\skip50
+\multicolsep=\skip51
+\multicolbaselineskip=\skip52
 \partial@page=\box31
 \last@line=\box32
 \maxbalancingoverflow=\dimen117
@@ -285,14 +311,25 @@ Package: multicol 2016/02/08 v1.8o multicolumn formatting (FMi)
 \@tempa=\box51
 \@tempa=\box52
 \@tempa=\box53
-\c@columnbadness=\count114
-\c@finalcolumnbadness=\count115
+\c@columnbadness=\count116
+\c@finalcolumnbadness=\count117
 \last@try=\dimen118
 \multicolovershoot=\dimen119
 \multicolundershoot=\dimen120
 \mult@nat@firstbox=\box54
 \colbreak@box=\box55
-\mc@col@check@num=\count116
+\mc@col@check@num=\count118
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
@@ -308,9 +345,9 @@ Package ifvtex Info: VTeX not detected.
 (/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count117
-\Gm@cntv=\count118
-\c@Gm@tempcnt=\count119
+\Gm@cnth=\count119
+\Gm@cntv=\count120
+\c@Gm@tempcnt=\count121
 \Gm@bindingoffset=\dimen121
 \Gm@wd@mp=\dimen122
 \Gm@odd@mp=\dimen123
@@ -319,7 +356,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutheight=\dimen126
 \Gm@layouthoffset=\dimen127
 \Gm@layoutvoffset=\dimen128
-\Gm@dimlist=\toks29
+\Gm@dimlist=\toks34
 )
 (./main.beamer.snm) (./main.tex (./group4.sty
 Package: group4 
@@ -332,12 +369,12 @@ Language: greek 2016/02/04 v1.9f Greek support for the babel system
 
 (/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
 File: babel.def 2016/02/24 3.9q Babel common definitions
-\babel@savecnt=\count120
+\babel@savecnt=\count122
 \U@D=\dimen129
 )
-\bbl@monogreek=\count121
-\bbl@polygreek=\count122
-\bbl@ancientgreek=\count123
+\bbl@monogreek=\count123
+\bbl@polygreek=\count124
+\bbl@ancientgreek=\count125
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/greek-fontenc/lgrenc.def
 File: lgrenc.def 2015/12/07 v0.13.1 LGR Greek font encoding definitions
@@ -370,19 +407,19 @@ Package graphics Info: Driver file: pdftex.def on input line 95.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count124
-\float@exts=\toks30
+\c@float@type=\count126
+\float@exts=\toks35
 \float@box=\box56
-\@float@everytoks=\toks31
+\@float@everytoks=\toks36
 \@floatcapt=\box57
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
-\labelindent=\skip51
+\labelindent=\skip62
 \enit@outerparindent=\dimen132
-\enit@toks=\toks32
+\enit@toks=\toks37
 \enit@inbox=\box58
-\enitdp@description=\count125
+\enitdp@description=\count127
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
@@ -480,7 +517,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \caption@parindent=\dimen138
 \caption@hangindent=\dimen139
 )
-\c@ContinuedFloat=\count126
+\c@ContinuedFloat=\count128
 Package caption Info: float package is loaded.
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/lmodern.sty
@@ -530,61 +567,61 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen147
 \cmidrulekern=\dimen148
 \defaultaddspace=\dimen149
-\@cmidla=\count127
-\@cmidlb=\count128
+\@cmidla=\count129
+\@cmidlb=\count130
 \@aboverulesep=\dimen150
 \@belowrulesep=\dimen151
-\@thisruleclass=\count129
-\@lastruleclass=\count130
+\@thisruleclass=\count131
+\@lastruleclass=\count132
 \@thisrulewidth=\dimen152
 ))
 (./main.article.aux)
 \openout1 = `main.article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 4.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 4.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 3.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 3.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2016/03/04 v1.1 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 4.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 4.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 3.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 3.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 4.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 4.
+LaTeX Font Info:    ... okay on input line 3.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 3.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count131
+\scratchcounter=\count133
 \scratchdimen=\dimen153
 \scratchbox=\box59
-\nofMPsegments=\count132
-\nofMParguments=\count133
-\everyMPshowfont=\toks33
-\MPscratchCnt=\count134
+\nofMPsegments=\count134
+\nofMParguments=\count135
+\everyMPshowfont=\toks38
+\MPscratchCnt=\count136
 \MPscratchDim=\dimen154
-\MPnumerator=\count135
-\makeMPintoPDFobject=\count136
-\everyMPtoPDFconversion=\toks34
+\MPnumerator=\count137
+\makeMPintoPDFobject=\count138
+\everyMPtoPDFconversion=\toks39
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -610,8 +647,92 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 4.
+LaTeX Info: Redefining \includegraphics on input line 3.
 
+
+Package utf8x.def Warning: Character(s)159 etc.gotredefinedsomewhere.
+(utf8x.def)                Restoringtoitsutf8x-meaning on input line 3.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/ucsencs.def
+File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
+LGR\textpentedeka already defined.
+LGR\textpenteqilioi already defined.
+LGR\textpentemuria already defined.
+LGR\textstigma already defined.
+LGR\textqoppa already defined.
+LGR\texteuro already defined.
+LGR\textperthousand already defined.
+LGR\textquoteleft already defined.
+LGR\textquoteright already defined.
+LGR\u already defined.
+LGR\= already defined.
+LGR\" already defined.
+LGR\textpercent already defined.
+LGR\textperiodcentered already defined.
+LGR\' already defined.
+LGR\textanoteleia already defined.
+LGR\textAlpha already defined.
+LGR\textBeta already defined.
+LGR\textDelta already defined.
+LGR\textEpsilon already defined.
+LGR\textPhi already defined.
+LGR\textGamma already defined.
+LGR\textEta already defined.
+LGR\textIota already defined.
+LGR\textTheta already defined.
+LGR\textKappa already defined.
+LGR\textLambda already defined.
+LGR\textMu already defined.
+LGR\textNu already defined.
+LGR\textOmicron already defined.
+LGR\textPi already defined.
+LGR\textChi already defined.
+LGR\textRho already defined.
+LGR\textSigma already defined.
+LGR\textTau already defined.
+LGR\textUpsilon already defined.
+LGR\textOmega already defined.
+LGR\textXi already defined.
+LGR\textPsi already defined.
+LGR\textZeta already defined.
+LGR\` already defined.
+LGR\textalpha already defined.
+LGR\textbeta already defined.
+LGR\textvarsigma already defined.
+LGR\textdelta already defined.
+LGR\textepsilon already defined.
+LGR\textphi already defined.
+LGR\textgamma already defined.
+LGR\texteta already defined.
+LGR\textiota already defined.
+LGR\texttheta already defined.
+LGR\textkappa already defined.
+LGR\textlambda already defined.
+LGR\textmu already defined.
+LGR\textnu already defined.
+LGR\textomicron already defined.
+LGR\textpi already defined.
+LGR\textchi already defined.
+LGR\textrho already defined.
+LGR\textautosigma already defined.
+LGR\textsigma already defined.
+LGR\texttau already defined.
+LGR\textupsilon already defined.
+LGR\textomega already defined.
+LGR\textxi already defined.
+LGR\textpsi already defined.
+LGR\textzeta already defined.
+LGR\guillemotleft already defined.
+LGR\guillemotright already defined.
+LGR\~ already defined.
+LGR\textemdash already defined.
+LGR\textdigamma already defined.
+LGR\textDigamma already defined.
+LGR\textdexiakeraia already defined.
+LGR\textaristerikeraia already defined.
+
+fontencoding LGR patched
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -724,35 +845,36 @@ Package caption Info: End \AtBeginDocument code.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 14.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 353.
+
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 14.
-
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 353
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 14.
-
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 353
+.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <12> on input line 353.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 14.
+(Font)              <8> on input line 353.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 14.
-LaTeX Font Info:    Try loading font information for U+msa on input line 14.
+(Font)              <6> on input line 353.
+LaTeX Font Info:    Try loading font information for U+msa on input line 353.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 14.
+LaTeX Font Info:    Try loading font information for U+msb on input line 353.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -760,135 +882,101 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 35.
+Underfull \hbox (badness 10000) in paragraph at lines 353--353
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
-File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--353
+
+ []
+
 <images/Unemployment.png, id=9, 1937.2375pt x 1182.4175pt>
 File: images/Unemployment.png Graphic file (type png)
 
 <use images/Unemployment.png>
-Package pdftex.def Info: images/Unemployment.png used on input line 62.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
+Package pdftex.def Info: images/Unemployment.png used on input line 353.
+(pdftex.def)             Requested size: 354.12144pt x 216.12769pt.
 
-<images/firstdiff.png, id=11, 555.07375pt x 554.07pt>
-File: images/firstdiff.png Graphic file (type png)
+Underfull \hbox (badness 10000) in paragraph at lines 353--353
 
-<use images/firstdiff.png>
-Package pdftex.def Info: images/firstdiff.png used on input line 77.
-(pdftex.def)             Requested size: 148.7685pt x 148.50182pt.
- [2
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 353--353
+
+ []
+
+[2
 
  <./images/Unemployment.png>]
-<images/stationarity.png, id=20, 1937.2375pt x 1182.4175pt>
+<images/stationarity.png, id=17, 1937.2375pt x 1182.4175pt>
 File: images/stationarity.png Graphic file (type png)
 
 <use images/stationarity.png>
-Package pdftex.def Info: images/stationarity.png used on input line 103.
+Package pdftex.def Info: images/stationarity.png used on input line 353.
 (pdftex.def)             Requested size: 354.12144pt x 216.12769pt.
+ [3 <./images/stationarity.png>]
+<images/firstdiff.png, id=22, 555.07375pt x 554.07pt>
+File: images/firstdiff.png Graphic file (type png)
 
-<images/acfpacf.png, id=21, 1937.2375pt x 1182.4175pt>
+<use images/firstdiff.png>
+Package pdftex.def Info: images/firstdiff.png used on input line 353.
+(pdftex.def)             Requested size: 148.7685pt x 148.50182pt.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 353.
+
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
+File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
+)
+
+LaTeX Warning: Reference `fig:secdiff' on page 4 undefined on input line 353.
+
+<images/acfpacf.png, id=23, 1937.2375pt x 1182.4175pt>
 File: images/acfpacf.png Graphic file (type png)
 
 <use images/acfpacf.png>
-Package pdftex.def Info: images/acfpacf.png used on input line 136.
+Package pdftex.def Info: images/acfpacf.png used on input line 353.
 (pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [3 <./images/firstdiff.png> <./images/stationarity.png>] [4 <./images/acfpacf.
-png>]
+ [4 <./images/firstdiff.png>] [5 <./images/acfpacf.png>]
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 182.
+(Font)              <10> on input line 353.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 182.
+(Font)              <7> on input line 353.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 182.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 184
-.
+(Font)              <5> on input line 353.
+ (./main.article.bbl) [6] (./main.article.aux)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [5]
-<images/seasonalmodel1.png, id=37, 1937.2375pt x 1182.4175pt>
-File: images/seasonalmodel1.png Graphic file (type png)
+LaTeX Warning: There were undefined references.
 
-<use images/seasonalmodel1.png>
-Package pdftex.def Info: images/seasonalmodel1.png used on input line 241.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
 
-<images/seasonalmodel2.png, id=38, 1937.2375pt x 1182.4175pt>
-File: images/seasonalmodel2.png Graphic file (type png)
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-<use images/seasonalmodel2.png>
-Package pdftex.def Info: images/seasonalmodel2.png used on input line 247.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [6 <./images/seasonalmodel1.png>]
-<images/seasonalmodel3.png, id=44, 1937.2375pt x 1182.4175pt>
-File: images/seasonalmodel3.png Graphic file (type png)
-
-<use images/seasonalmodel3.png>
-Package pdftex.def Info: images/seasonalmodel3.png used on input line 253.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [7 <./images/seasonalmodel2.png> <./images/seasonalmodel3.png>]
-<images/seasonallyadjustedmodel4.png, id=51, 1937.2375pt x 1182.4175pt>
-File: images/seasonallyadjustedmodel4.png Graphic file (type png)
-
-<use images/seasonallyadjustedmodel4.png>
-Package pdftex.def Info: images/seasonallyadjustedmodel4.png used on input line
- 260.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
-
-<images/seasonallyadjustedmodel5.png, id=52, 1937.2375pt x 1182.4175pt>
-File: images/seasonallyadjustedmodel5.png Graphic file (type png)
-
-<use images/seasonallyadjustedmodel5.png>
-Package pdftex.def Info: images/seasonallyadjustedmodel5.png used on input line
- 266.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [8 <./images/seasonallyadjustedmodel4.png> <./images/seasonallyadjustedmodel5.
-png>]
-<images/seasonallyadjustedmodel6.png, id=58, 1937.2375pt x 1182.4175pt>
-File: images/seasonallyadjustedmodel6.png Graphic file (type png)
-
-<use images/seasonallyadjustedmodel6.png>
-Package pdftex.def Info: images/seasonallyadjustedmodel6.png used on input line
- 272.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
-
-<images/seasonallyadjustedmodel7.png, id=59, 1937.2375pt x 1182.4175pt>
-File: images/seasonallyadjustedmodel7.png Graphic file (type png)
-
-<use images/seasonallyadjustedmodel7.png>
-Package pdftex.def Info: images/seasonallyadjustedmodel7.png used on input line
- 278.
-(pdftex.def)             Requested size: 505.89pt x 308.77446pt.
- [9 <./images/seasonallyadjustedmodel6.png> <./images/seasonallyadjustedmodel7.
-png>] (./main.article.aux) ) ) 
+ ) ) 
 Here is how much of TeX's memory you used:
- 8254 strings out of 493027
- 135923 string characters out of 6134069
- 193351 words of memory out of 5000000
- 11516 multiletter control sequences out of 15000+600000
- 47574 words of font info for 53 fonts, out of 8000000 for 9000
+ 9121 strings out of 493027
+ 149958 string characters out of 6134069
+ 219243 words of memory out of 5000000
+ 12366 multiletter control sequences out of 15000+600000
+ 53189 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,8n,48p,966b,363s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvi
-ps/lm/lm-rm.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.
-enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/
-local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texl
-ive/2015/texmf-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fon
-ts/type1/public/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
-ublic/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/l
-mr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/t
-exlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/
-texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/lm/lmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/typ
-e1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (9 pages, 1762530 bytes).
+ 56i,12n,48p,951b,357s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/loca
+l/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/
+2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015/texmf
+-dist/fonts/enc/dvips/lm/lm-ts1.enc}</usr/local/texlive/2015/texmf-dist/fonts/t
+ype1/public/lm/lmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
+c/lm/lmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmmi1
+0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/2015/te
+xmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/p
+ublic/lm/lmsy10.pfb>
+Output written on main.article.pdf (6 pages, 788289 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 74 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 56 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

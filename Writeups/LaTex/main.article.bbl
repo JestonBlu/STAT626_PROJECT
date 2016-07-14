@@ -1,0 +1,18 @@
+\begin{thebibliography}{2}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Shumway and Stoffer(2010)]{shumway2010time}
+Robert~H Shumway and David~S Stoffer.
+\newblock \emph{Time series analysis and its applications: with R examples}.
+\newblock Springer Science \& Business Media, 2010.
+
+\bibitem[{U.S. Bureau of Labor Statistics}(2016)]{blsref}
+{U.S. Bureau of Labor Statistics}.
+\newblock \emph{Civilian Unemployment Rate [UNRATE]}.
+\newblock https://fred.stlouisfed.org/series/UNRATE, 2016.
+
+\end{thebibliography}

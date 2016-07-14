@@ -1,9 +1,7 @@
 \beamer@endinputifotherversion {3.36pt}
 \select@language {english}
 \beamer@sectionintoc {2}{Initial Plots}{3}{0}{1}
-\beamer@subsectionintoc {2}{1}{Differencing}{3}{0}{1}
-\beamer@subsectionintoc {2}{2}{ACF \& PACF}{4}{0}{1}
-\beamer@sectionintoc {3}{Model Comparisons}{5}{0}{2}
-\beamer@subsectionintoc {3}{1}{Overview}{5}{0}{2}
-\beamer@subsectionintoc {3}{2}{Seasonal Models}{6}{0}{2}
-\beamer@subsectionintoc {3}{3}{Seasonally Adjusted Models}{9}{0}{2}
+\beamer@subsectionintoc {2}{1}{ACF \& PACF}{4}{0}{1}
+\beamer@subsectionintoc {2}{2}{Overview}{5}{0}{1}
+\beamer@subsectionintoc {2}{3}{Seasonal Models}{6}{0}{1}
+\beamer@subsectionintoc {2}{4}{Seasonally Adjusted Models}{9}{0}{1}
