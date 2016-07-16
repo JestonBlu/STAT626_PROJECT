@@ -5,12 +5,12 @@ Notes on write-up:
   
 From the original readme file we have:
 Team Members and Responsibilities (edit as you wish)
-    Joseph: Plots, Data Prep, Code Management
-    Alison: Write up. I'd be happy to do writing.
-    Sean: Presentor, Write up?
-    Travis: I can do the diagnostics.
-    Akarshan: Final Write up and Model selection and fitting.
-    Bo: Model fitting, plots, final write up
+    -Joseph: Plots, Data Prep, Code Management
+    -Alison: Write up. I'd be happy to do writing.
+    -Sean: Presentor, Write up?
+    -Travis: I can do the diagnostics.
+    -Akarshan: Final Write up and Model selection and fitting.
+    -Bo: Model fitting, plots, final write up
 
 Based on the professor's emails, we may need to adjust some of the above.
 
