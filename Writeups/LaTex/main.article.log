@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  13 JUL 2016 22:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  14 JUL 2016 18:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -955,11 +955,11 @@ rticle.aux) ) )
 Here is how much of TeX's memory you used:
  9097 strings out of 493027
  149209 string characters out of 6134069
- 214713 words of memory out of 5000000
+ 215713 words of memory out of 5000000
  12344 multiletter control sequences out of 15000+600000
  52824 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,12n,48p,899b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 56i,11n,48p,903b,373s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc
 }{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}</usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/texlive
@@ -969,7 +969,7 @@ ts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
 blic/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr
 12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr17.pfb></us
 r/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb>
-Output written on main.article.pdf (6 pages, 1689588 bytes).
+Output written on main.article.pdf (6 pages, 1689655 bytes).
 PDF statistics:
  70 PDF objects out of 1000 (max. 8388607)
  41 compressed objects within 1 object stream
