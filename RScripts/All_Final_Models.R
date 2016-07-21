@@ -1,3 +1,5 @@
+rm(list = ls())
+
 library(astsa)
 library(xtable)
 library(knitr)
@@ -13,8 +15,8 @@ unem = ts(unem, start = c(1993,1), frequency = 12)
 unem.sa = econ.sa$unem_rate_sa
 
 ##Plotting first differences also (for write-up)
-unem1 = diff(diff(unem1), lag = 12)
-unem1.sa = diff(unem1.sa)
+unem1 = diff(diff(unem), lag = 12)
+unem1.sa = diff(unem.sa)
 par(mfrow = c(1, 2))
 plot.ts(unem1, main = "First differences, Seasonal")
 plot.ts(unem1.sa, main = "First differences, Seasonally Adjusted")
@@ -23,11 +25,8 @@ plot.ts(unem1.sa, main = "First differences, Seasonally Adjusted")
 ## in the arima model parameters, it feels like we should not be differencing the data beforehand
 ##
 ## Differencing 
-unem = diff(diff(unem, differences = 2), lag = 12)
+unem = diff(diff(unem, lag = 12), differences = 2)
 unem.sa = diff(unem.sa, differences = 2)
-
-
-
 
 ## Stationary plots
 par(mfrow = c(1, 2))
