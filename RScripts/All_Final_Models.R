@@ -4,50 +4,45 @@ library(astsa)
 library(xtable)
 library(knitr)
 library(tseries)
+library(forecast)
 
 load("Data/Data_Prep.rda")
 
-## Unemployment rate with seasonality
-unem = econ$unem_rate
-unem = ts(unem, start = c(1993,1), frequency = 12)
 
 ## Seasonally adjusted unemployment
-unem.sa = econ.sa$unem_rate_sa
-
-##Plotting first differences also (for write-up)
-unem1 = diff(diff(unem), lag = 12)
-unem1.sa = diff(unem.sa)
-par(mfrow = c(1, 2))
-plot.ts(unem1, main = "First differences, Seasonal")
-plot.ts(unem1.sa, main = "First differences, Seasonally Adjusted")
+unem = econ.sa$unem_rate_sa
 
 ## Everyone seems to agree that 2 differences gets us stationarity... since we specify differencing
 ## in the arima model parameters, it feels like we should not be differencing the data beforehand
 ##
 ## Differencing 
-unem = diff(diff(unem, lag = 12), differences = 2)
-unem.sa = diff(unem.sa, differences = 2)
+unem1 = diff(unem)
+unem2 = diff(unem, differences = 2)
 
-## Stationary plots
+## Differencing plots
 par(mfrow = c(1, 2))
-plot.ts(unem, main = "Second differences, Seasonal")
-plot.ts(unem.sa, main = "Second differences, Seasonally Adjusted")
+plot.ts(unem1, main = "First difference")
+plot.ts(unem2, main = "Second difference")
 
 #ADF of differenced data
 adf.test(unem1)
-adf.test(unem1.sa)
-adf.test(unem)
-adf.test(unem.sa)
+adf.test(unem2)
 
 ## ACF/PACF Plots
 par(mfrow = c(2,2))
-acf(unem); pacf(unem)
-acf(unem.sa); pacf(unem.sa)
+Acf(unem1); Pacf(unem1)
+Acf(unem2); Pacf(unem2)
 
-## Seasonal Models
-mdl.1 = sarima(econ$unem_rate, p = 0, d = 2, q = 1, P = 1, D = 1, Q = 0, S = 12)
-mdl.2 = sarima(econ$unem_rate, p = 0, d = 2, q = 1, P = 3, D = 1, Q = 0, S = 12)
-mdl.3 = sarima(econ$unem_rate, p = 4, d = 2, q = 1, P = 3, D = 1, Q = 0, S = 12)
+## ACF/PACF Model Suggestions
+##
+## First Difference
+## -----------------------------
+## Suggested:   MA(4)
+##
+## Second Difference
+## -----------------------------
+## Suggested:   ARMA(1,3)
+
 
 ## Seasonally Adjusted Models
 mdl.4 = sarima(econ.sa$unem_rate_sa, p = 0, d = 2, q = 1, P = 1, D = 0, Q = 0, S = 12)
