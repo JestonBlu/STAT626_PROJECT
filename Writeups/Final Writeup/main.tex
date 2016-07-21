@@ -1,0 +1,275 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Journal Article
+% LaTeX Template
+% Version 1.4 (15/5/16)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% Original author:
+% Frits Wenneker (http://www.howtotex.com) with extensive modifications by
+% Vel (vel@LaTeXTemplates.com)
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% Template modified by Alison Sheltong for STAT 626 Final Project.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[twoside,twocolumn]{article}
+
+\usepackage[greek,english]{babel} % Language hyphenation and typographical rules
+\usepackage{graphicx}
+\usepackage{float, enumitem}
+\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{caption}
+\usepackage{lmodern}
+\usepackage{booktabs} % Horizontal rules in tables
+
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage{blindtext} % Package to generate dummy text throughout this template - helpful for double checking spaccing.
+
+\usepackage[utf8x]{inputenc} %Because I like this one better than the one in the template
+\usepackage{natbib}
+\bibliographystyle{apalike}
+
+
+\usepackage[margin=.75 in, hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins, provided extra space for us with smaller margins than the default.
+
+\usepackage{enumitem} % Customized lists
+\setlist[itemize]{noitemsep} % Make itemize lists more compact
+
+\usepackage{abstract} % Allows abstract customization - The italics for example.
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+\usepackage{fancyhdr} % Headers and footers
+\pagestyle{fancy} % All pages have headers and footers
+\lhead{\bfseries Group 4}
+\chead{\bfseries STAT 626: Time Series Analysis}
+\rhead{\bfseries US Unemployment Trends} 
+\lfoot{}
+\cfoot{\thepage}
+\rfoot{} 
+
+
+\usepackage{titling} % Customizing the title section 
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\setlength{\droptitle}{-4\baselineskip} % Move the title up
+
+\pretitle{\begin{center}\huge\bfseries} % Article title formatting
+\posttitle{\end{center}} % Article title closing formatting
+\title{US Unemployment Trends} % Article title
+\author{%
+\textsc{Joseph Blubaugh}\thanks{Plots, Data Prep, Code Management} \\[1ex] % Your name
+\normalsize Statistics\\ % Your institution
+%\normalsize \href{mailto:john@smith.com}{john@smith.com} % Your email address
+\and % Uncomment if 2 authors are required, duplicate these 4 lines if more
+\textsc{Sean Roberson}\thanks{Presentor} \\[1ex] % Second author's name
+\normalsize Mathematics, Industrial\\ % Second author's institution
+\and 
+\textsc{Akarshan Puri}\thanks{Model selection and fitting} \\[1ex] 
+\normalsize Electrical Engineering\\ 
+\and 
+\textsc{Alison Shelton}\thanks{Write-up} \\[1ex] 
+\normalsize Statistics\\ 
+\and 
+\textsc{Travis Lilley}\thanks{Diagnostics} \\[1ex] 
+\normalsize Statistics\\ 
+\and
+\textsc{Bo Pang}\thanks{Model fitting and plots} \\[1 ex]
+\normalsize Psychology, Statistics
+\vspace*{.5 cm}
+}
+%\institute[Texas A\&M] % I'm not sure yet how to add this in with the way that I put in the author names.
+	%	{Texas A\&M \newline College Station, Texas}
+\date{July 25, 2016 \vspace*{.25 cm}} % Final write-up due date plus a bit of extra space
+\renewcommand{\maketitlehookd}{%
+\begin{abstract}
+\noindent The information from above is from the original presentation.  The links as to who did what should be modified probably at the end.  This is just a starting point. Also the abstract should be written last so I thought it was a good place to put this information.
+
+\vspace*{.25 cm}
+\noindent The writeup below has dummy text so I could set up the sections. I also moved some of the older write-up text to this document to start it all up.
+\end{abstract}
+}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+% Print the title
+\maketitle
+
+%----------------------------------------------------------------------------------------
+%	ARTICLE CONTENTS
+%----------------------------------------------------------------------------------------
+
+\section{Introduction}
+		Unemployment has been a topic of concern throughout the United States in recent years.  Graduate and Undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it has seemed to be in generations past. Therefore, the purpose of our project is to examine trends in unemployment in the United States, focusing  on the years from 1992 to 2015, with a goal of forecasting into late 2016 and beyond.
+	
+		
+	
+
+\subsection{Goal}
+\blindtext % Dummy text
+
+\subsection{Data}
+
+The unemployment data being examined was obtained from the non-seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATENSA), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsref}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
+
+%------------------------------------------------
+
+\section{Exploratory Analysis}
+
+Also known as put the initial plots here and then describe it.
+
+	As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  The time span included in the study encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all potential explanatory variables that will be explored in further analysis.
+	
+		\begin{figure}[H]
+			\centering
+			\caption{Plot of the original data}
+			\label{fig:unemployment}
+			\includegraphics[width=.7\linewidth]{images/Unemployment}
+		\end{figure}
+
+%Text requiring further explanation\footnote{Example footnote}. I don't think we need footnotes
+
+%------------------------------------------------
+
+\section{Achieving Stationarity}
+
+%\begin{equation} % we probably should number our equations so that we can reference them
+%\label{eq:emc}
+%e = mc^2
+%\end{equation}
+
+			After the initial exploration of the time series graphs, the team has chosen to focus on building priliminary models which will serve as the foundation of further analysis. In looking at the inital plots, it appears that the series could benefit from detrending. As such, one of the primary goals has been to transform the data to stationarity. 
+			
+			An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF test tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. For the non-seasonlly adjusted data the Dickey-Fuller test statistic was -1.4266, with a lag order of 6, and a p-value of 0.8176. Additionally, the seasonally adjusted data had a Dickey-Fuller test statistic of -2.1377, also with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data, whether or not the data are seasonally adjusted.
+			
+		 The first and second differences of the unemployment data were plotted for both the seasonal and seasonally adjusted unemployment data, see Figures \ref{fig:firstdiff} and \ref{fig:secdiff}. Both the first and second differences appear considerably more stationary when compared to the original data. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the 4 differenced models. The consensus in the group was to continue the model building using second differences.
+		 
+	
+		 \begin{figure}[H]
+							\centering
+							\includegraphics[width=.6\linewidth]{images/firstdiff}
+							\caption{Plots of first differences}
+							\label{fig:firstdiff}
+						\end{figure}
+						
+								 \begin{figure}[H]
+							\centering
+							\includegraphics[width=.6\linewidth]{images/secdiff}
+							\caption{Plots of second differences}
+							\label{fig:secdiff}
+						\end{figure}
+
+	 \begin{table}[H]
+		 \centering
+		 \caption{ADF Test Results}
+		 \label{tab:ADF}
+		 \begin{tabular}{lllll}
+		 \hline
+		 \textbf{Model} & \textbf{Statistic} & \textbf{Lag order} & \textbf{p-value}\\ \hline
+		 1\(^{st}\) difference &  -7.6799 & 6 & \( < 0.01\)\\
+		  1\(^{st}\) difference, SA &  -9.3595 & 6 &\( < 0.01\)\\
+		 2\(^{nd}\) difference &  -8.4515 & 6 & \( < 0.01\)\\
+		  2\(^{nd}\) difference, SA &  -9.3595 & 6 & \( < 0.01\)\\		 \hline
+		 \end{tabular}
+		 \end{table}
+
+  
+
+
+%------------------------------------------------
+
+\section{Model Building}
+
+\subsection{ACF and PACF Plots}
+
+ The team visually analyzed the ACF and PACF plots within the first season (h = 1, 2, ..., 12), see Figure \ref{fig:secdiff2}. The PACF appears to decline slowly, while the ACF seems to fall off after 1. Therefore we began by letting p = 0, and q = 1. Several models were considered by making adjustments to variations resulting in the models found in Table \ref{tab:models}.\newline
+  
+   \begin{figure}[H]
+      	\centering
+      	\caption{ACF \& PACF Plots}
+      	\includegraphics[width=\linewidth]{images/acfpacf}
+      	\label{fig:secdiff2}
+      \end{figure}
+      
+      \subsection{Model Fit}
+      
+      This will need to be adjusted to make reflect our current decision on the models.
+      
+      I'll fix it up later but for now I am getting rid of a couple of columns.
+  
+     	\begin{table}[H]
+     		\centering
+     		\caption{Model Summaries}
+     		     		\label{tab:models}
+     		\begin{tabular}{ccccc}
+     			\hline
+     			\textbf{Model \#}  & \textbf{Order} & \textbf{Seasonal} &  \textbf{AIC} & \textbf{BIC} \\
+     			&&\textbf{Order}&&\\ 
+     			\hline
+     			1   & 0,2,1 & 1,1,0 &  -2.27 & -3.23 \\ 
+     			2   & 0,2,1 & 3,1,0 &  -2.44 & -3.37 \\ 
+     			3   & 4,2,1 & 3,1,0 &  -2.44 & -3.32 \\ 
+     			4  & 0,2,1 & 1,0,0 &  -2.61 & -3.58 \\ 
+     			5  & 1,2,1 &  &  -2.63 & -3.60 \\ 
+     			6  & 1,0,1 &  &  -2.617 &  -3.578 \\ 
+     			7  & 1,0,1 & & -2.672 &  -3.565\\ \hline
+     		\end{tabular}
+     	\end{table}
+
+		%-----------------------------------------------------------------------------------------
+		
+		Based on the AIC values, the two models that show the most promise are models 5 and 7.  Model 5 includes only the time series data whereas model 7 also includes some of the predictors of interest.  The diagnostic plots are shown in Figures \ref{fig:mod5} and \ref{fig:mod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. Therefore, we will continue to refine these models further as we explore the nature of US Unemployment rate patterns.
+
+\begin{figure}[H]
+      	\centering
+      	\caption{Model 5 Diagnostics}
+      	\includegraphics[width=\linewidth]{images/mod5}
+      	\label{fig:mod5}
+\end{figure}
+
+\begin{figure}[H]
+      	\centering
+      	\caption{Model 7 Diagnostics}
+      	\includegraphics[width=\linewidth]{images/mod7}
+      	\label{fig:mod7}
+\end{figure}
+
+\subsection{Predictor Variables}
+
+\blindtext % Dummy text
+
+\section{Forcasting}
+
+\blindtext % Dummy text
+
+\section{Discussion and Implications}
+
+\blindtext % Dummy text
+
+%----------------------------------------------------------------------------------------
+%	REFERENCE LIST
+%----------------------------------------------------------------------------------------
+
+\begin{flushleft}
+\bibliography{main} % refers to our bibliography
+\end{flushleft}
+
+%----------------------------------------------------------------------------------------
+
+\end{document}

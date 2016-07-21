@@ -1,0 +1,14 @@
+\begin{thebibliography}{}
+
+\bibitem[Shumway and Stoffer, 2006]{Shumway2006}
+Shumway, R.~H. and Stoffer, D.~S. (2006).
+\newblock {Time Series Analysis and Its Applications: With R Examples - Third
+  Edition}.
+\newblock {\em Springer}, page 575.
+
+\bibitem[{U.S. Bureau of Labor Statistics}, 2016]{blsref}
+{U.S. Bureau of Labor Statistics} (2016).
+\newblock {\em {Civilian Unemployment Rate [UNRATE]}}.
+\newblock https://fred.stlouisfed.org/series/UNRATE.
+
+\end{thebibliography}

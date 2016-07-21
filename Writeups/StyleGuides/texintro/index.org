@@ -1,0 +1,60 @@
+# $Id: index.org,v 37:2e260faa2b95 2012/06/02 04:31:20 stanton $
+#+title: Writing Finance Papers using LaTeX
+# #+date: May, 2012
+#+setupfile: setup
+#+startup: indent
+{{{haas-frame()}}}
+
+[[http://faculty.haas.berkeley.edu/stanton][Richard Stanton]] \\
+Professor of Finance and Real Estate \\
+Kingsford Capital Management Chair in Business \\
+Haas School of Business \\
+University of California, Berkeley
+
+[[file:images/RS_head_cropped.gif]]
+
+* Abstract
+This document provides some recommendations for efficiently writing finance papers using LaTeX and related tools, based on techniques that have made me (at least slightly) more productive over the years. It also contains the LaTeX style files and  BibTeX format files (along with sample paper outlines) necessary for making your paper and bibliography match the formats required by the /Journal of Finance/, /Journal of Financial Economics/, and /Review of Financial Studies/. The source file, *texintro.tex*, and various additional included files are important parts of this document.
+
+* Downloads
+
+*The paper*
+- [[file:paper/texintro.pdf][*texintro.pdf*]]: Download this file if you just want to read the paper.
+
+*Zip file containing the entire distribution (with figures, bibliography, this Web page, etc.)*
+- [[file:zip/texintro.zip][*texintro.zip*]]: Allows you to build the paper and all examples, Web pages, etc. yourself.
+
+*LaTeX source for paper* 
+- [[file:paper/texintro.tex][*texintro.tex*]]: Useful to see how the examples in the paper were created.
+
+*Non-standard LaTeX style files needed to compile the paper*
+- [[file:paper/texintro.sty][texintro.sty]]: Contains a few definitions needed to compile the paper.
+- [[file:sty/versionPO.sty][versionPO.sty]]: Useful for including text conditionally.
+
+*Journal-specific files*
+- /Journal of Finance/
+  - [[file:jf/jf.sty][LaTeX style file (jf.sty]])
+  - [[file:jf/jfIA.sty][LaTeX style file for JF Internet Appendix (jfIA.sty]])
+  - [[file:jf/jf.bst][BibTeX format (jf.bst)]]
+  - [[file:jf/jfsample.tex][Sample paper (jfsample.tex)]]
+    - [[file:jf/jfsample.pdf][PDF file]]
+  - [[file:jf/jfIAsample.tex][Sample Internet Appendix (jfIAsample.tex)]]
+    - [[file:jf/jfIAsample.pdf][PDF file]]
+- /Journal of Financial Economics/
+  - [[file:jfe/jfe.sty][LaTeX style file (jfe.sty]])
+  - [[file:jfe/jfe.bst][BibTeX format (jfe.bst)]]
+  - [[file:jfe/jfesample.tex][Sample paper (jfesample.tex)]]
+    - [[file:jfe/jfesample.pdf][PDF file]]
+- /Review of Financial Studies/
+  - [[file:rfs/rfs.sty][LaTeX style file (rfs.sty]])
+  - [[file:rfs/rfs.bst][BibTeX format (rfs.bst)]]
+  - [[file:rfs/rfssample.tex][Sample paper (rfssample.tex)]]
+    - [[file:rfs/rfssample.pdf][PDF file]]
+
+* org-mode
+
+This page was created using [[http://orgmode.org][org-mode]] in [[http://www.gnu.org/software/emacs][Emacs]]. org-mode is an extremely useful package, which can do almost everything from keeping track of your To Do list and notes to writing papers to editing web pages. The source for this page is available here: [[file:src.org][src]]. 
+
+* Acknowledgments
+I am grateful to Jennifer Carpenter and Johan Walden for helpful suggestions and valuable input (even if some of it was inadvertent). I am also grateful to Tobias Oetiker for writing the *example* environment, which I use liberally in this document, and to Stefan Vollmar, whose formatting I borrowed with only minor changes for this Web page. 
+

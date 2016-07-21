@@ -1,0 +1,17 @@
+# $Id: src.org,v 38:f67b21e4d7d3 2012/06/04 05:09:51 stanton $
+#+title: Program Source
+#+email: stanton@haas.berkeley.edu
+#+setupfile: setup
+{{{haas-frame()}}}
+
+* Main org-file
+original file: [[file:index.org][index.org]]
+#+INCLUDE: "./index.org" src org
+
+* setup (Org-file)
+original file: [[file:setup][setup]]
+#+INCLUDE: "./setup" src org
+
+* CSS-file
+original file: [[file:css/org.css][org.css]] (Cascading Style Sheet)
+#+INCLUDE: "css/org.css" src css

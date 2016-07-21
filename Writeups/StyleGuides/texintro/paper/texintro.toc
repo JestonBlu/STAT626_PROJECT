@@ -1,0 +1,41 @@
+
+\contentsline {section}{\numberline {1}Introduction}{2}{section.1}
+\contentsline {section}{\numberline {2}Installing \LaTeX {}}{3}{section.2}
+\contentsline {section}{\numberline {3}Introduction to \LaTeX }{4}{section.3}
+\contentsline {subsection}{\numberline {3.1}Entering text}{4}{subsection.3.1}
+\save@tocdepth \setcounter {tocdepth}{-10}
+\contentsline {section}{\numberline {1}Section Title}{7}{section.1}
+\contentsline {subsection}{\numberline {1.1}Subsection title}{7}{subsection.1.1}
+\reset@tocdepth 
+\contentsline {subsection}{\numberline {3.2}Mathematical expressions}{7}{subsection.3.2}
+\contentsline {section}{\numberline {4}Useful \LaTeX \ Packages}{8}{section.4}
+\contentsline {subsection}{\numberline {4.1}Installing packages}{9}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Installing Non-Standard Packages}{9}{subsubsection.4.1.1}
+\contentsline {subsection}{\numberline {4.2}Changing line spacing: \texttt {setspace}}{11}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Including figures: \texttt {graphicx}}{11}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}Mathematical typesetting: \texttt {amsmath}}{12}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}\textbackslash eqref}{12}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}\textbackslash begin\{align\} \ldots \textbackslash end\{align\}}{12}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}\textbackslash begin\{cases\} \ldots \textbackslash end\{cases\}}{13}{subsubsection.4.4.3}
+\contentsline {subsection}{\numberline {4.5}Setting page margins: \texttt {geometry}}{13}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}Inserting notes: \texttt {todonotes}}{14}{subsection.4.6}
+\contentsline {paragraph}{Note:}{15}{section*.6}
+\contentsline {subsection}{\numberline {4.7}Printing date and time: \texttt {datetime}}{15}{subsection.4.7}
+\contentsline {subsection}{\numberline {4.8}Multiple versions from one file: \texttt {versionPO}}{15}{subsection.4.8}
+\contentsline {subsection}{\numberline {4.9}List formatting: \texttt {enumitem}}{17}{subsection.4.9}
+\contentsline {subsection}{\numberline {4.10}URLs and hyperlinks: \texttt {hyperref}}{17}{subsection.4.10}
+\contentsline {subsection}{\numberline {4.11}Landscape and subfigures: \texttt {rotating} and \texttt {subfigure}}{18}{subsection.4.11}
+\contentsline {subsection}{\numberline {4.12}Other useful packages}{20}{subsection.4.12}
+\contentsline {section}{\numberline {5}Citations and Bibliographies}{20}{section.5}
+\contentsline {subsection}{\numberline {5.1}BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}{}}{21}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}The BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}\ database}{22}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Telling BibT\kern -.1667em\lower .5ex\hbox {E}\kern -.125emX\spacefactor \@m {}\ where to find the database}{22}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}Formatting the bibliography: \texttt {natbib} and \texttt {custom-bib}}{23}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}natbib}{23}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}Customizing the bibliography format: custom-bib}{24}{subsubsection.5.4.2}
+\contentsline {section}{\numberline {6}Journal-Specific Document Formatting}{24}{section.6}
+\contentsline {subsection}{\numberline {6.1}Formatting the bibliography}{24}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2}Formatting the text}{25}{subsection.6.2}
+\contentsline {section}{\numberline {7}Working with Others: Version Control Systems}{26}{section.7}
+\contentsline {subsection}{\numberline {7.1}Public hosting of DVCS repositories}{28}{subsection.7.1}
+\contentsline {subsection}{\numberline {7.2}This project's Bitbucket repository}{28}{subsection.7.2}

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Writing Finance Papers using LaTeX</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="Writing Finance Papers using LaTeX"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-06-03T22:28-0700"/>
+<meta name="author" content="Richard Stanton"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="css/org.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Writing Finance Papers using LaTeX</h1>
+
+
+<div id="haas-frame"><a href="http://haas.berkeley.edu"><img src="images/HaasBerkeley.png" width="189px" height="120px"  alt="images/HaasBerkeley.png" /></a></div>
+
+<p>
+<a href="http://faculty.haas.berkeley.edu/stanton">Richard Stanton</a> <br/>
+Professor of Finance and Real Estate <br/>
+Kingsford Capital Management Chair in Business <br/>
+Haas School of Business <br/>
+University of California, Berkeley
+</p>
+<p>
+<img src="images/RS_head_cropped.gif"  alt="images/RS_head_cropped.gif" />
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Abstract</a></li>
+<li><a href="#sec-2">Downloads</a></li>
+<li><a href="#sec-3">org-mode</a></li>
+<li><a href="#sec-4">Acknowledgments</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Abstract</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>This document provides some recommendations for efficiently writing finance papers using LaTeX and related tools, based on techniques that have made me (at least slightly) more productive over the years. It also contains the LaTeX style files and  BibTeX format files (along with sample paper outlines) necessary for making your paper and bibliography match the formats required by the <i>Journal of Finance</i>, <i>Journal of Financial Economics</i>, and <i>Review of Financial Studies</i>. The source file, <b>texintro.tex</b>, and various additional included files are important parts of this document.
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Downloads</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<p>
+<b>The paper</b>
+</p><ul>
+<li><a href="paper/texintro.pdf"><b>texintro.pdf</b></a>: Download this file if you just want to read the paper.
+</li>
+</ul>
+
+
+<p>
+<b>Zip file containing the entire distribution (with figures, bibliography, this Web page, etc.)</b>
+</p><ul>
+<li><a href="zip/texintro.zip"><b>texintro.zip</b></a>: Allows you to build the paper and all examples, Web pages, etc. yourself.
+</li>
+</ul>
+
+
+<p>
+<b>LaTeX source for paper</b> 
+</p><ul>
+<li><a href="paper/texintro.tex"><b>texintro.tex</b></a>: Useful to see how the examples in the paper were created.
+</li>
+</ul>
+
+
+<p>
+<b>Non-standard LaTeX style files needed to compile the paper</b>
+</p><ul>
+<li><a href="paper/texintro.sty">texintro.sty</a>: Contains a few definitions needed to compile the paper.
+</li>
+<li><a href="sty/versionPO.sty">versionPO.sty</a>: Useful for including text conditionally.
+</li>
+</ul>
+
+
+<p>
+<b>Journal-specific files</b>
+</p><ul>
+<li><i>Journal of Finance</i>
+<ul>
+<li><a href="jf/jf.sty">LaTeX style file (jf.sty</a>)
+</li>
+<li><a href="jf/jfIA.sty">LaTeX style file for JF Internet Appendix (jfIA.sty</a>)
+</li>
+<li><a href="jf/jf.bst">BibTeX format (jf.bst)</a>
+</li>
+<li><a href="jf/jfsample.tex">Sample paper (jfsample.tex)</a>
+<ul>
+<li><a href="jf/jfsample.pdf">PDF file</a>
+</li>
+</ul>
+
+</li>
+<li><a href="jf/jfIAsample.tex">Sample Internet Appendix (jfIAsample.tex)</a>
+<ul>
+<li><a href="jf/jfIAsample.pdf">PDF file</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li><i>Journal of Financial Economics</i>
+<ul>
+<li><a href="jfe/jfe.sty">LaTeX style file (jfe.sty</a>)
+</li>
+<li><a href="jfe/jfe.bst">BibTeX format (jfe.bst)</a>
+</li>
+<li><a href="jfe/jfesample.tex">Sample paper (jfesample.tex)</a>
+<ul>
+<li><a href="jfe/jfesample.pdf">PDF file</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li><i>Review of Financial Studies</i>
+<ul>
+<li><a href="rfs/rfs.sty">LaTeX style file (rfs.sty</a>)
+</li>
+<li><a href="rfs/rfs.bst">BibTeX format (rfs.bst)</a>
+</li>
+<li><a href="rfs/rfssample.tex">Sample paper (rfssample.tex)</a>
+<ul>
+<li><a href="rfs/rfssample.pdf">PDF file</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">org-mode</h2>
+<div class="outline-text-2" id="text-3">
+
+
+<p>
+This page was created using <a href="http://orgmode.org">org-mode</a> in <a href="http://www.gnu.org/software/emacs">Emacs</a>. org-mode is an extremely useful package, which can do almost everything from keeping track of your To Do list and notes to writing papers to editing web pages. The source for this page is available here: <a href="src.html">src</a>. 
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Acknowledgments</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>I am grateful to Jennifer Carpenter and Johan Walden for helpful suggestions and valuable input (even if some of it was inadvertent). I am also grateful to Tobias Oetiker for writing the <b>example</b> environment, which I use liberally in this document, and to Stefan Vollmar, whose formatting I borrowed with only minor changes for this Web page. 
+</p>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="author">Author: Richard Stanton (<a href="mailto:stanton@haas.berkeley.edu">stanton@haas.berkeley.edu</a>)</p>
+<p class="date">Date: 2012-06-03T22:28-0700</p>
+<p class="creator">Generated by Org version 7.8.11 with Emacs version 24</p>
+<p class="xhtml-validation"></p>
+
+</div>
+</body>
+</html>

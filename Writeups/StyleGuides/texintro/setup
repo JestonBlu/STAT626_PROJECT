@@ -1,0 +1,10 @@
+# $Id: setup,v 0:e52cabd1f988 2012/05/29 21:55:57 stanton $
+#+author: Richard Stanton
+#+email: stanton@haas.berkeley.edu
+#+options: toc:t num:nil author:t creator:t ^:nil
+#+style: <link rel="stylesheet" type="text/css" href="css/org.css" />
+
+#+macro: blue-frame #+html:<div id="blue-frame"><a href="http://haas.berkeley.edu"><img src="images/blueGlass4.png" width="189px" height="120px"  alt="images/blueGlass4.png" /></a></div>
+
+#+macro: haas-frame #+html:<div id="haas-frame"><a href="http://haas.berkeley.edu"><img src="images/HaasBerkeley.png" width="189px" height="120px"  alt="images/HaasBerkeley.png" /></a></div>
+
