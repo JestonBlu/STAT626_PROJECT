@@ -1,3 +1,5 @@
+rm(list = ls())
+
 library(astsa)
 library(forecast)
 
