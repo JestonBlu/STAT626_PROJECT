@@ -1,6 +1,11 @@
+rm(list = ls())
+
 ## Import original Data
 econ = read.csv("Data/Unemployment.csv")
 poly = read.csv("Data/US Congress and Recession Data.csv")
+
+## Save 2016 unemployment for measuring accuracy
+unem.16 = econ$unem_rate[313:317]
 
 poly = poly[, c("date", "recession_ind")]
 econ = merge(econ, poly, by = "date")
@@ -29,6 +34,9 @@ decom.con = decompose(ts(data = econ$construction_spending,
 decom.rts = decompose(ts(data = econ$retail_sales, 
                          start = c(1993,1), frequency = 12), type = "additive")
 
+## Seasonally Adjust 2016 unemployment
+unem.16 = unem.16 - decom.unem$seasonal[1:5]
+
 ## Add seasonally adjusted rate
 econ.sa = data.frame(
   row.names = row.names(econ),
@@ -43,4 +51,4 @@ econ.sa = data.frame(
 
 
 ## Export data to be used for modeling
-save(list = c("econ", "econ.sa"), file = "Data/Data_Prep.rda")
+save(list = c("econ.sa", "unem.16"), file = "Data/Data_Prep.rda")
