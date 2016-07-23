@@ -1,0 +1,41 @@
+load("Data_Prep.rda")
+library(astsa)
+library(vars)
+
+
+par(mfrow=c(1,1))
+unem = econ.sa$unem_rate_sa
+plot.ts(unem)
+
+VARselect(econ.sa,lag.max=20,type = "both")# BIC suggests VAR(1) HQ suggest VAR(2)
+M1<-VAR(econ.sa, p=1, type = "both")
+M2<-VAR(econ.sa, p=2, type = "both")
+M3<-VAR(econ.sa[,c(1,6,7)], p=1, type = "both")
+M4<-VAR(econ.sa[,c(1,6,7)], p=2, type = "both")
+
+summary(M1$varresult$unem_rate_sa) 
+cor(econ.sa, use="complete.obs", method="kendall") 
+pairs(econ.sa)
+# the results only show the retail_sales_sa.l1 and recession_ind.l1 
+# besides unem_rate_sa.l1 were significant predictors. I checked the correlation among
+# these predictors and found that variables industrial_production, manufacturers_new_orders,
+# house_price_sa, construction_spend, and retail_sales are highly correlated. 
+# Thus, I then fitted two models with only unem_rate, retail_sales, and recession_ind which are M3 and M4
+
+
+AIC(M1$varresult$unem_rate_sa) # -253.317
+AIC(M2$varresult$unem_rate_sa) # -252.6457
+AIC(M3$varresult$unem_rate_sa) # -247.1147
+AIC(M4$varresult$unem_rate_sa) # -251.6351
+
+
+BIC(M1$varresult$unem_rate_sa) # -217.1493
+BIC(M2$varresult$unem_rate_sa) # -191.2225
+BIC(M3$varresult$unem_rate_sa) # -225.414
+BIC(M4$varresult$unem_rate_sa) # -219.117
+
+
+acf(resid(M3),52) # The CCF plots look pretty reasonable. The ACF for retail sales and recession ind signify some issues.
+serial.test(M3, lags.pt = 12, type = "PT.adjusted") # due to the ACF problems, expectedly the formal is rejected
+
+
