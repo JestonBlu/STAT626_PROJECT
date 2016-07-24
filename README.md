@@ -2,7 +2,7 @@
 
 #### Team Members and Responsibilities (edit as you wish)
 
-- **Joseph**: Plots, Data Prep, Code Management
+- **Joseph**: Plots, Data Prep, Code Management, Modeling
 - **Alison**: Write up. I'd be happy to do writing.
 - **Sean**: Presentor, Write up?
 - **Travis**: I can do the diagnostics.
