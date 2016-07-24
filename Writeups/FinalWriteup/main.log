@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  24 JUL 2016 13:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  24 JUL 2016 13:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -789,7 +789,7 @@ LaTeX Warning: Reference `fig:mod5' on page 4 undefined on input line 283.
 
 LaTeX Warning: Reference `fig:mod7' on page 4 undefined on input line 283.
 
-<images/forcasts.png, id=177, 2304.61pt x 1130.2225pt>
+<images/forcasts.png, id=176, 2304.61pt x 1130.2225pt>
 File: images/forcasts.png Graphic file (type png)
 
 <use images/forcasts.png>
@@ -799,7 +799,7 @@ Package pdftex.def Info: images/forcasts.png used on input line 295.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-<images/forcast3.png, id=178, 2304.61pt x 1130.2225pt>
+<images/forcast3.png, id=177, 2304.61pt x 1130.2225pt>
 File: images/forcast3.png Graphic file (type png)
 
 <use images/forcast3.png>
@@ -922,7 +922,7 @@ s/type1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
 lic/lm/lmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr8.
 pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/
 local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9.pfb>
-Output written on main.pdf (6 pages, 3352786 bytes).
+Output written on main.pdf (6 pages, 3352789 bytes).
 PDF statistics:
  280 PDF objects out of 1000 (max. 8388607)
  223 compressed objects within 3 object streams
