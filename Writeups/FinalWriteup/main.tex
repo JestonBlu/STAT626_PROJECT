@@ -226,6 +226,19 @@ The first, second, and third differences of the unemployment data were plotted f
 
 \subsubsection{ARIMA Models}
 
+Given the potenial of ARIMA models to represent the unemployment data we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three intitial models, without regressors, we chose to retain model 1.  
+
+    \begin{figure}[H]
+    	\centering
+     	\caption{ARIMA(1,2,1) residual diagonostics.}
+     	\includegraphics[width=\linewidth]{images/sarima1}
+     	\label{fig:sarimamod1}
+     \end{figure}
+
+
+Figure \ref{fig:sarimamod1} provides the residual diagnostics for model 1. The timeplot of the standardized residuals resembles a white noise series and largely stays within two standard deviations from the expected mean of 0.  The ACF of residuals does not deviate significantly from 0, although there is a potential spike at lag 24. The normal Q-Q plot is relatively straight giving no indication that the residuals are not normally distributed. The pvalues for the Ljung-Box statistic are all relatively large, giving no indication of autocorrelation in the residuals.  Overall, model 1 seems to represent the unemployment series well.
+
+
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
 \begin{table}[ht]
@@ -270,13 +283,7 @@ model3$AIC; model3$BIC
 [1] -3.327824
 \end{verbatim}
 
-From looking at AIC and BIC values, Models 2 and 3 perform quite similarly, which both show some slight evidence of outperforming Model1.
 
-Then we could compare the three models based on diagnostic plots. The standardized residuals of all models show some evidence of non-white-noise. ARMA models do not model variability. We will have a few lectures on this topic. There is not much we can do now on this issue.
-
-In the ACF of residuals of Model 1 shows a spike at lag 24. The other two models do not show such a spike.
-
-The normal plots from the three models are fairly similar.
 
 The Q-statistic or Ljung-Box statistic
 Models 1 and 2 have similar results. Model 1 seems to perform better at the first few lags, but Model 2 does better after lag 15. Model 3 clearly perform better than the two models on the Q-statistic. Since the Model 3 is based on a reasoning our professor does not like, we may not present this model. However it at least informs us that some models based on the thought that both the ACF and PACF cuts off at certain lags might model our data better. I am not quite sure how to handle this situation. Any thoughts on this would be highly appreciated!
