@@ -116,32 +116,46 @@
 %----------------------------------------------------------------------------------------
 
 \section{Introduction}
-		Unemployment has been a topic of concern throughout the United States in recent years.  Graduate and Undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it has seemed to be in generations past. Therefore, the purpose of our project is to examine trends in unemployment in the United States, focusing  on the years from 1992 to 2015, with a goal of forecasting into late 2016 and beyond.
-	
+		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession iof 2007 was accompanied the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring, in 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and Undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full-reovery of college graduate employment rates and earning is expected to be a slow process \cite{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it has seemed to be in generations past.
 		
-	
+Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression and suicide, and even physical deterioration \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, reasearch into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
 
 \subsection{Goal}
-\blindtext % Dummy text
+		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our goal is to forcast unemployment into 2016. 
 
 \subsection{Data}
 
-The unemployment data being examined was obtained from the non-seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATENSA), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsref}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
+The unemployment data being examined was obtained from the seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATE), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsrefsa, blsrefnsa}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
+
+Resession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as Aggregate hours of work in the total economy.
+
+We also explored several potential predictor variables that are potentially related to unemployment.  Industrial Production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of Manufacturers' New Orders for All Manufacturing Industries refers to manufacturer's sales and inventory, except for New Orders from the Semicondutor Industry \citep{vmno}. The Purchase Only House Price Index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}.
+
+
 
 %------------------------------------------------
 
 \section{Exploratory Analysis}
-
-Also known as put the initial plots here and then describe it.
-
-	As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  The time span included in the study encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all potential explanatory variables that will be explored in further analysis.
-	
 		\begin{figure}[H]
-			\centering
-			\caption{Plot of the original data}
-			\label{fig:unemployment}
-			\includegraphics[width=.7\linewidth]{images/Unemployment}
-		\end{figure}
+		\centering
+		\caption{Plot of the original data}
+		\label{fig:unemployment}
+		\includegraphics[width=\linewidth]{images/unemployment_total_nsa}
+	\end{figure}
+As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
+
+Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all potential explanatory variables that can potentially inform unemployment patterns.
+
+
+		\begin{figure}[H]
+		\centering
+		\caption{Seasonally adjusted unemployment for the study time period}
+		\label{fig:presunemp}
+		\includegraphics[width=.9\linewidth]{images/presunemp}
+	\end{figure}
+
+
+	
 
 %Text requiring further explanation\footnote{Example footnote}. I don't think we need footnotes
 
@@ -161,19 +175,8 @@ Also known as put the initial plots here and then describe it.
 		 The first and second differences of the unemployment data were plotted for both the seasonal and seasonally adjusted unemployment data, see Figures \ref{fig:firstdiff} and \ref{fig:secdiff}. Both the first and second differences appear considerably more stationary when compared to the original data. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the 4 differenced models. The consensus in the group was to continue the model building using second differences.
 		 
 	
-		 \begin{figure}[H]
-							\centering
-							\includegraphics[width=.6\linewidth]{images/firstdiff}
-							\caption{Plots of first differences}
-							\label{fig:firstdiff}
-						\end{figure}
-						
-								 \begin{figure}[H]
-							\centering
-							\includegraphics[width=.6\linewidth]{images/secdiff}
-							\caption{Plots of second differences}
-							\label{fig:secdiff}
-						\end{figure}
+		 
+	
 
 	 \begin{table}[H]
 		 \centering
@@ -200,12 +203,12 @@ Also known as put the initial plots here and then describe it.
 
  The team visually analyzed the ACF and PACF plots within the first season (h = 1, 2, ..., 12), see Figure \ref{fig:secdiff2}. The PACF appears to decline slowly, while the ACF seems to fall off after 1. Therefore we began by letting p = 0, and q = 1. Several models were considered by making adjustments to variations resulting in the models found in Table \ref{tab:models}.\newline
   
-   \begin{figure}[H]
-      	\centering
-      	\caption{ACF \& PACF Plots}
-      	\includegraphics[width=\linewidth]{images/acfpacf}
-      	\label{fig:secdiff2}
-      \end{figure}
+  % \begin{figure}[H]
+ %     	\centering
+  %    	\caption{ACF \& PACF Plots}
+  %    	\includegraphics[width=\linewidth]{images/acfpacf}
+ %     	\label{fig:secdiff2}
+ %     \end{figure}
       
       \subsection{Model Fit}
       
@@ -236,19 +239,6 @@ Also known as put the initial plots here and then describe it.
 		
 		Based on the AIC values, the two models that show the most promise are models 5 and 7.  Model 5 includes only the time series data whereas model 7 also includes some of the predictors of interest.  The diagnostic plots are shown in Figures \ref{fig:mod5} and \ref{fig:mod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. Therefore, we will continue to refine these models further as we explore the nature of US Unemployment rate patterns.
 
-\begin{figure}[H]
-      	\centering
-      	\caption{Model 5 Diagnostics}
-      	\includegraphics[width=\linewidth]{images/mod5}
-      	\label{fig:mod5}
-\end{figure}
-
-\begin{figure}[H]
-      	\centering
-      	\caption{Model 7 Diagnostics}
-      	\includegraphics[width=\linewidth]{images/mod7}
-      	\label{fig:mod7}
-\end{figure}
 
 \subsection{Predictor Variables}
 

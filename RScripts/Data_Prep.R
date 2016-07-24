@@ -1,8 +1,8 @@
 rm(list = ls())
 
 ## Import original Data
-econ = read.csv("Data/Unemployment.csv")
-poly = read.csv("Data/US Congress and Recession Data.csv")
+econ = read.csv("Unemployment.csv")
+poly = read.csv("US Congress and Recession Data.csv")
 
 ## Save 2016 unemployment for measuring accuracy
 unem.16 = econ$unem_rate[313:317]
@@ -51,4 +51,5 @@ econ.sa = data.frame(
 
 
 ## Export data to be used for modeling
-save(list = c("econ.sa", "unem.16"), file = "Data/Data_Prep.rda")
+save(list = c("econ.sa", "unem.16"), file = "Data_Prep.rda")
+

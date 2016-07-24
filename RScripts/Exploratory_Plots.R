@@ -5,13 +5,29 @@ library(scales)
 
 
 ## Read in data
-econ = read.csv("Data/Unemployment.csv")
-usa  = read.csv("Data/US Congress and Recession Data.csv")
+econ = read.csv("Unemployment.csv")
+usa  = read.csv("US Congress and Recession Data.csv")
+
+#Unemployment before all the modifications
+unem.sa <- read.csv("UNRATE.csv")$UNRATE
+unem.nsa <- read.csv("UNRATENSA.csv")$UNRATENSA
+unem.sa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
+unem.nsa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
+
+par.oldpar <- par()
+
+#Plot seasonally adjusted and not seasonaly adjusted Unemployment rates
+par(par.oldpar)
+plot(unem.nsa, main="Monthly US Unemployment Rate, Not Seasonally Adusted", xlab="Year", ylab="Rate")
+plot(unem.sa)
+
 
 ## Subset data from Jan 1993 to Dec 2015
 econ = na.omit(econ)
 dta = na.omit(join(econ, usa, by = "date"))
 dta$date = as.Date(dta$date)
+
+
 
 ## Custom ggplot theme
 theme_stat = function() {
@@ -63,6 +79,8 @@ g4 = g2 +
   scale_fill_discrete("President") +
   ggtitle("Seasonally Adjusted Unemployment Rate\n(Jan 93' - Dec 15')") +
   theme_stat()
+
+g4
 
 ## Lag Plot
 ## Borrowed from StackOverflow: http://stackoverflow.com/questions/21524600/
