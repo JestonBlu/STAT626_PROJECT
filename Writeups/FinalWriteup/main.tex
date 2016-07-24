@@ -125,7 +125,7 @@ Unemployment has far-reaching consequences that extends beyond financial securit
 
 \subsection{Data}
 
-The unemployment data being examined was obtained from the seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATE), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsrefsa, blsrefnsa}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
+The unemployment data being examined was obtained from the seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATE), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsrefsa}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
 
 Resession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as Aggregate hours of work in the total economy.
 
@@ -140,18 +140,18 @@ We also explored several potential predictor variables that are potentially rela
 		\centering
 		\caption{Plot of the original data}
 		\label{fig:unemployment}
-		\includegraphics[width=\linewidth]{images/unemployment_total_nsa}
+		\includegraphics[width=\linewidth]{images/unemployment_total_sa}
 	\end{figure}
 	
 			\begin{figure}[H]
 		\centering
-		\caption{Seasonally adjusted unemployment for the study time period}
+		\caption{Smoothed unemployment for the study time period}
 		\label{fig:presunemp}
 		\includegraphics[width=\linewidth]{images/presunemp}
 	\end{figure}
 
 
-As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
+As a first step, the data was plotted over time to identify any obvious patterns visually, considering the seasonlly adjusted version of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
 
 Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot of these predictors can be seen in Figure \ref{fig:pred_scatt}.
 
@@ -169,42 +169,25 @@ Due to marked potential differences in the trend surrounding times of economic d
 
 \section{Achieving Stationarity}
 
-%\begin{equation} % we probably should number our equations so that we can reference them
-%\label{eq:emc}
-%e = mc^2
-%\end{equation}
-
-			After the initial exploration of the time series graphs, the team has chosen to focus on building priliminary models which will serve as the foundation of further analysis. In looking at the inital plots, it appears that the series could benefit from detrending. As such, one of the primary goals has been to transform the data to stationarity. 
+In analyzing the inital plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coffecients, particularly through lag 6 further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF test tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The Dickey-Fuller test statistic for the unemployment data is -2.1377, with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data.
 			
-			An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF test tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. For the non-seasonlly adjusted data the Dickey-Fuller test statistic was -1.4266, with a lag order of 6, and a p-value of 0.8176. Additionally, the seasonally adjusted data had a Dickey-Fuller test statistic of -2.1377, also with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data, whether or not the data are seasonally adjusted.
-			
-
-
-			\begin{figure}[H]
+						\begin{figure}[H]
 		\centering
 		\caption{Autocorrelation of unemployment data}
 		\label{fig:laggedunemployment}
 		\includegraphics[width=\linewidth]{images/laggedunemployment}
 	\end{figure}
-	
-			\begin{figure}[H]
-		\centering
-		\caption{First differences of unemployment rate}
-		\label{fig:firstdiff}
-		\includegraphics[width=\linewidth]{images/firstdiff}
-	\end{figure}
 			
-		A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The first and second differences of the unemployment data were plotted for both the seasonal and seasonally adjusted unemployment data, see Figures \ref{fig:firstdiff} and \ref{fig:secdiff}. Both the first and second differences appear considerably more stationary when compared to the original data. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the 4 differenced models. The consensus in the group was to continue the model building using second differences.
-		 
 
-		 
-			\begin{figure}[H]
+
+					\begin{figure}[H]
 		\centering
-		\caption{Second differences of unemployment rate}
-		\label{fig:secdiff}
-		\includegraphics[width=\linewidth]{images/secdiff.png}
+		\caption{Timeplots with and without differencing}
+		\label{fig:seasonalunem}
+		\includegraphics[width=\linewidth]{images/seasonalunem}
 	\end{figure}
-		 
+
+The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to homoscedasticity. The  The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences, in effort to build a parsimonious model  the consensus in the group was to continue the model building process using second differences.
 
 	 \begin{table}[H]
 		 \centering
@@ -213,10 +196,9 @@ Due to marked potential differences in the trend surrounding times of economic d
 		 \begin{tabular}{lllll}
 		 \hline
 		 \textbf{Model} & \textbf{Statistic} & \textbf{Lag order} & \textbf{p-value}\\ \hline
-		 1\(^{st}\) difference &  -7.6799 & 6 & \( < 0.01\)\\
-		  1\(^{st}\) difference, SA &  -9.3595 & 6 &\( < 0.01\)\\
-		 2\(^{nd}\) difference &  -8.4515 & 6 & \( < 0.01\)\\
-		  2\(^{nd}\) difference, SA &  -9.3595 & 6 & \( < 0.01\)\\		 \hline
+		  1\(^{st}\) difference &  -9.3595 & 6 &\( < 0.01\)\\
+		  2\(^{nd}\) difference &  -9.3595 & 6 & \( < 0.01\)\\			  
+		  3\(^{rd}\) difference &  -13.02 & 6 & \( < 0.01\)\\		 \hline
 		 \end{tabular}
 		 \end{table}
 
@@ -240,32 +222,63 @@ Due to marked potential differences in the trend surrounding times of economic d
       
       \subsection{Model Fit}
       
-      This will need to be adjusted to make reflect our current decision on the models.
-      
-      I'll fix it up later but for now I am getting rid of a couple of columns.
-  
-     	\begin{table}[H]
-     		\centering
-     		\caption{Model Summaries}
-     		     		\label{tab:models}
-     		\begin{tabular}{ccccc}
-     			\hline
-     			\textbf{Model \#}  & \textbf{Order} & \textbf{Seasonal} &  \textbf{AIC} & \textbf{BIC} \\
-     			&&\textbf{Order}&&\\ 
-     			\hline
-     			1   & 0,2,1 & 1,1,0 &  -2.27 & -3.23 \\ 
-     			2   & 0,2,1 & 3,1,0 &  -2.44 & -3.37 \\ 
-     			3   & 4,2,1 & 3,1,0 &  -2.44 & -3.32 \\ 
-     			4  & 0,2,1 & 1,0,0 &  -2.61 & -3.58 \\ 
-     			5  & 1,2,1 &  &  -2.63 & -3.60 \\ 
-     			6  & 1,0,1 &  &  -2.617 &  -3.578 \\ 
-     			7  & 1,0,1 & & -2.672 &  -3.565\\ \hline
-     		\end{tabular}
-     	\end{table}
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[ht]
+\centering
+\begin{tabular}{cllrrl}
+  \hline
+ Model & Order & Reg  & AIC & BIC & Best \\ 
+  \hline
+1 & 1,2,1 &  NA &   -212.30 & -201.46 & BIC \\ 
+  2  & 2,2,2 & NA   & -211.81 & -193.74 &  \\ 
+  3  & 3,2,3 &  NA  & -215.48 & -190.19 &  \\ 
+  4  & 1,2,1 & X  & -211.56 & -182.65 &  \\ 
+  5  & 2,2,2 & X   & -209.83 & -177.32 &  \\ 
+  6  & 3,2,3 & X   & -215.10 & -171.74 &  \\ 
+  7  & 1,2,1 &  LagX & -222.45 & -193.69 & AIC \\ 
+  8  & 2,2,2 &  LagX & -220.70 & -188.35 &  \\ 
+  9  & 3,2,3 &  LagX & -217.89 & -174.76 &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[ht]
+\centering
+\begin{tabular}{clllll}
+  \hline
+ Model & P & Type &  AIC & BIC & Best \\ 
+  \hline
+1  & 1 & NA  &  -223.67 & -201.97 &  \\ 
+  2  & 2 & NA  &   -217.83 & -185.31 &  \\ 
+  3  & 1 & Ind  & -256.77 & -231.45 & BIC/AIC \\ 
+  4  & 1 & LagX & -216.65 & -195.06 &  \\ 
+  5  & 2 & LagX & -212.53 & -180.17 &  \\ 
+  6  & 1 & Both  & -245.72 & -220.53 &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[ht]
+\centering
+\begin{tabular}{lllll}
+  \hline
+Model & Type & AIC & BIC & Best \\ 
+  \hline
+ARIMA(1,2,1) & NA &   -212.29 & -201.45 &  \\ 
+ARIMA(1,2,1) & LagX   & -222.45 & -193.69 &  \\ 
+VAR(1) & Ind & -256.76 & -231.45 & AIC/BIC \\ 
+   \hline
+\end{tabular}
+\end{table}
 
 		%-----------------------------------------------------------------------------------------
 		
-		Based on the AIC values, the two models that show the most promise are models 5 and 7.  Model 5 includes only the time series data whereas model 7 also includes some of the predictors of interest.  The diagnostic plots are shown in Figures \ref{fig:mod5} and \ref{fig:mod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. Therefore, we will continue to refine these models further as we explore the nature of US Unemployment rate patterns.
+	These are wrong now: I am moving my information from what I compliled online into here.	Based on the AIC values, the two models that show the most promise are models 5 and 7.  Model 5 includes only the time series data whereas model 7 also includes some of the predictors of interest.  The diagnostic plots are shown in Figures \ref{fig:mod5} and \ref{fig:mod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. Therefore, we will continue to refine these models further as we explore the nature of US Unemployment rate patterns.
 
 
 \subsection{Predictor Variables}

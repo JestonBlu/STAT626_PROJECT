@@ -5,12 +5,12 @@ library(scales)
 
 
 ## Read in data
-econ = read.csv("Unemployment.csv")
-usa  = read.csv("US Congress and Recession Data.csv")
+econ = read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/Unemployment.csv")
+usa  = read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/US Congress and Recession Data.csv")
 
 #Unemployment before all the modifications
-unem.sa <- read.csv("UNRATE.csv")$UNRATE
-unem.nsa <- read.csv("UNRATENSA.csv")$UNRATENSA
+unem.sa <- read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/UNRATE.csv")$UNRATE
+unem.nsa <- read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/UNRATENSA.csv")$UNRATENSA
 unem.sa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
 unem.nsa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
 
