@@ -142,19 +142,25 @@ We also explored several potential predictor variables that are potentially rela
 		\label{fig:unemployment}
 		\includegraphics[width=\linewidth]{images/unemployment_total_nsa}
 	\end{figure}
-As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
-
-Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all potential explanatory variables that can potentially inform unemployment patterns.
-
-
-		\begin{figure}[H]
+	
+			\begin{figure}[H]
 		\centering
 		\caption{Seasonally adjusted unemployment for the study time period}
 		\label{fig:presunemp}
-		\includegraphics[width=.9\linewidth]{images/presunemp}
+		\includegraphics[width=\linewidth]{images/presunemp}
 	\end{figure}
 
 
+As a first step, the data was plotted over time to identify any obvious patterns visually, considering both seasonlly adjusted and non-seasonlly adjusted versions of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
+
+Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot of these predictors can be seen in Figure \ref{fig:pred_scatt}.
+
+			\begin{figure}[H]
+		\centering
+		\caption{Scatterplot of unemployment and potential predictors}
+		\label{fig:pred_scatt}
+		\includegraphics[width=\linewidth]{images/pred_scatt}
+	\end{figure}
 	
 
 %Text requiring further explanation\footnote{Example footnote}. I don't think we need footnotes
@@ -172,11 +178,33 @@ Due to marked potential differences in the trend surrounding times of economic d
 			
 			An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF test tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. For the non-seasonlly adjusted data the Dickey-Fuller test statistic was -1.4266, with a lag order of 6, and a p-value of 0.8176. Additionally, the seasonally adjusted data had a Dickey-Fuller test statistic of -2.1377, also with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data, whether or not the data are seasonally adjusted.
 			
-		 The first and second differences of the unemployment data were plotted for both the seasonal and seasonally adjusted unemployment data, see Figures \ref{fig:firstdiff} and \ref{fig:secdiff}. Both the first and second differences appear considerably more stationary when compared to the original data. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the 4 differenced models. The consensus in the group was to continue the model building using second differences.
-		 
+
+
+			\begin{figure}[H]
+		\centering
+		\caption{Autocorrelation of unemployment data}
+		\label{fig:laggedunemployment}
+		\includegraphics[width=\linewidth]{images/laggedunemployment}
+	\end{figure}
 	
+			\begin{figure}[H]
+		\centering
+		\caption{First differences of unemployment rate}
+		\label{fig:firstdiff}
+		\includegraphics[width=\linewidth]{images/firstdiff}
+	\end{figure}
+			
+		A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The first and second differences of the unemployment data were plotted for both the seasonal and seasonally adjusted unemployment data, see Figures \ref{fig:firstdiff} and \ref{fig:secdiff}. Both the first and second differences appear considerably more stationary when compared to the original data. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the 4 differenced models. The consensus in the group was to continue the model building using second differences.
 		 
-	
+
+		 
+			\begin{figure}[H]
+		\centering
+		\caption{Second differences of unemployment rate}
+		\label{fig:secdiff}
+		\includegraphics[width=\linewidth]{images/secdiff.png}
+	\end{figure}
+		 
 
 	 \begin{table}[H]
 		 \centering
