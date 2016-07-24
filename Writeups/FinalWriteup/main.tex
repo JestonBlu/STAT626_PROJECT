@@ -63,7 +63,6 @@
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
-
 \setlength{\droptitle}{-4\baselineskip} % Move the title up
 
 \pretitle{\begin{center}\huge\bfseries} % Article title formatting
@@ -115,6 +114,9 @@
 %	ARTICLE CONTENTS
 %----------------------------------------------------------------------------------------
 
+%Text requiring further explanation\footnote{Example footnote}. I don't think we need footnotes
+
+
 \section{Introduction}
 		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession iof 2007 was accompanied the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring, in 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and Undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full-reovery of college graduate employment rates and earning is expected to be a slow process \cite{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it has seemed to be in generations past.
 		
@@ -163,8 +165,6 @@ Due to marked potential differences in the trend surrounding times of economic d
 	\end{figure}
 	
 
-%Text requiring further explanation\footnote{Example footnote}. I don't think we need footnotes
-
 %------------------------------------------------
 
 \section{Achieving Stationarity}
@@ -187,7 +187,7 @@ In analyzing the inital plots, it appears that the series could benefit from det
 		\includegraphics[width=\linewidth]{images/seasonalunem}
 	\end{figure}
 
-The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to homoscedasticity. The  The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences there appears to be more variability in the model that includes third differences.  Therefore, the consensus in the group was to continue the model building process using second differences.
+The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences there appears to be more variability in the model that includes third differences.  Therefore, the consensus in the group was to continue the model building process using second differences.
 
 	 \begin{table}[H]
 		 \centering
@@ -208,15 +208,164 @@ The first, second, and third differences of the unemployment data were plotted f
 %------------------------------------------------
 
 \section{Model Building}
-
-\subsection{ACF and PACF Plots}
   
-  \begin{figure}[H]
+  We began our model building process by inspecting the correlogram (ACF plot) and partial correlogram (PACF plot) of tthe unemployment data, see Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these inital plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible mixture model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model . Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models, therefore models with regressors and Vector Autogressive Models (VAR) were considered as well.
+  
+    \begin{figure}[H]
     	\centering
      	\caption{ACF \& PACF Plots}
      	\includegraphics[width=\linewidth]{images/acfpacf}
-     	\label{fig:secdiff2}
+     	\label{fig:acfpacf}
+     	\caption{ACF \& PACF Plots of Second Differences}
+     	\includegraphics[width=\linewidth]{images/acfpacf2d}
+     	\label{fig:acfpacf2}
       \end{figure}
+
+
+\subsection{Models Considered}
+
+\subsubsection{ARIMA Models}
+
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[ht]
+\centering
+\begin{tabular}{cllrrl}
+  \hline
+ Model & Order & Reg  & AIC & BIC & Best \\ 
+  \hline
+1 & 1,2,1 &  NA &   -212.30 & -201.46 & BIC \\ 
+  2  & 2,2,2 & NA   & -211.81 & -193.74 &  \\ 
+  3  & 3,2,3 &  NA  & -215.48 & -190.19 &  \\ 
+  4  & 1,2,1 & X  & -211.56 & -182.65 &  \\ 
+  5  & 2,2,2 & X   & -209.83 & -177.32 &  \\ 
+  6  & 3,2,3 & X   & -215.10 & -171.74 &  \\ 
+  7  & 1,2,1 &  LagX & -222.45 & -193.69 & AIC \\ 
+  8  & 2,2,2 &  LagX & -220.70 & -188.35 &  \\ 
+  9  & 3,2,3 &  LagX & -217.89 & -174.76 &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+
+\begin{verbatim}
+model1 <- sarima(unem, p = 0, d = 2, 
+q = 1, P = 1, D = 1, Q = 0, S = 12)
+model2 <- sarima(unem, p = 0, d = 2, 
+q = 1, P = 3, D = 1, Q = 0, S = 12)
+model3 <- sarima(unem, p = 4, d = 2, 
+q = 1, P = 3, D = 1, Q = 0, S = 12)
+
+model1$AIC; model1$BIC
+[1] -2.283108
+[1] -3.244063
+
+model2$AIC; model2$BIC
+[1] -2.444084
+[1] -3.379008
+
+model3$AIC; model3$BIC
+[1] -2.44496
+[1] -3.327824
+\end{verbatim}
+
+From looking at AIC and BIC values, Models 2 and 3 perform quite similarly, which both show some slight evidence of outperforming Model1.
+
+Then we could compare the three models based on diagnostic plots. The standardized residuals of all models show some evidence of non-white-noise. ARMA models do not model variability. We will have a few lectures on this topic. There is not much we can do now on this issue.
+
+In the ACF of residuals of Model 1 shows a spike at lag 24. The other two models do not show such a spike.
+
+The normal plots from the three models are fairly similar.
+
+The Q-statistic or Ljung-Box statistic
+Models 1 and 2 have similar results. Model 1 seems to perform better at the first few lags, but Model 2 does better after lag 15. Model 3 clearly perform better than the two models on the Q-statistic. Since the Model 3 is based on a reasoning our professor does not like, we may not present this model. However it at least informs us that some models based on the thought that both the ACF and PACF cuts off at certain lags might model our data better. I am not quite sure how to handle this situation. Any thoughts on this would be highly appreciated!
+
+While going through a bunch of models, the following model seems most appropriate as noted by everyone. sarima(econ[,2],0,2,1,1,1,0,12) with the following diagnostics: [image: Inline image 2] The adf test also suggests stationarity as follows: [image: Inline image 3] Also, I am working on other predictor variables to develop a preliminary regression model.
+
+Regarding the expectations for presentation, the professor has not
+mentioned yet. However, in the last two lectures (14 and 15), he talked a
+lot applied examples about model building. I'd assume that our presentation
+would be something similar to what he talked in the two lectures.
+Basically, it's the model building process. How do we preprocess our data
+to obtain a stationary process (difference order 2 and difference order 1
+in our case)? How do we identify the model (based on ACF and PACF)? What is
+the set of candidate models? How do you choose the best one (AIC, BIC,
+diagnostics)? I guess we might not need to present a regression model at
+this stage since he hasn't talked much about it. How do you guys think
+about this?
+
+
+
+"Best model," as far as I know, is pretty ambiguous right now. With what I have done before, I checked AIC and BIC (not really thinking about using R-squared for the time being). The model identification from P/ACF is outlined in the text by checking out the tail behavior to see if it decays asymptotically or cuts off. We should be checking inside the band for "cutoff" behavior.
+
+I actually missed today's live lecture since I had an engineering final to take; I'll relay other questions to him tomorrow.
+
+
+Sure, it's always hard to call a model "Best". I think in presentations, we
+may present several potential candidate models, and compare them from
+several perspectives. Hopefully, one model will gain relatively more
+evidence.
+
+I just uploaded my code for these preliminary models I played with.
+
+
+ would like to propose an additional model. I have gone through the same exercise as \@trlilley12 and \@bopangpsy only I used the seasonally adjusted unemployment rate. It looks like the performance is definitely comparable to the seasonal models. I used sarima for the nice diagnostic plot it creates, but I left the seasonal parameters out.
+
+I committed a script here \begin{verbatim}RScripts/seasonally_adjusted.R\end{verbatim}
+
+I get an AICc \(= -2.672\) and BIC \(= -3.565\)
+
+Cool, Joseph! This model is simple and performs pretty well in terms of
+both fitting indices and diagnostics.
+
+
+
+Thanks, one thing I am wondering about in the preliminary models you guys created is in the differrencing... im wondering what the impact is of doing one or two differences and then doing a 12 lag difference.. that may make interpretation a little difficult... do you guys have any references or thoughts for going about differencing that way? Did you try doing the lag difference first? Maybe like this:
+
+diff(diff(unem, lag = 12), differences = 2)
+
+Even I have used the seasonally adjusted unemp rate while considering the
+models. Also , I have posted my script on github.
+
+Okay, i see it... can you explain the thought behind fitting a seasonal parameter to the seasonally adjusted data? I just switched it to 0 but it looks like it doesnt make a difference in the output. Also using the additional variables looks like it does improve the model slightly. Did you try playing with the lags to see if any of the explanatory variables can be used as leading variables? As a side note, in my last commit i added a recession indicator.. if you use \begin{verbatim}load("Data/data_prep.rda")\end{verbatim} then you shouldnt have to do all of the data prep in your first several steps.
+
+I have created a script \begin{verbatim}RScripts/All_Final_Models.R\end{verbatim} to combine everyone's currently proposed models into a single place. I grouped them by seasonal vs seasonally adjusted data and created this table to show the model differences and relative performance. I also have the latex equivalent pasted below in case we want to put that into beamer (hopefully its compatible). I would still like to see us play with the additional variables a bit and see if we can find the appropriate lags to improve the models further since sarima allows you to easily include them.
+
+Please take a look and let me know what you think. There are a few plots in the code which we can use for the presentation, but feel free to add more if you think we are missing something. We do probably need a few more.
+
+I have been working a bit more on fitting an arima model with regressors to the seasonally adjusted data. I believe I fixed the issue we were having with the xregs (they needed to be stationary as well). I also lagged the xregs based off of the cross correlation and lag plots and it looks like the model has improved from the AIC measure. It also looks like a few of the xregs are leading indicators of unemployment. The code is in RScripts/multivariate if you want to play with it. I think i will add this one to the \begin{verbatim}All_Final_Models.r\end{verbatim} script soon if no one makes improvements on it. 
+
+Right, but what I just proposed was lagging the xregs which you did not do. Also we had some differences in our differencing and model parameters choices. Our model diagnostics are a different as well.. it looks like a lot of the pvalues in your Ljung-Box statistic were significant suggesting error dependence.
+
+Of the models we have discussed so far, I think the ARIMA(1, 2, 1) is best. It had the best diagnostics and the lowest AIC.
+
+I added some predictors to the ARIMA(1, 2, 1), and only retail seemed significant. However, its coefficient is so small that I argue we don't need it.
+
+I then did some forecasting for the ARIMA(1, 2, 1) as well as two ARIMA(1, 2, 1) models with predictors. I then compared our predicted values for 2016 unemployment with the actual values:
+
+\begin{verbatim}
+Jan 2016: actual 5.3 , predicted = 5.0
+Feb 2016: actual 5.2 , predicted = 5.0
+
+Mar 2016: actual 5.1 , predicted = 4.9
+Apr 2016: actual 4.7 , predicted = 4.9
+May 2016: actual 4.5 , predicted = 4.9
+
+Overall, I think the ARIMA(1, 2, 1) is very good.
+
+I uploaded all of my code as "forecasting 7_21_16".
+
+\end{verbatim}
+
+@trlilley12 did you see the model I posted that was also an ARIMA(1,2,1)? I also added some xregs with different lags and in addition to retail, industrial production, and house price measure as significant. The script is in Rscripts/multivariate.R. 
+
+Oh, okay that looks like it lowers the AIC. Did you try the ARIMA(1, 2, 1) with different lags for retail, ipi, and house price (excluding the others)? The AIC might be even lower.
+Okay, I prefer the simpler ARIMA(1, 2, 1) with no predictors, since Dr. P prefers simpler models. It had the lowest BIC as well. Can everyone vote on it?
+
+ARIMA(1,2,1) looks good to me. Many people actually prefer BIC over AIC. Btw, do we need to look around for other candidate models? I plan to do it tomorrow night since I have other final on tomorrow afternoon. Sorry being late on this issue.
+
+
       
       The team visually analyzed the ACF and PACF plots within the first season (h = 1, 2, ..., 12), see Figure \ref{fig:secdiff2}. The PACF appears to decline slowly, while the ACF seems to fall off after 1. Therefore we began by letting p = 0, and q = 1. Several models were considered by making adjustments to variations resulting in the models found in Table \ref{tab:models}.\newline
       
@@ -360,161 +509,8 @@ VAR(1) & Ind & -256.76 & -231.45 & AIC/BIC \\
       \end{figure}
       
       \section*{Appendix B: Online Discussions}\label{App:AppendixB}
-      
-          First, the book says to look at the seasonal changes in ACF and PACF (h = 12, 24, 36, ...). These seem to indicate that the ACF trails off, and the PACF cuts off after one year (h = 12). This suggests that we let P = 1 and Q = 0.
+     
 
-Next, the book says to look at the ACF and PACF within only the first season (h = 1, 2, ..., 12). The PACF declines slowly, but the ACF cuts off after 1, suggesting we let p = 0, and q = 1.
-
-When we put this all together, we get a (S)ARIMA(0, 2, 1) x (1, 1, 0) with s = 12 model. I fit that model, and here are the diagnostic plots:
-
-And here are the parameter estimates:
-
-Coefficients:
-ma1 sar1 constant
--0.8322 -0.4868 0.0348
-s.e. 0.0355 0.0536 6.7411
-
-sigma\(^2\) estimated as 0.03703: log likelihood = 54.87, aic = -101.75
-
-Overall, I think the diagnostics look good. The standardized residual plot isn't great, but it isn't terrible. The normal Q-Q and ACF of residuals look pretty good. The p-values for Ljung-Box are not amazing, but they are at least above the line until H = 20, which I believe the book says is a decent cutoff.
-
-Also, here is the mathematical representation of our model, which we will probably need at some point. 
-
-I then look at the ACF and PACF plots to build models. First, we can look into the seasonal pattern. The ACF seems to tail off and the PACF cuts off at either 1 or 3. Together, the plots suggest AR(1) or AR (3).
-
-We then can inspect the plots at the within season lags, h=1,..,11. One perspective is that the ACF cuts off after 1 and the PACF tails off, and it indicates MA(1). Another perspective is that the ACF cuts off after 1 and the PACF cuts off after 4. In this situation, the book suggests to build a SARMA of orders p = 4 and q = 1. However, our professor points out that this is a bad reasoning. It is still however tempting for me to try this model since I lean to the side that the PACF cuts off after lag 4 instead of tails off (some subjective feeling goes in here). We right now don't know how to handle the situation where both ACF and PACF cuts off at a certain lag other than the approach mentioned in the book. So I tried this model. In diagnostic procedures, as you will see, it works better at some criterion. Together, I proposed two additional models and compare them to the one proposed by Travis.
-
-\begin{verbatim}
-model1 <- sarima(unem, p = 0, d = 2, 
-q = 1, P = 1, D = 1, Q = 0, S = 12)
-model2 <- sarima(unem, p = 0, d = 2, 
-q = 1, P = 3, D = 1, Q = 0, S = 12)
-model3 <- sarima(unem, p = 4, d = 2, 
-q = 1, P = 3, D = 1, Q = 0, S = 12)
-
-model1$AIC; model1$BIC
-[1] -2.283108
-[1] -3.244063
-
-model2$AIC; model2$BIC
-[1] -2.444084
-[1] -3.379008
-
-model3$AIC; model3$BIC
-[1] -2.44496
-[1] -3.327824
-\end{verbatim}
-
-
-
-
-From looking at AIC and BIC values, Models 2 and 3 perform quite similarly, which both show some slight evidence of outperforming Model1.
-
-Then we could compare the three models based on diagnostic plots. The standardized residuals of all models show some evidence of non-white-noise. ARMA models do not model variability. We will have a few lectures on this topic. There is not much we can do now on this issue.
-
-In the ACF of residuals of Model 1 shows a spike at lag 24. The other two models do not show such a spike.
-
-The normal plots from the three models are fairly similar.
-
-The Q-statistic or Ljung-Box statistic
-Models 1 and 2 have similar results. Model 1 seems to perform better at the first few lags, but Model 2 does better after lag 15. Model 3 clearly perform better than the two models on the Q-statistic. Since the Model 3 is based on a reasoning our professor does not like, we may not present this model. However it at least informs us that some models based on the thought that both the ACF and PACF cuts off at certain lags might model our data better. I am not quite sure how to handle this situation. Any thoughts on this would be highly appreciated!
-
-While going through a bunch of models, the following model seems most appropriate as noted by everyone. sarima(econ[,2],0,2,1,1,1,0,12) with the following diagnostics: [image: Inline image 2] The adf test also suggests stationarity as follows: [image: Inline image 3] Also, I am working on other predictor variables to develop a preliminary regression model.
-
-Regarding the expectations for presentation, the professor has not
-mentioned yet. However, in the last two lectures (14 and 15), he talked a
-lot applied examples about model building. I'd assume that our presentation
-would be something similar to what he talked in the two lectures.
-Basically, it's the model building process. How do we preprocess our data
-to obtain a stationary process (difference order 2 and difference order 1
-in our case)? How do we identify the model (based on ACF and PACF)? What is
-the set of candidate models? How do you choose the best one (AIC, BIC,
-diagnostics)? I guess we might not need to present a regression model at
-this stage since he hasn't talked much about it. How do you guys think
-about this?
-
-
-
-"Best model," as far as I know, is pretty ambiguous right now. With what I have done before, I checked AIC and BIC (not really thinking about using R-squared for the time being). The model identification from P/ACF is outlined in the text by checking out the tail behavior to see if it decays asymptotically or cuts off. We should be checking inside the band for "cutoff" behavior.
-
-I actually missed today's live lecture since I had an engineering final to take; I'll relay other questions to him tomorrow.
-
-
-Sure, it's always hard to call a model "Best". I think in presentations, we
-may present several potential candidate models, and compare them from
-several perspectives. Hopefully, one model will gain relatively more
-evidence.
-
-I just uploaded my code for these preliminary models I played with.
-
-
- would like to propose an additional model. I have gone through the same exercise as \@trlilley12 and \@bopangpsy only I used the seasonally adjusted unemployment rate. It looks like the performance is definitely comparable to the seasonal models. I used sarima for the nice diagnostic plot it creates, but I left the seasonal parameters out.
-
-I committed a script here \begin{verbatim}RScripts/seasonally_adjusted.R\end{verbatim}
-
-I get an AICc \(= -2.672\) and BIC \(= -3.565\)
-
-Cool, Joseph! This model is simple and performs pretty well in terms of
-both fitting indices and diagnostics.
-
-
-
-Thanks, one thing I am wondering about in the preliminary models you guys created is in the differrencing... im wondering what the impact is of doing one or two differences and then doing a 12 lag difference.. that may make interpretation a little difficult... do you guys have any references or thoughts for going about differencing that way? Did you try doing the lag difference first? Maybe like this:
-
-diff(diff(unem, lag = 12), differences = 2)
-
-Even I have used the seasonally adjusted unemp rate while considering the
-models. Also , I have posted my script on github.
-
-Okay, i see it... can you explain the thought behind fitting a seasonal parameter to the seasonally adjusted data? I just switched it to 0 but it looks like it doesnt make a difference in the output. Also using the additional variables looks like it does improve the model slightly. Did you try playing with the lags to see if any of the explanatory variables can be used as leading variables? As a side note, in my last commit i added a recession indicator.. if you use \begin{verbatim}load("Data/data_prep.rda")\end{verbatim} then you shouldnt have to do all of the data prep in your first several steps.
-
-I have created a script \begin{verbatim}RScripts/All_Final_Models.R\end{verbatim} to combine everyone's currently proposed models into a single place. I grouped them by seasonal vs seasonally adjusted data and created this table to show the model differences and relative performance. I also have the latex equivalent pasted below in case we want to put that into beamer (hopefully its compatible). I would still like to see us play with the additional variables a bit and see if we can find the appropriate lags to improve the models further since sarima allows you to easily include them.
-
-Please take a look and let me know what you think. There are a few plots in the code which we can use for the presentation, but feel free to add more if you think we are missing something. We do probably need a few more.
-
-I have been working a bit more on fitting an arima model with regressors to the seasonally adjusted data. I believe I fixed the issue we were having with the xregs (they needed to be stationary as well). I also lagged the xregs based off of the cross correlation and lag plots and it looks like the model has improved from the AIC measure. It also looks like a few of the xregs are leading indicators of unemployment. The code is in RScripts/multivariate if you want to play with it. I think i will add this one to the \begin{verbatim}All_Final_Models.r\end{verbatim} script soon if no one makes improvements on it. 
-
-Right, but what I just proposed was lagging the xregs which you did not do. Also we had some differences in our differencing and model parameters choices. Our model diagnostics are a different as well.. it looks like a lot of the pvalues in your Ljung-Box statistic were significant suggesting error dependence.
-
-Of the models we have discussed so far, I think the ARIMA(1, 2, 1) is best. It had the best diagnostics and the lowest AIC.
-
-I added some predictors to the ARIMA(1, 2, 1), and only retail seemed significant. However, its coefficient is so small that I argue we don't need it.
-
-I then did some forecasting for the ARIMA(1, 2, 1) as well as two ARIMA(1, 2, 1) models with predictors. I then compared our predicted values for 2016 unemployment with the actual values:
-
-\begin{verbatim}
-Jan 2016: actual 5.3 , predicted = 5.0
-Feb 2016: actual 5.2 , predicted = 5.0
-
-Mar 2016: actual 5.1 , predicted = 4.9
-Apr 2016: actual 4.7 , predicted = 4.9
-May 2016: actual 4.5 , predicted = 4.9
-
-Overall, I think the ARIMA(1, 2, 1) is very good.
-
-I uploaded all of my code as "forecasting 7_21_16".
-
-\end{verbatim}
-
-@trlilley12 did you see the model I posted that was also an ARIMA(1,2,1)? I also added some xregs with different lags and in addition to retail, industrial production, and house price measure as significant. The script is in Rscripts/multivariate.R. 
-
-
-
-Oh, okay that looks like it lowers the AIC. Did you try the ARIMA(1, 2, 1) with different lags for retail, ipi, and house price (excluding the others)? The AIC might be even lower.
-
-If your model is better, we can definitely go with it.
-@JestonBlu
-Owner
-JestonBlu commented 3 days ago
-
-@trlilley12 yeah, I experimented with different lags and that seemed to be what worked best... when they were all the same lag it didn't look as good.
-@trlilley12
-Collaborator
-trlilley12 commented 3 days ago
-
-Okay, I prefer the simpler ARIMA(1, 2, 1) with no predictors, since Dr. P prefers simpler models. It had the lowest BIC as well. Can everyone vote on it?
-
-ARIMA(1,2,1) looks good to me. Many people actually prefer BIC over AIC. Btw, do we need to look around for other candidate models? I plan to do it tomorrow night since I have other final on tomorrow afternoon. Sorry being late on this issue.
 
 Yes, I think we should look at one or two models outside of the current ARIMA set... maybe VAR or Fractional ARIMA. Also @trlilley12 I am unable to run your code without it erroring out so I cannot verify your results.. 
 

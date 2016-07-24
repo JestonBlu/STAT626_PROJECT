@@ -5,6 +5,13 @@ Akanni, A. (2014).
 \newblock History of terrorism, youth psychology and unemployment in nigeria.
 \newblock {\em Journal of Pan African Studies}, 3:65.
 
+\bibitem[Box et~al., 2008]{Box2008}
+Box, G. E.~P., Jenkins, G.~M., and Reinsel, G.~C. (2008).
+\newblock {\em {Time series analysis : forecasting and control. 4th ed. George
+  E.P. Box, Gwilym M. Jenkins, Gregory C. Reinsel.}}
+\newblock Wiley series in probability and statistics. Hoboken, N.J. : J. Wiley
+  and Sons, [2008].
+
 \bibitem[Carnevale and Cheah, 2015]{carnevale2015hard}
 Carnevale, A.~P. and Cheah, B. (2015).
 \newblock {From Hard Times to Better Times: College Majors, Unemployment, and
@@ -61,12 +68,8 @@ Shumway, R.~H. and Stoffer, D.~S. (2006).
 {The National Bureau of Economic Research} (2016).
 \newblock Us business cycle expansions and contractions.
 
-\bibitem[{U.S. Bureau of Labor Statistics}, 2016a]{blsrefnsa}
-{U.S. Bureau of Labor Statistics} (2016a).
-\newblock {Civilian Unemployment Rate Not Seasonally Adjusted (UNRATENSA)}.
-
-\bibitem[{U.S. Bureau of Labor Statistics}, 2016b]{blsrefsa}
-{U.S. Bureau of Labor Statistics} (2016b).
+\bibitem[{U.S. Bureau of Labor Statistics}, 2016]{blsrefsa}
+{U.S. Bureau of Labor Statistics} (2016).
 \newblock {Civilian Unemployment Rate (UNRATE)}.
 
 \bibitem[{US. Bureau of the Census}, 2016a]{retail2016}
