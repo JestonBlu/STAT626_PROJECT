@@ -85,9 +85,9 @@ compare = data.frame(
 ## VAR Model
 
 ## Fit a VAR on non stationary data
-mdl.var1 = VAR(y = econ.sa[, c(1,2,3,4,5,6)], type = "both", p = 1)
-mdl.var2 = VAR(y = econ.sa[, c(1,2,3,4,5,6)], type = "both", p = 2)
-mdl.var3 = VAR(y = econ.sa[, c(1,2,3,4,5,6,7)], type = "both", p = 1)
+mdl.var1 = VAR(y = econ.sa[, c(1,5,6)], type = "both", p = 1)
+mdl.var2 = VAR(y = econ.sa[, c(1,5,6)], type = "both", p = 2)
+mdl.var3 = VAR(y = econ.sa[, c(1,5,6,7)], type = "both", p = 1)
 
 ## Residuals of the Unemployment rate series
 # par(mfrow = c(1,3))
@@ -105,9 +105,9 @@ mdl.var3 = VAR(y = econ.sa[, c(1,2,3,4,5,6,7)], type = "both", p = 1)
 
 
 ## Fit a VAR on non stationary data
-mdl.var4 = VAR(y = econ.sa.lag[, c(1,2,3,4,5,6)], type = "both", p = 1)
-mdl.var5 = VAR(y = econ.sa.lag[, c(1,2,3,4,5,6)], type = "both", p = 2)
-mdl.var6 = VAR(y = econ.sa.lag[, c(1,2,3,4,5,6,7)], type = "both", p = 1)
+mdl.var4 = VAR(y = econ.sa.lag[, c(1,5,6)], type = "both", p = 1)
+mdl.var5 = VAR(y = econ.sa.lag[, c(1,5,6)], type = "both", p = 2)
+mdl.var6 = VAR(y = econ.sa.lag[, c(1,5,6,7)], type = "both", p = 1)
 
 ## Residuals of the Unemployment rate series
 # par(mfrow = c(1,3))
@@ -152,8 +152,8 @@ compare.best = data.frame(
   Model = c("ARIMA(1,2,1)", "ARIMA(1,2,1)", "VAR(1)"),
   Lag.XRegs = c("", "Y", ""),
   Reccession = c("", "", "Y"),
-  AIC = c(-212.29, -222.45, -253.31),
-  BIC = c(-201.45, -193.69, -217.15),
+  AIC = c(-212.29, -222.45, -256.76),
+  BIC = c(-201.45, -193.69, -231.45),
   Best = c("", "", "Best AIC/BIC")
 )
 
@@ -211,7 +211,7 @@ g2 = ggplot(pred, aes(x = dt)) +
 
 grid.arrange(g1, g2, nrow = 1)
 
-## Shorten the plotted time range and plot both series together
+g## Shorten the plotted time range and plot both series together
 ## Best ARIMA Forecast
 
 par(mfrow = c(1,1))
