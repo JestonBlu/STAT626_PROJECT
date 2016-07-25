@@ -1,7 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {english}
-\beamer@sectionintoc {2}{Recap: shape and nature of the data}{3}{0}{1}
-\beamer@sectionintoc {3}{Preliminary models, strengths and weaknesses}{4}{0}{2}
-\beamer@sectionintoc {4}{Refinements, inclusion of VAR models}{5}{0}{3}
-\beamer@sectionintoc {5}{Forecast comparisons, strength of new models (correlation among predictors?)}{6}{0}{4}
-\beamer@sectionintoc {6}{Final model decision, forecast analysis}{7}{0}{5}

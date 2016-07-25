@@ -1,0 +1,19 @@
+\BOOKMARK [1][-]{section.1}{Introduction}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{Goal}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{Data}{section.1}% 3
+\BOOKMARK [1][-]{section.2}{Exploratory Analysis}{}% 4
+\BOOKMARK [1][-]{section.3}{Achieving Stationarity}{}% 5
+\BOOKMARK [1][-]{section.4}{Model Building}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Models Considered}{section.4}% 7
+\BOOKMARK [3][-]{subsubsection.4.1.1}{ARIMA Models}{subsection.4.1}% 8
+\BOOKMARK [3][-]{subsubsection.4.1.2}{VAR Models}{subsection.4.1}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Initial Model comparisons}{section.4}% 10
+\BOOKMARK [1][-]{section.5}{Forcasting}{}% 11
+\BOOKMARK [2][-]{subsection.5.1}{Multivariate ARIMA\(1,2,1\)}{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.2}{VAR\(1\)}{section.5}% 13
+\BOOKMARK [2][-]{subsection.5.3}{Forcast comparisons}{section.5}% 14
+\BOOKMARK [1][-]{section.6}{Final model}{}% 15
+\BOOKMARK [2][-]{subsection.6.1}{Model estimates}{section.6}% 16
+\BOOKMARK [2][-]{subsection.6.2}{Forcasts}{section.6}% 17
+\BOOKMARK [1][-]{section.7}{Discussion and Implications}{}% 18
+\BOOKMARK [1][-]{appendix.A}{Project contributions}{}% 19
