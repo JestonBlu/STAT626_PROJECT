@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  24 JUL 2016 17:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  24 JUL 2016 20:45
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -717,7 +717,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 ]
-<images/unemployment_total_sa.png, id=119, 2304.61pt x 1130.2225pt>
+<images/unemployment_total_sa.png, id=127, 2304.61pt x 1130.2225pt>
 File: images/unemployment_total_sa.png Graphic file (type png)
 
 <use images/unemployment_total_sa.png>
@@ -725,14 +725,14 @@ Package pdftex.def Info: images/unemployment_total_sa.png used on input line 14
 3.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-<images/presunemp.png, id=121, 2320.67pt x 1365.1pt>
+<images/presunemp.png, id=129, 2320.67pt x 1365.1pt>
 File: images/presunemp.png Graphic file (type png)
 
 <use images/presunemp.png>
 Package pdftex.def Info: images/presunemp.png used on input line 150.
 (pdftex.def)             Requested size: 242.94499pt x 142.89189pt.
 
-<images/pred_scatt.png, id=131, 2320.67pt x 1365.1pt>
+<images/pred_scatt.png, id=139, 2320.67pt x 1365.1pt>
 File: images/pred_scatt.png Graphic file (type png)
 
 <use images/pred_scatt.png>
@@ -740,14 +740,14 @@ Package pdftex.def Info: images/pred_scatt.png used on input line 162.
 (pdftex.def)             Requested size: 242.94499pt x 142.89189pt.
  [2 <./images/unemployment_total_sa.png> <./images/presunemp.png> <./images/pre
 d_scatt.png>]
-<images/laggedunemployment.png, id=155, 2254.4225pt x 1332.98pt>
+<images/laggedunemployment.png, id=163, 2254.4225pt x 1332.98pt>
 File: images/laggedunemployment.png Graphic file (type png)
 
 <use images/laggedunemployment.png>
 Package pdftex.def Info: images/laggedunemployment.png used on input line 176.
 (pdftex.def)             Requested size: 242.94499pt x 143.63832pt.
 
-<images/seasonalunem.png, id=156, 1750.54pt x 1355.0625pt>
+<images/seasonalunem.png, id=164, 1750.54pt x 1355.0625pt>
 File: images/seasonalunem.png Graphic file (type png)
 
 <use images/seasonalunem.png>
@@ -758,13 +758,13 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 188.
 
-<images/acfpacf.png, id=162, 2295.57625pt x 794.97pt>
+<images/acfpacf.png, id=170, 2295.57625pt x 794.97pt>
 File: images/acfpacf.png Graphic file (type png)
  <use images/acfpacf.png>
 Package pdftex.def Info: images/acfpacf.png used on input line 215.
 (pdftex.def)             Requested size: 242.94499pt x 84.12328pt.
 
-<images/acfpacf2d.png, id=163, 2295.57625pt x 830.10126pt>
+<images/acfpacf2d.png, id=171, 2295.57625pt x 830.10126pt>
 File: images/acfpacf2d.png Graphic file (type png)
 
 <use images/acfpacf2d.png>
@@ -772,129 +772,143 @@ Package pdftex.def Info: images/acfpacf2d.png used on input line 218.
 (pdftex.def)             Requested size: 242.94499pt x 87.84085pt.
  [3 <./images/laggedunemployment.png> <./images/seasonalunem.png> <./images/acf
 pacf.png> <./images/acfpacf2d.png>]
-<images/sarima1.png, id=184, 2304.61pt x 1130.2225pt>
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+[]\OT1/lmr/m/n/10 Models 4 through 6 were ARIMA(1,2,1),
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 275--276
+\OT1/lmr/m/n/10 ARIMA(2,2,2), and ARIMA(3,2,3) re-spec-tively.
+ []
+
+<images/sarima1.png, id=192, 2304.61pt x 1130.2225pt>
 File: images/sarima1.png Graphic file (type png)
  <use images/sarima1.png>
-Package pdftex.def Info: images/sarima1.png used on input line 283.
+Package pdftex.def Info: images/sarima1.png used on input line 281.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-<images/sarima7.png, id=185, 2304.61pt x 1130.2225pt>
+<images/sarima7.png, id=193, 2304.61pt x 1130.2225pt>
 File: images/sarima7.png Graphic file (type png)
  <use images/sarima7.png>
-Package pdftex.def Info: images/sarima7.png used on input line 292.
+Package pdftex.def Info: images/sarima7.png used on input line 290.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 301
+
+[4 <./images/sarima1.png> <./images/sarima7.png>]
+
+Package natbib Warning: Citation `Tasci2015' on page 5 undefined on input line 
+302.
+
+<images/varUnemresid.png, id=214, 858.20625pt x 258.21469pt>
+File: images/varUnemresid.png Graphic file (type png)
+
+<use images/varUnemresid.png>
+Package pdftex.def Info: images/varUnemresid.png used on input line 313.
+(pdftex.def)             Requested size: 242.94499pt x 73.0955pt.
+
+<images/unem_rate_fit_resid.png, id=215, 858.20625pt x 537.50812pt>
+File: images/unem_rate_fit_resid.png Graphic file (type png)
+
+<use images/unem_rate_fit_resid.png>
+Package pdftex.def Info: images/unem_rate_fit_resid.png used on input line 321.
+
+(pdftex.def)             Requested size: 242.94499pt x 152.15799pt.
+
+<images/var25mo.png, id=216, 854.44218pt x 367.3725pt>
+File: images/var25mo.png Graphic file (type png)
+
+<use images/var25mo.png>
+Package pdftex.def Info: images/var25mo.png used on input line 329.
+(pdftex.def)             Requested size: 242.94499pt x 104.4556pt.
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 332
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-) [4 <./images/sarima1.png> <./images/sarima7.png>]
-<images/varUnemresid.png, id=196, 858.20625pt x 258.21469pt>
-File: images/varUnemresid.png Graphic file (type png)
-
-<use images/varUnemresid.png>
-Package pdftex.def Info: images/varUnemresid.png used on input line 310.
-(pdftex.def)             Requested size: 242.94499pt x 73.0955pt.
-
-<images/unem_rate_fit_resid.png, id=197, 858.20625pt x 537.50812pt>
-File: images/unem_rate_fit_resid.png Graphic file (type png)
-
-<use images/unem_rate_fit_resid.png>
-Package pdftex.def Info: images/unem_rate_fit_resid.png used on input line 318.
-
-(pdftex.def)             Requested size: 242.94499pt x 152.15799pt.
-
-<images/var25mo.png, id=198, 854.44218pt x 367.3725pt>
-File: images/var25mo.png Graphic file (type png)
-
-<use images/var25mo.png>
-Package pdftex.def Info: images/var25mo.png used on input line 326.
-(pdftex.def)             Requested size: 242.94499pt x 104.4556pt.
-
-Overfull \hbox (9.05428pt too wide) in paragraph at lines 329--329
+)
+Overfull \hbox (9.05428pt too wide) in paragraph at lines 332--332
 []\OT1/lmtt/m/n/10 industrial_production, manufacturers_new_orders, 
  []
 
 
-Overfull \hbox (30.05421pt too wide) in paragraph at lines 329--329
+Overfull \hbox (30.05421pt too wide) in paragraph at lines 332--332
 []\OT1/lmtt/m/n/10 house_price_sa, construction_spend, and retail_sales 
  []
 
-<images/varcorrelation.png, id=199, 1204.5pt x 798.985pt>
+<images/varcorrelation.png, id=217, 1204.5pt x 798.985pt>
 File: images/varcorrelation.png Graphic file (type png)
 
 <use images/varcorrelation.png>
-Package pdftex.def Info: images/varcorrelation.png used on input line 334.
+Package pdftex.def Info: images/varcorrelation.png used on input line 337.
 (pdftex.def)             Requested size: 242.94499pt x 161.14742pt.
  [5 <./images/varUnemresid.png (PNG copy)> <./images/unem_rate_fit_resid.png (P
 NG copy)> <./images/var25mo.png (PNG copy)> <./images/varcorrelation.png>]
-Overfull \hbox (40.55418pt too wide) in paragraph at lines 352--352
+Overfull \hbox (40.55418pt too wide) in paragraph at lines 355--355
 []\OT1/lmtt/m/n/10 The BICs suggest the VAR(1) with only three variables.[] 
  []
 
-<images/boplots.png, id=210, 1204.5pt x 798.985pt>
+<images/boplots.png, id=231, 1204.5pt x 798.985pt>
 File: images/boplots.png Graphic file (type png)
  <use images/boplots.png>
-Package pdftex.def Info: images/boplots.png used on input line 357.
+Package pdftex.def Info: images/boplots.png used on input line 360.
 (pdftex.def)             Requested size: 242.94499pt x 161.14742pt.
 
-<images/arimavarforcastalso.png, id=211, 855.195pt x 362.85562pt>
+<images/arimavarforcastalso.png, id=232, 855.195pt x 362.85562pt>
 File: images/arimavarforcastalso.png Graphic file (type png)
 
 <use images/arimavarforcastalso.png>
-Package pdftex.def Info: images/arimavarforcastalso.png used on input line 382.
+Package pdftex.def Info: images/arimavarforcastalso.png used on input line 385.
 
 (pdftex.def)             Requested size: 242.94499pt x 103.07718pt.
  [6 <./images/boplots.png> <./images/arimavarforcastalso.png (PNG copy)>]
-Overfull \hbox (14.30426pt too wide) in paragraph at lines 411--411
+Overfull \hbox (14.30426pt too wide) in paragraph at lines 419--419
 []\OT1/lmtt/m/n/10 Unemployment_{t-1} + .004 ConstructionSpend_{t-1}[] 
  []
 
 
-Overfull \hbox (51.05415pt too wide) in paragraph at lines 411--411
+Overfull \hbox (51.05415pt too wide) in paragraph at lines 419--419
 [] \OT1/lmtt/m/n/10 - .005 RetailSales_{t-1} + .19 RecessionIndicator_{t-1}[] 
  []
 
 
-Overfull \hbox (7.74873pt too wide) in paragraph at lines 441--450
+Overfull \hbox (7.74873pt too wide) in paragraph at lines 439--448
  [][] 
  []
 
-<images/forcasts.png, id=220, 2304.61pt x 1130.2225pt>
+<images/forcasts.png, id=241, 2304.61pt x 1130.2225pt>
 File: images/forcasts.png Graphic file (type png)
 
 <use images/forcasts.png>
 Package pdftex.def Info: images/forcasts.png used on input line 458.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-<images/forcast3.png, id=221, 2304.61pt x 1130.2225pt>
+<images/forcast3.png, id=242, 2304.61pt x 1130.2225pt>
 File: images/forcast3.png Graphic file (type png)
 
 <use images/forcast3.png>
 Package pdftex.def Info: images/forcast3.png used on input line 465.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-Underfull \vbox (badness 1226) has occurred while \output is active []
+Underfull \vbox (badness 2443) has occurred while \output is active []
 
- [7 <./images/forcasts.png>] <images/fore1.png, id=230, 674.52pt x 673.51625pt>
+ [7 <./images/forcasts.png>] <images/fore1.png, id=251, 674.52pt x 673.51625pt>
 File: images/fore1.png Graphic file (type png)
 
 <use images/fore1.png>
 Package pdftex.def Info: images/fore1.png used on input line 481.
 (pdftex.def)             Requested size: 218.649pt x 218.31467pt.
- <images/fore2.png, id=231, 674.52pt x 673.51625pt>
+ <images/fore2.png, id=252, 674.52pt x 673.51625pt>
 File: images/fore2.png Graphic file (type png)
 
 <use images/fore2.png>
 Package pdftex.def Info: images/fore2.png used on input line 487.
 (pdftex.def)             Requested size: 218.649pt x 218.31467pt.
- <images/fore3.png, id=232, 674.52pt x 673.51625pt>
+ <images/fore3.png, id=253, 674.52pt x 673.51625pt>
 File: images/fore3.png Graphic file (type png)
 
 <use images/fore3.png>
 Package pdftex.def Info: images/fore3.png used on input line 488.
 (pdftex.def)             Requested size: 218.649pt x 218.31467pt.
- <images/fore4.png, id=233, 674.52pt x 673.51625pt>
+ <images/fore4.png, id=254, 674.52pt x 673.51625pt>
 File: images/fore4.png Graphic file (type png)
 
 <use images/fore4.png>
@@ -906,19 +920,19 @@ Overfull \vbox (29.22533pt too high) has occurred while \output is active []
 
 [8 <./images/forcast3.png> <./images/fore1.png> <./images/fore2.png> <./images/
 fore3.png> <./images/fore4.png>]
-<images/fore5.png, id=242, 674.52pt x 673.51625pt>
+<images/fore5.png, id=263, 674.52pt x 673.51625pt>
 File: images/fore5.png Graphic file (type png)
  <use images/fore5.png>
 Package pdftex.def Info: images/fore5.png used on input line 495.
 (pdftex.def)             Requested size: 194.35672pt x 194.06091pt.
 
-<images/fore6.png, id=243, 674.52pt x 673.51625pt>
+<images/fore6.png, id=264, 674.52pt x 673.51625pt>
 File: images/fore6.png Graphic file (type png)
  <use images/fore6.png>
 Package pdftex.def Info: images/fore6.png used on input line 496.
 (pdftex.def)             Requested size: 170.06075pt x 169.80714pt.
 
-<images/fore7.png, id=244, 674.52pt x 673.51625pt>
+<images/fore7.png, id=265, 674.52pt x 673.51625pt>
 File: images/fore7.png Graphic file (type png)
  <use images/fore7.png>
 Package pdftex.def Info: images/fore7.png used on input line 498.
@@ -933,32 +947,41 @@ Overfull \hbox (24.80423pt too wide) in paragraph at lines 528--528
 []\OT1/lmtt/m/n/10 I uploaded all of my code as "forecasting 7_21_16".[] 
  []
 
-<images/forejune.png, id=245, 1218.5525pt x 673.51625pt>
+<images/forejune.png, id=266, 1218.5525pt x 673.51625pt>
 File: images/forejune.png Graphic file (type png)
 
 <use images/forejune.png>
 Package pdftex.def Info: images/forejune.png used on input line 533.
 (pdftex.def)             Requested size: 242.94499pt x 134.2795pt.
  [9 <./images/fore5.png> <./images/fore6.png> <./images/fore7.png> <./images/fo
-rejune.png>] (./main.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 552.
- [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 552.
+rejune.png>] (./main.bbl [10])
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 569.
+[11
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 569.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 552.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 552.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 569.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 569.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D292DE8D42B4B2E52B12D6CFC91AE523;696.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 552.
+(rerunfilecheck)             Checksum: 70D1636294D020B7704F880C86E9A3B8;804.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 569.
  ) 
 Here is how much of TeX's memory you used:
- 10433 strings out of 493027
- 166061 string characters out of 6134069
- 267942 words of memory out of 5000000
- 13705 multiletter control sequences out of 15000+600000
+ 10459 strings out of 493027
+ 166490 string characters out of 6134069
+ 269117 words of memory out of 5000000
+ 13723 multiletter control sequences out of 15000+600000
  60809 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1085b,463s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1085b,529s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -992,10 +1015,10 @@ ype1/public/lm/lmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri10.pfb></usr/loc
 al/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9.pfb></usr/local/texlive/
 2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.pdf (10 pages, 3232408 bytes).
+Output written on main.pdf (11 pages, 3236822 bytes).
 PDF statistics:
- 320 PDF objects out of 1000 (max. 8388607)
- 255 compressed objects within 3 object streams
- 72 named destinations out of 1000 (max. 500000)
- 222 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 359 PDF objects out of 1000 (max. 8388607)
+ 293 compressed objects within 3 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 238 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -221,6 +221,7 @@ The first, second, and third differences of the unemployment data were plotted f
 
 
 \subsection{Models Considered}
+%I think we should remove the code fragment and just show the tables. We could always refer to our github project (which I can clean up) as the source for our code so people can see what functions we actually used. Also notice that the AIC in the table is different from the AIC extracted with the code. I noticed that the SARIMA produces multiple AIC, so I used the AIC extraction function to pull it out of the model frame at a lower level in the output object. I think this was better because it matches up with the same technique used in the VAR model.
 
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
@@ -270,12 +271,10 @@ The first, second, and third differences of the unemployment data were plotted f
 
 Given the potenial of ARIMA models to represent the unemployment data we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three intitial models, without regressors, we chose to retain model 1.  
 
-The above analysis was repeated using Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending as potential predictors of unemployment. Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, see Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable with predictors that were not stationary, we chose to repeat the process using lagged regressors.
+The univariate ARIMA models we began with seem to fit the data well and have the added strength of being relatively simple models. Nevertheless, in their simplicity univariate models are not equiped to accurately portray the asymmetric nature of unemployment data and have a tendency of underpredicting during economic slowdowns \citep{Montgomery1998}. Therefore, we repeaded the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were includedpotential predictors of unemployment. 
 
-Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. In fact of all 9 of our original models, model 7 has the lowest AIC overall, see Table \ref{tab:arimachoices}.  
-     
-     	
-		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. 
+Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, see Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. In fact of all 9 of our original models, model 7 has the lowest AIC overall, see Table \ref{tab:arimachoices}.  
+
 
 		    \begin{figure}[H]
     	\centering
@@ -295,14 +294,17 @@ Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) mod
      \end{figure}
      
      
+     
+		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. 
+
       
       \subsubsection{VAR Models}
+      
+     Much of the recent literature on modeling unemployment trends has suggesting that vector autoregressive models (VAR) have the capacity to outperform ARIMA models and are widely used by professional forcasters \citep{Meyer2015, Tasci2015, Barnichon2016}. VAR models provide another mechanism for modeling complex, multivariate times series in the absense of a moving average term \citep{Chatfield2001} . The ACF and PACF plots shown in Figures \ref{fig:acfpacf} and \ref{fig:acfpacf2} do not conclusively demonstrate that the moving average term is necessary in this case, therefore we have decided to explore the potential in fitting VAR models to the unemployment data in order to improve the performance of our predictions.  
 
-I have built a few VAR models that we can use to compare against the currently favored ARIMA models. I have also cleaned up the \begin{verbatim}All_Final_Models.r\end{verbatim} script and removed all of the seasonally adjusted data and models. I will post about that next, but here is what I have found for the VAR model. First, i think it was very fun to play with the vars package. It has a lot of functionality and many different plots that can be called.
+We started 6 inital VAR models to compare models 1, 2, \& 3 without lagged regressors, and models 4, 5, \& 6 with a variety of lag values.
 
-I ended up fitting 6 models in total. VAR(1), VAR(2), VAR(3) with no lags and then again with all of the ``xRegs'' lagged at various h (see Multivariate.r) for how i determined which lags to use. There is a lot of output that comes with each model so I am only going to post one so you get the idea. You should be able to run the VAR.r script without incident if the data folder is a sub directory of your current R work space.
 
-I decided to run up to a VAR(3) so that I could try to eliminate as much residual variance as possible. Sometimes in the ACF residuals plots you can see significant values in lag 12 even though we are using seasonally adjusted data. You dont see this in the unemployment rate acf plots which is good since thats what we are most interested in. You could probably argue that VAR(1) is good enough if you only wanted to look at unemployment. 
 
   \begin{figure}[H]
     	\centering
@@ -382,6 +384,11 @@ The forecasts start to look significantly different when you look at the longer 
      	\includegraphics[width=\linewidth]{images/arimavarforcastalso}
  \end{figure}
  
+
+
+Updated the VAR to not include the insignificant variables I mentioned. The plots in \(All_Final_Models.r\) will reflect this... here are the updated tables now that those variables have been dropped. This matches the VAR equation i posted yesterday.
+
+ 
  
  Note on best VAR
 For the best VAR model shown in the 2nd table, all of the variables are present. The inclusion of the recession indicator significantly improves the overall fit as well as the look of the forecast plot. There are a few variables in the VAR model that do not measure as being significant. When taking those parameters out the longterm forecast looks a bit more aggressive. The AIC and BIC are both a couple points improved if you remove the insignificant variables though. I can strip them back out depending on what everyone thinks we should do. Here is a plot with the insignificant variables removed.
@@ -420,16 +427,6 @@ I think we want to present one model ultimately, but I also think that part of t
 
 
 
-The VAR models in the literature have been outperforming the ARIMA models significantly. Although some of the more recent articles are using VAR to model different predictors I still think it is good justification. For example:
-
-(Barnichon \& Garda, 2016)
-"Finally, the large improvements in forecasting performances were obtained with simple VAR-based forecasts of the worker flows. "
-
-(Meyer \& Tasci, 2015)
-"So far our results indicate that the VAR model delivers the most accurate forecasts for up to 2 quarters ahead, and the FLOW-UC model presents the most potential for the farther
-horizons,"
-
-Updated the VAR to not include the insignificant variables I mentioned. The plots in \(All_Final_Models.r\) will reflect this... here are the updated tables now that those variables have been dropped. This matches the VAR equation i posted yesterday.
 
 
 \subsection{Model comparisons}
@@ -450,6 +447,9 @@ VAR(1) & Ind & -256.76 & -231.45 & AIC/BIC \\
 \end{table}
 
 
+The professor seems to like the idea of splitting the data into training and validation sets. We didn't split the data but luckily we have the new 5 months data as a validation set. From looking at the plots, it seems hard to distinguish the performance of two models. I computed the mean squared error of forecasting of the two best models. 0.01505823 for ARIMA(1,2,1) and 0.009663836 for VAR(1). This quantitative measure also supports this VAR(1) model. Hope this would help a bit when we are comparing the two models. 
+
+
 \section{Forcasting}
 
  \begin{figure}[H]
@@ -465,6 +465,9 @@ VAR(1) & Ind & -256.76 & -231.45 & AIC/BIC \\
      	\includegraphics[width=\linewidth]{images/forcast3}
      	\label{fig:forcasts2}
       \end{figure}
+      
+      The ARIMA(1, 2, 1) predicts that unemployment will continue to decrease indefinitely, which we know can't be true. The VAR(1) model shows a much more accurate picture in the long run.
+
       
       I am glad to start doing some forecasting. I did some with the ARIMA(1, 2, 1) seasonally adjusted, no predictors. It's in the RScript "forecasting."
 
@@ -537,7 +540,24 @@ The professor seems to like the idea of splitting the data into training and val
 
 \section{Discussion and Implications}
 
-There are always implications. I just need to type them in.
+``It should also be noted that forecasting unemployment is much more difficult during periods when it is rapidly increasing than during more stable periods. 3. Initial claims for unemployment insurance under the
+state programs, which are available weekly, are used as a leading indicator of u, because they contain information on whether unemployment is rising or falling'' \citep{Montgomery1998}. 
+
+``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues (background noise) an multivariate singular spectrum model (MSSA) for modelling unemployment in Croatia is presented in this paper'' \citep{Skare2015}.
+
+
+%----------------------------------------------------------------------------------------
+%	Appendices: These are temporary
+%----------------------------------------------------------------------------------------
+
+\section{Appendices}
+\appendix
+
+\section{Research to Include Later}
+
+``The estimation of unobserved components: trend-cycle, seasonal and irregular component was made with SEATS program based on ARIMA models. Seasonally adjusted series were obtained by removing the seasonal component from the original data. Trend was obtained by removing the irregular component from the seasonally adjusted series'' \citep{VOINEAGU2012}.
+
+``A possible leading indicator variable for the unemployment rate is the number of initial claims of unemployment'' \citep{Montgomery1998}.
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -547,6 +567,6 @@ There are always implications. I just need to type them in.
 \bibliography{main} % refers to our bibliography
 \end{flushleft}
  
-%----------------------------------------------------------------------------------------
+
 
 \end{document}

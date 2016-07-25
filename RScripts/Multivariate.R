@@ -3,7 +3,7 @@ rm(list = ls())
 library(astsa)
 library(forecast)
 
-load("Data/Data_Prep.rda")
+load("Data_Prep.rda")
 
 ## Establish stationarity for predictor variables
 plot.ts(diff(econ.sa$unem_rate_sa, differences = 2))

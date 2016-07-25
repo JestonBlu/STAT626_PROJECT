@@ -5,6 +5,11 @@ Akanni, A. (2014).
 \newblock History of terrorism, youth psychology and unemployment in nigeria.
 \newblock {\em Journal of Pan African Studies}, 3:65.
 
+\bibitem[Barnichon and Garda, 2016]{Barnichon2016}
+Barnichon, R. and Garda, P. (2016).
+\newblock {Forecasting unemployment across countries: The ins and outs}.
+\newblock {\em European Economic Review}, 84:165--183.
+
 \bibitem[Box et~al., 2008]{Box2008}
 Box, G. E.~P., Jenkins, G.~M., and Reinsel, G.~C. (2008).
 \newblock {\em {Time series analysis : forecasting and control. 4th ed. George
@@ -17,6 +22,11 @@ Carnevale, A.~P. and Cheah, B. (2015).
 \newblock {From Hard Times to Better Times: College Majors, Unemployment, and
   Earnings.}
 \newblock {\em Georgetown University Center on Education and the Workforce}.
+
+\bibitem[Chatfield, 2001]{Chatfield2001}
+Chatfield, C. (2001).
+\newblock {\em {Time-series forecasting. Chris Chatfield.}}
+\newblock Boca Raton : Chapman and Hall/CRC, [2001].
 
 \bibitem[DeFina and Hannon, 2015]{suicide}
 DeFina, R. and Hannon, L. (2015).
@@ -41,6 +51,13 @@ Kim, T.~J. and von~dem Knesebeck, O. (2015).
   job insecurity and unemployment.
 \newblock {\em BMC Public Health}, 15:985.
 
+\bibitem[Meyer and Tasci, 2015]{Meyer2015}
+Meyer, B. and Tasci, M. (2015).
+\newblock {Lessons for Forecasting Unemployment in the United States: Use Flow
+  Rates, Mind the Trend.}
+\newblock {\em Working Paper Series (Federal Reserve Bank of Atlanta)},
+  2015(1):1.
+
 \bibitem[Montgomery et~al., 1998]{Montgomery1998}
 Montgomery, A.~L., Zarnowitz, V., Tsay, R.~S., Tiao, G.~C., Montgomery, A.~L.,
   Tsay, R.~S., and Tiao, G.~C. (1998).
@@ -58,6 +75,12 @@ Shumway, R.~H. and Stoffer, D.~S. (2006).
 \newblock {Time Series Analysis and Its Applications: With R Examples - Third
   Edition}.
 \newblock {\em Springer}, page 575.
+
+\bibitem[Skare and Buterin, 2015]{Skare2015}
+Skare, M. and Buterin, V. (2015).
+\newblock {Modelling and Forecasting Unemployment Non-linear Dynamics Using
+  Spectral Analysis.}
+\newblock {\em Engineering Economics}, 26(4):373--383.
 
 \bibitem[{The Board of Governors of the Federal Reserve System},
   2016]{BGFS2016}
@@ -88,6 +111,13 @@ Shumway, R.~H. and Stoffer, D.~S. (2006).
 \bibitem[{US. Federal Housing Finance Agency}, 2016]{fhfa2016}
 {US. Federal Housing Finance Agency} (2016).
 \newblock {Purchase Only House Price Index for the United States}.
+
+\bibitem[VOINEAGU et~al., 2012]{VOINEAGU2012}
+VOINEAGU, V., PISICA, S., and CARAGEA, N. (2012).
+\newblock {FORECASTING MONTHLY UNEMPLOYMENT BY ECONOMETRIC SMOOTHING
+  TECHNIQUES.}
+\newblock {\em Economic Computation {\&} Economic Cybernetics Studies {\&}
+  Research}, 46(3):255--267.
 
 \bibitem[Wanberg, 2012]{wanberg2012individual}
 Wanberg, C.~R. (2012).
