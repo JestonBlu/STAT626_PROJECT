@@ -6,7 +6,7 @@
 \BOOKMARK [1][-]{section.4}{Model Building}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Models Considered}{section.4}% 7
 \BOOKMARK [3][-]{subsubsection.4.1.1}{ARIMA Models}{subsection.4.1}% 8
-\BOOKMARK [2][-]{subsection.4.2}{Model Fit}{section.4}% 9
-\BOOKMARK [2][-]{subsection.4.3}{Predictor Variables}{section.4}% 10
+\BOOKMARK [3][-]{subsubsection.4.1.2}{VAR Models}{subsection.4.1}% 9
+\BOOKMARK [2][-]{subsection.4.2}{Model comparisons}{section.4}% 10
 \BOOKMARK [1][-]{section.5}{Forcasting}{}% 11
 \BOOKMARK [1][-]{section.6}{Discussion and Implications}{}% 12
