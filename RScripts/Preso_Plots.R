@@ -190,9 +190,12 @@ rm(list = ls())
 ## Chunk 3
 ##
 ## Plots:
-##    - Model 1: ARIMA(1,2,1) no regressors
-##    - Model 7: ARIMA(1,2,1) lagged regressors
-
+##    - Model 1:  ARIMA(1,2,1) no regressors
+##    - Model 7:  ARIMA(1,2,1) lagged regressors
+##    - VAR Mdl3: VAR(1) 
+##    - 5 month forecast plots
+##    - 3 year forecast plots
+##    - Residual plots for VAR
 
 library(astsa)
 library(xtable)
@@ -296,8 +299,6 @@ ggplot(pred, aes(x = dt)) +
 
 
 
-
-
 ####################################################
 ## Long Term Forecasts
 
@@ -338,3 +339,54 @@ ggplot(pred.long, aes(x = dt)) +
   ggtitle("") +
   scale_y_continuous("Unemployment Rate", limits = c(0,NA)) +
   scale_x_date("", limits = c(as.Date("1993-01-01"), NA))
+
+
+#######################################################
+## VAR Residual Plot
+
+par(mfrow = c(2,2))
+Acf(residuals(mdl.var3$varresult$unem_rate_sa), main = "Unemployment")
+Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$construction_spend_sa), main = "Unemployment vs Construction")
+Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$retail_sales_sa), main = "Unemployment vs Retail")
+Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$recession_ind), main = "Unemployment vs Recession")
+
+
+############################################################3
+## Chunk 4
+##
+## Plots:
+##    - Model 1:  ARIMA(1,2,1) no regressors
+##    - Model 7:  ARIMA(1,2,1) lagged regressors
+##    - VAR Mdl3: VAR(1) 
+##    - 5 month forecast plots
+##    - 3 year forecast plots
+##    - Residual plots for VAR
+
+rm(list = ls())
+
+load("Data/Data_Prep.rda")
+
+econ.sa.st = data.frame(
+  unem_rate_sa = diff(econ.sa$unem_rate_sa, differences = 2),
+  industrial_production_sa = diff(econ.sa$industrial_production_sa, differences = 2),
+  manufacturers_new_orders_sa = diff(econ.sa$manufacturers_new_orders_sa, differences = 2),
+  house_price_sa = diff(econ.sa$house_price_sa, differences = 2),
+  construction_spend_sa = diff(econ.sa$construction_spend_sa, differences = 2),
+  retail_sales_sa = diff(econ.sa$retail_sales_sa, differences = 2),
+  recession_ind = diff(econ.sa$recession_ind, differences = 2)
+)
+
+par(mfrow = c(2,3))
+Ccf(x = econ.sa.st$unem_rate_sa, y = econ.sa.st$industrial_production_sa, lag.max = 12, main = "Ind. Production")
+Ccf(x = econ.sa.st$unem_rate_sa, y = econ.sa.st$manufacturers_new_orders_sa, lag.max = 12, main = "Man. New Orders")
+Ccf(x = econ.sa.st$unem_rate_sa, y = econ.sa.st$house_price_sa, lag.max = 12, main = "House Price Index")
+Ccf(x = econ.sa.st$unem_rate_sa, y = econ.sa.st$construction_spend_sa, lag.max = 12, main = "Constr. Spend")
+Ccf(x = econ.sa.st$unem_rate_sa, y = econ.sa.st$retail_sales_sa, lag.max = 12, main = "Retail Sales")
+
+## Individual Lag Plots (not saved)
+par(mfrow = c(2,3))
+lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$industrial_production_sa, max.lag = 12)    ## No real lag, setting to 2
+lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$manufacturers_new_orders_sa, max.lag = 12) ## Lag 4?
+lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$house_price_sa, max.lag = 12)              ## Lag 5?
+lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$construction_spend_sa, max.lag = 12)       ## No real lag, setting to 3
+lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$retail_sales_sa, max.lag = 12)             ## No real lag, setting to 0
