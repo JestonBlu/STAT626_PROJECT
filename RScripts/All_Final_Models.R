@@ -34,6 +34,10 @@ adf.test(unem2)
 
 ## ACF/PACF Plots
 par(mfrow = c(1,2))
+Acf(unem, main=""); Pacf(unem, main="")
+
+## ACF/PACF Plots
+par(mfrow = c(1,2))
 Acf(unem2); Pacf(unem2)
 
 
@@ -278,6 +282,15 @@ arima.predictions = data.frame(
   LowerCI = pred$arima.pred.lwr[73:77],
   UpperCI = pred$arima.pred.upr[73:77],
   Residual = pred$unemployment[73:77] - pred$arima.pred[73:77])
+
+### Table for VAR Predictions
+
+var.predictions = data.frame(
+  Date = pred$dt[73:77], Unemployment = pred$unemployment[73:77], 
+  Prediction = pred$var.pred[73:77],
+  LowerCI = pred$var.pred.lwr[73:77],
+  UpperCI = pred$var.pred.upr[73:77],
+  Residual = pred$unemployment[73:77] - pred$var.pred[73:77])
 
 ###### Table outputs
 
