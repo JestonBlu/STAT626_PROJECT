@@ -1,32 +1,24 @@
+rm(list = ls())
+
 ## Packages
 library(ggplot2)
 library(plyr)
 library(scales)
 
+load("Data/Data_Prep.rda")
 
 ## Read in data
-econ = read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/Unemployment.csv")
-usa  = read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/US Congress and Recession Data.csv")
-
-#Unemployment before all the modifications
-unem.sa <- read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/UNRATE.csv")$UNRATE
-unem.nsa <- read.csv("~/OneDrive/TAMU/STAT 626/Group Presentation/STAT626_PROJECT/RScripts/UNRATENSA.csv")$UNRATENSA
-unem.sa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
-unem.nsa <- ts(unem.sa, start=c(1948, 1), frequency = 12)
-
-par.oldpar <- par()
-
-#Plot seasonally adjusted and not seasonaly adjusted Unemployment rates
-par(par.oldpar)
-plot(unem.nsa, main="Monthly US Unemployment Rate, Not Seasonally Adusted", xlab="Year", ylab="Rate")
-plot(unem.sa)
-
+econ = read.csv("Data/Unemployment.csv")
+usa  = read.csv("Data/US Congress and Recession Data.csv")
 
 ## Subset data from Jan 1993 to Dec 2015
 econ = na.omit(econ)
-dta = na.omit(join(econ, usa, by = "date"))
-dta$date = as.Date(dta$date)
+econ.sa$date = seq.Date(from = as.Date("1993-01-01"), to = as.Date("2015-12-01"), by = "month")
 
+econ.sa$date = as.Date(econ.sa$date)
+usa$date = as.Date(usa$date)
+
+dta = join(econ.sa, usa, by = "date")
 
 
 ## Custom ggplot theme
@@ -73,7 +65,7 @@ geom_line(aes(x = date, y = unem_rate/100)) +
 unem.decom = decompose(ts(data = dta$unem_rate, start = c(1993,1), frequency = 12), type = "additive")
 
 g4 = g2 + 
-  geom_line(aes(x = date, y = unem.decom$trend/100)) +
+  geom_line(aes(x = date, y = unem_rate_sa/100)) +
   scale_x_date("Year", expand = c(0,0)) +
   scale_y_continuous("Unemployment Rate", labels = percent, expand=c(0,0)) +
   scale_fill_discrete("President") +

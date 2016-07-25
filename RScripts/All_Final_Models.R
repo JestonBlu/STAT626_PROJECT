@@ -25,8 +25,8 @@ unem2 = diff(unem, differences = 2)
 
 ## Differencing plots
 par(mfrow = c(1, 2))
-plot.ts(unem1, main = "First difference")
-plot.ts(unem2, main = "Second difference")
+plot.ts(unem1, main = "First Difference", cex.main = 2, ylab = "Unemployment", xlab = "Time")
+plot.ts(unem2, main = "Second Difference", cex.main = 2, ylab = "Unemployment", xlab = "Time")
 
 #ADF of differenced data
 adf.test(unem1)
