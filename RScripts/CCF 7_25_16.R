@@ -16,10 +16,10 @@ con.res <- residuals(fit)[, 2]
 ret.res <- residuals(fit)[, 3]
 rec.res <- residuals(fit)[, 4]
 
-par(mfrow = c(1, 4))
+par(mfrow = c(2, 2))
 
-acf(un.res)
-ccf(un.res, con.res)
-ccf(un.res, ret.res)
-ccf(un.res, rec.res)
+acf(un.res, main="Unemployment")
+ccf(un.res, con.res, main="Unemployment & Construction", ylab="CCF")
+ccf(un.res, ret.res, main="Unemployment & Retail", ylab="CCF")
+ccf(un.res, rec.res, main="Unemployment & Recession", ylab="CCF")
 

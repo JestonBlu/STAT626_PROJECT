@@ -26,22 +26,12 @@ mdl.var2 = VAR(y = econ.sa[, c(1,5,6)], type = "both", p = 2)#
 mdl.var3 = VAR(y = econ.sa[, c(1,5,6,7)], type = "both", p = 1)
 plot(mdl.var1)
 # plot(mdl.var1)
-# plot(mdl.var1)
-# plot(mdl.var1)
 # plot(mdl.var2)
-plot(mdl.var1)
-plot(mdl.var1)
-plot(mdl.var1)
 plot(mdl.var1)
 plot(mdl.var2)
 plot(mdl.var3)
-plot(mdl.var3)
-plot(mdl.var3)
 plot(predict(mdl.var1, n.ahead = 12))
 mdl.var4 = VAR(y = econ.sa.lag[, c(1,5,6)], type = "both", p = 1)
-mdl.var4 = VAR(y = econ.sa.lag[, c(1,5,6)], type = "both", p = 1)
-## Comparison of various models
-## Comparison of various models
 ## Comparison of various models
 ## Comparison of various models#
 compare = data.frame(#
@@ -123,6 +113,4 @@ mdl.var5 = VAR(y = econ.sa.lag[, c(1,5,6)], type = "both", p = 2)#
 mdl.var6 = VAR(y = econ.sa.lag[, c(1,5,6,7)], type = "both", p = 1)
 plot(mdl.var4)
 plot(mdl.var5)
-plot(mdl.var6)
-plot(mdl.var6)
 plot(mdl.var6)

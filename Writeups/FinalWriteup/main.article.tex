@@ -34,7 +34,7 @@
 \usepackage[greek,english]{babel} % Language hyphenation and typographical rules
 \usepackage{graphicx}
 \usepackage{float, enumitem}
-\usepackage{amssymb,amsfonts,textcomp}
+\usepackage{amsmath, amssymb,amsfonts,textcomp}
 \usepackage{caption}
 \usepackage{lmodern}
 \usepackage{booktabs} % Horizontal rules in tables
@@ -428,6 +428,7 @@ The unemployment rates for January 2016 to May 2016 were forcast using the Multi
 % Mon Jul 25 12:02:02 2016
 \begin{table}[ht]
 \centering
+\small
 \caption{2016 Unemployment Rate Predictions from Multivariate VAR(1)}
 \label{tab:varforecast}
 \begin{tabular}{ccccc}
@@ -458,21 +459,60 @@ The unemployment rates for January 2016 to May 2016 was also forcast using the V
 
  \section{Final model}
  
- The final model
- \begin{verbatim}
- VAR(1)
-Unemployment = .935 + .0041 t + .975 Unemployment_{t-1} + .004 ConstructionSpend_{t-1} - .005 RetailSales_{t-1} + .19 RecessionIndicator_{t-1}+ w_t
-AIC: -256, BIC: -231
- \end{verbatim}
+ 
+Model strengths: In the long run (past one year), the VAR(1) model seems to provide a much more accurate forecast than the ARIMA(1, 2, 1) model and with much narrower prediction intervals. The complex cyclical nature of unemployment necessitates the use of a more advanced model for long forecasts.
+
+Model weaknesses: In the short term (the next six months to a year), VAR(1) is not dramatically more effective than ARIMA(1, 2, 1), suggesting that an VAR(1) model might be overfitting the data in this region, i. e., more parameters were estimated and more degrees of freedom were sacrificed than necessary.
+
+The final model chosen was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors.
  
  \subsection{Model estimates}
+ {\small
+ \begin{verbatim}
+Estimation results for equation unem: 
+============================================
+unem.l1       0.975191   0.009984  97.677  < 2e-16 ***
+constr.l1     0.004262   0.001249   3.412 0.000744 ***
+retail.l1    -0.005873   0.001121  -5.241 3.24e-07 ***
+recession.l1  0.192394   0.031793   6.051 4.80e-09 ***
+const         0.843825   0.201499   4.188 3.82e-05 ***
+trend         0.004488   0.000943   4.759 3.17e-06 ***
+ \end{verbatim} }
+ 
+ For the discussion, we can note that the coefficient for retail is negative, which makes sense, because if people are spending more, they are more likely to be employed. The positive coefficient for construction is a little harder to explain. The positive trend coefficient suggests that, overall, unemployment has increased over the last 23 years, and this seems to be supported from the original graph of the data. Also, the high positive coefficient for the recession indicator makes sense as well. The only one that is strange is maybe the construction coefficient, but we could argue that, while significant, it might not be practically significant, since it is so small.
+ 
+ \begin{align*}
+  \widehat{\text{U}}\text{nemployment} &= 0.8438_{(0.2015)} +
+  0.0045(t)_{(0.0009)}\\ 		
+  &+ 0.9752\text{Unemployment}_{t-1 (0.0010)}\\
+  &+ 0.0043\text{ConstructionSpend}_{t-1(0.0012)}\\
+  &- 0.0059\text{RetailSales}_{t-1(0.0012)}\\
+  &+ 0.1924\text{Recession}_{t-1(0.0012)}
+  \end{align*}
  
  \subsection{Forcasts}
 
 \section{Discussion and Implications}
-``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues (background noise) an multivariate singular spectrum model (MSSA) for modelling unemployment in Croatia is presented in this paper'' \citep{Skare2015}.
 
-I take it the last section of this write up can be used for further refinements that can be done? If so, I feel that another interpretation is to include an indicator isElection or something.
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=\linewidth]{images/CCFplots}
+\end{figure}
+
+Here are the CCFs of the residuals. The first graph is the CCF of the unemployment residuals with themselves, which is just the ACF. The y-axes are labelled "ACF" but are really the CCF.
+
+The Portmanteau Test, whose null hypothesis is that the residuals are stationary (basically the multivariate Q-test) , returned a p-value < 0.001. This small p-value, along with the graphs above, suggests there is still some dependence still left in our residuals. Clearly, our model is not perfect, and we would need to explore how to better account for the correlation between unemployment and other predictors in future models.
+
+It seems that Travis already posted the first row of this plot. As Travis mentioned, the Portmanteau Test rejected the null hypothesis (Chi-squared = 529.42, df = 176, p-value < 2.2e-16). From looking at the plot above, it appears that the ACF for the unemployment rate and the CCF between the unemployment rate and the three predictors do not indicate much evidence of dependency in the residuals. However, the ACFs for Construction Spend and Retail Sales indicate a great deal of dependence left in the residuals which might the main cause of the significance of the Portmanteau Test. Future work might resolve these issues to see whether a better forecasting could be achieved. Nevertheless, it might be a serious issue in the current since the focus is to predict unemployment rate instead of Construction Spend and Retail Sales. (A paragraph similar to this might be put into the last section as a discussion of the limitation the current work.)
+
+Another interpretation is to include an indicator isElection or something.
+
+Next steps: Maybe we could try to come up with a model that somehow combines the simplicity of the ARIMA models in the short term, while incorporating the more complex structure needed for the long term. Also, there are countless more economic predictors (e.g., construction spending, retail spending, etc.) than the ones we included, so further investigation might reveal even more useful predictors.
+
+We were not able to analyze the effect that presidential transitions had on unemployment, but it seems that (just from the raw data) a new presidential term is accompanied by a sharp increase in unemployment, followed by a slower decline. This could offer a future avenue of research.
+
+
+``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues (background noise) an multivariate singular spectrum model (MSSA) for modelling unemployment in Croatia is presented in this paper'' \citep{Skare2015}.
  
 
 %----------------------------------------------------------------------------------------
@@ -482,6 +522,9 @@ I take it the last section of this write up can be used for further refinements 
 \begin{flushleft}
 \bibliography{main} % refers to our bibliography
 \end{flushleft}
+ 
+ \appendix
+ \section{Project contributions}
  
 
 
