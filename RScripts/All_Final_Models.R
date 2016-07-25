@@ -15,6 +15,7 @@ load("Data/Data_Prep.rda")
 ## Seasonally adjusted unemployment
 unem = econ.sa$unem_rate_sa
 
+
 ## Everyone seems to agree that 2 differences gets us stationarity... since we specify differencing
 ## in the arima model parameters, it feels like we should not be differencing the data beforehand
 ##
@@ -211,7 +212,7 @@ g2 = ggplot(pred, aes(x = dt)) +
 
 grid.arrange(g1, g2, nrow = 1)
 
-g## Shorten the plotted time range and plot both series together
+## Shorten the plotted time range and plot both series together
 ## Best ARIMA Forecast
 
 par(mfrow = c(1,1))
@@ -228,7 +229,7 @@ g3 = ggplot(pred, aes(x = dt)) +
   scale_x_date("", limits = c(as.Date("2014-01-01"), NA))
 
 
-####################################################3
+####################################################
 ## Long Term Forecasts
 
 ## Prediction for best ARIMA
@@ -269,7 +270,14 @@ g4 = ggplot(pred.long, aes(x = dt)) +
   scale_y_continuous("Unemployment Rate", limits = c(0,NA)) +
   scale_x_date("", limits = c(as.Date("1993-01-01"), NA))
 
+### Table for ARIMA Predictions
 
+arima.predictions = data.frame(
+  Date = pred$dt[73:77], Unemployment = pred$unemployment[73:77], 
+  Prediction = pred$arima.pred[73:77],
+  LowerCI = pred$arima.pred.lwr[73:77],
+  UpperCI = pred$arima.pred.upr[73:77],
+  Residual = pred$unemployment[73:77] - pred$arima.pred[73:77])
 
 ###### Table outputs
 
