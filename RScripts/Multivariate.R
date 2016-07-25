@@ -2,16 +2,50 @@ rm(list = ls())
 
 library(astsa)
 library(forecast)
+library(xtable)
+library(knitr)
+library(tseries)
+library(vars)
+library(ggplot2)
+library(gridExtra)
 
 load("Data_Prep.rda")
 
+old.par <- par()
+
+#par(mfrow=c(2,3))
+par(old.par)
+
+par(mfrow=c(2,3))
 ## Establish stationarity for predictor variables
-plot.ts(diff(econ.sa$unem_rate_sa, differences = 2))
-plot.ts(diff(econ.sa$industrial_production_sa, differences = 2))
-plot.ts(diff(econ.sa$manufacturers_new_orders_sa, differences = 2))
-plot.ts(diff(econ.sa$house_price_sa, differences = 2))
-plot.ts(diff(econ.sa$construction_spend_sa, differences = 2))
-plot.ts(diff(econ.sa$retail_sales_sa, differences = 2))
+plot.ts(econ.sa$unem_rate_sa, xlab="", ylab="Unemployment Rate")
+plot.ts(econ.sa$industrial_production_sa, xlab="",  ylab="Industrial Production")
+plot.ts(econ.sa$manufacturers_new_orders_sa, xlab="",  ylab="New Orders")
+plot.ts(econ.sa$house_price_sa, xlab="",  ylab="House Price")
+plot.ts(econ.sa$construction_spend_sa, xlab="",  ylab="Construction Spending")
+plot.ts(econ.sa$retail_sales_sa, xlab="",  ylab="Retail Sales")
+
+## Establish stationarity for predictor variables
+plot.ts(diff(econ.sa$unem_rate_sa, differences = 2), xlab="", ylab="Unemployment Rate, d=2")
+plot.ts(diff(econ.sa$industrial_production_sa, differences = 2), xlab="",  ylab="Industrial Production, d=2")
+plot.ts(diff(econ.sa$manufacturers_new_orders_sa, differences = 2), xlab="",  ylab="New Orders, d=2")
+plot.ts(diff(econ.sa$house_price_sa, differences = 2), xlab="",  ylab="House Price, d=2")
+plot.ts(diff(econ.sa$construction_spend_sa, differences = 2), xlab="",  ylab="Construction Spending, d=2")
+plot.ts(diff(econ.sa$retail_sales_sa, differences = 2), xlab="",  ylab="Retail Sales, d=2")
+
+par(old.par)
+
+adf.test(diff(econ.sa$unem_rate_sa, differences = 2))
+adf.test(diff(econ.sa$industrial_production_sa, differences = 2))
+adf.test(diff(econ.sa$manufacturers_new_orders_sa, differences = 2))
+adf.test(diff(econ.sa$house_price_sa, differences =2))
+adf.test(diff(econ.sa$construction_spend_sa, differences =2))
+adf.test(diff(econ.sa$retail_sales_sa, differences =2))
+
+plot.ts(diff(log(econ.sa$house_price_sa), differences = 2), xlab="",  ylab="log(House Price), d=2")
+
+
+adf.test(diff(log(econ.sa$house_price_sa), differences=2))
 
 econ.sa.st = data.frame(
   unem_rate_sa = diff(econ.sa$unem_rate_sa, differences = 2),

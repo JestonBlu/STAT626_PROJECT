@@ -129,39 +129,43 @@ Unemployment has far-reaching consequences that extends beyond financial securit
 
 The unemployment data being examined was obtained from the seasonaly adjusted, monthly, Civilian Unemployment Rate Series (UNRATE), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsrefsa}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
 
-Resession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as Aggregate hours of work in the total economy.
+Unemployment tends to follow a countercyclical pattern, increasing quickly during times of economic slowdowns and decreasing slowly in times of growth \citep{Montgomery1998}. To address this we have chosen to include a recession indicator as a possible predictor of unemployment. Resession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as Aggregate hours of work in the total economy.
 
-We also explored several predictor variables that are potentially related to unemployment.  Industrial Production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of Manufacturers' New Orders for All Manufacturing Industries refers to manufacturer's sales and inventory, except for New Orders from the Semicondutor Industry \citep{vmno}. The Purchase Only House Price Index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}.
+\begin{figure}[H]
+	\centering
+	\caption{Timeplots of included variables}
+	\label{fig:predictors}
+	\includegraphics[width=\linewidth]{images/predictors}
+\end{figure}
 
+We also explored several predictor variables that are potentially related to unemployment.  Industrial Production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of Manufacturers' New Orders for All Manufacturing Industries refers to manufacturer's sales and inventory, except for New Orders from the Semicondutor Industry \citep{vmno}. The Purchase Only House Price Index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}. Each of these predictors shows an overall increasing trend over time, see Figure \ref{fig:predictors}.
 %------------------------------------------------
 
 \section{Exploratory Analysis}
-		\begin{figure}[H]
+		\begin{figure}[htb]
 		\centering
 		\caption{Plot of the original data}
 		\label{fig:unemployment}
 		\includegraphics[width=\linewidth]{images/unemployment_total_sa}
 	\end{figure}
 	
-			\begin{figure}[H]
+				\begin{figure}[htb]
 		\centering
 		\caption{Smoothed unemployment for the study time period}
 		\label{fig:presunemp}
 		\includegraphics[width=\linewidth]{images/presunemp}
-	\end{figure}
+		\end{figure}
 
 
 As a first step, the data was plotted over time to identify any obvious patterns visually, considering the seasonlly adjusted version of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This countercyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
-
-Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot of these predictors can be seen in Figure \ref{fig:pred_scatt}.
-
-			\begin{figure}[H]
-		\centering
-		\caption{Scatterplot of unemployment and potential predictors}
+	
+		\begin{figure}[htb]
+		\caption{Scatterplot matrix of unemployment and potential predictors}
 		\label{fig:pred_scatt}
 		\includegraphics[width=\linewidth]{images/pred_scatt}
 	\end{figure}
-	
+
+Due to marked potential differences in the trend surrounding times of economic downturn, such as those that occured after World War II and in the 70s and the 80s, we have chosen to limit our analysis on a more recent set of unemployment data. Ultimately, we decided to focus the time preceeding and following the Great Recession of 2007. We limited our inital analysis to 1992 to 2015, which encompases the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the begining of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes the represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot matrix  of these predictors can be seen in Figure \ref{fig:pred_scatt}.
 
 %------------------------------------------------
 
@@ -169,27 +173,23 @@ Due to marked potential differences in the trend surrounding times of economic d
 
 In analyzing the inital plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coffecients, particularly through lag 6 further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF test tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The Dickey-Fuller test statistic for the unemployment data is -2.1377, with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data.
 			
-						\begin{figure}[H]
+		\begin{figure}[htb]
 		\centering
 		\caption{Autocorrelation of unemployment data}
 		\label{fig:laggedunemployment}
 		\includegraphics[width=\linewidth]{images/laggedunemployment}
 	\end{figure}
-			
-
-
-					\begin{figure}[H]
+The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences there appears to be more variability in the model that includes third differences.  Therefore, the consensus in the group was to continue the model building process using second differences.
+	\begin{figure}[htb]
 		\centering
 		\caption{Timeplots with and without differencing}
 		\label{fig:seasonalunem}
 		\includegraphics[width=\linewidth]{images/seasonalunem}
 	\end{figure}
-
-The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences there appears to be more variability in the model that includes third differences.  Therefore, the consensus in the group was to continue the model building process using second differences.
-
-	 \begin{table}[H]
+		 
+		 \begin{table}[htb]
 		 \centering
-		 \caption{ADF Test Results}
+		 \caption{ADF Test Results for unemployment}
 		 \label{tab:ADF}
 		 \begin{tabular}{lllll}
 		 \hline
@@ -199,6 +199,44 @@ The first, second, and third differences of the unemployment data were plotted f
 		  3\(^{rd}\) difference &  -13.02 & 6 & \( < 0.01\)\\		 \hline
 		 \end{tabular}
 		 \end{table}
+The predictor variables were also detrended using second differences. The timeplots of these second differences can be seen in Figure \ref{fig:statpred}. Although the housing prices still retains some nonconstant variance, overall the differencing improves the stationarity of all the predictor variables.  Futhermore, the ADF test of the differenced data provides evidence of stationarity for each of the variables, See table \ref{tab:ADF2}. 
+
+		\begin{figure}[htb]
+		\centering
+		\caption{Timeplots of differenced predictors}
+		\label{fig:statpred}
+		\includegraphics[width=\linewidth]{images/StationaryPred}
+		\end{figure}
+
+An attempt to stabalize the variance of the housing prices, utilizing a log transform, does not improve this stationarity much (ADF changes from -9.104 to -9.5211 and a scatterplot of the differenced logs still shows evidence of heteroscedasticity in the variance over time, see figure \ref{fig:loghouse}. 
+
+
+		
+		\begin{figure}[htb]
+		\centering
+		\caption{Timeplot of transformed housing prices, d=2}
+		\label{fig:loghouse}
+		\includegraphics[width=\linewidth]{images/houseprice}
+	\end{figure}
+
+
+		 
+\begin{table}[htb]
+		 \centering
+		 \caption{ADF Test Results for Predictors, \(d=2\)}
+		 \label{tab:ADF2}
+		 \begin{tabular}{lllll}
+		 \hline
+		 \textbf{Variable} & \textbf{Statistic}  & \textbf{p-value}\\ \hline
+		  Industrial Production & -9.2333  &\( < 0.01\)\\
+		  New Orders &  -8.391  & \( < 0.01\)\\			  
+		  House Prices &  -9.104  & \( < 0.01\)\\				  
+		  Construction Spending &  -10.447 &  \( < 0.01\)\\
+		  Retail Sales &  -10.72 &  \( < 0.01\)\\ \hline
+		 \end{tabular}
+		 \end{table}
+
+	 
 
   
 
@@ -206,10 +244,9 @@ The first, second, and third differences of the unemployment data were plotted f
 %------------------------------------------------
 
 \section{Model Building}
-  
-  We began our model building process by inspecting the correlogram (ACF plot) and partial correlogram (PACF plot) of tthe unemployment data, see Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these inital plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible mixture model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model . Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models, therefore models with regressors and Vector Autogressive Models (VAR) were considered as well.
-  
-    \begin{figure}[H]
+
+ 
+    \begin{figure}[hbt]
     	\centering
      	\caption{ACF \& PACF Plots}
      	\includegraphics[width=\linewidth]{images/acfpacf}
@@ -219,13 +256,15 @@ The first, second, and third differences of the unemployment data were plotted f
      	\label{fig:acfpacf2}
       \end{figure}
 
+  We began our model building process by inspecting the correlogram (ACF plot) and partial correlogram (PACF plot) of tthe unemployment data, see Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these inital plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible mixture model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model . Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models, therefore models with regressors and Vector Autogressive Models (VAR) were considered as well.
 
 \subsection{Models Considered}
 %I think we should remove the code fragment and just show the tables. We could always refer to our github project (which I can clean up) as the source for our code so people can see what functions we actually used. Also notice that the AIC in the table is different from the AIC extracted with the code. I noticed that the SARIMA produces multiple AIC, so I used the AIC extraction function to pull it out of the model frame at a lower level in the output object. I think this was better because it matches up with the same technique used in the VAR model.
 
+\subsubsection{ARIMA Models}
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
-\begin{table}[ht]
+\begin{table}[htb]
 \centering
 \caption{ARIMA models considered}
 \label{tab:arimachoices}
@@ -246,11 +285,40 @@ The first, second, and third differences of the unemployment data were plotted f
 \end{tabular}
 \end{table}
 
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Sun Jul 24 08:35:48 2016
-\begin{table}[ht]
-\centering
+Given the potenial of ARIMA models to represent the unemployment data we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three intitial models, without regressors, we chose to retain model 1.  
 
+The univariate ARIMA models we began with seem to fit the data well and have the added strength of being relatively simple models. Nevertheless, in their simplicity univariate models are not equiped to accurately portray the asymmetric nature of unemployment data and have a tendency of underpredicting during economic slowdowns \citep{Montgomery1998}. Therefore, we repeaded the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were includedpotential predictors of unemployment. 
+
+Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, see Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. In fact of all 9 of our original models, model 7 has the lowest AIC overall, see Table \ref{tab:arimachoices}.  
+
+
+		    \begin{figure}[htb]
+    	\centering
+    	\caption{Model 7: Residual Diagnostics}
+     	\includegraphics[width=\linewidth]{images/sarima1}
+     	\caption*{ARIMA(1,2,1) with no regressors}
+     	\label{fig:sarimamod1}
+     \end{figure}
+
+
+    \begin{figure}[htb]
+    	\centering
+    	\caption{Model 7: Residual Diagnostics}
+     	\includegraphics[width=\linewidth]{images/sarima7}
+     	\caption*{ARIMA(1,2,1) with lagged regressors}
+     	\label{fig:sarimamod7}
+     \end{figure}
+     
+     
+     
+		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. 
+
+      
+      \subsubsection{VAR Models}
+      % latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[htb]
+\centering
 \caption{VAR models considered}
 \label{tab:varchoices}
 \begin{tabular}{clllll}
@@ -267,199 +335,56 @@ The first, second, and third differences of the unemployment data were plotted f
 \end{tabular}
 \end{table}
 
-\subsubsection{ARIMA Models}
-
-Given the potenial of ARIMA models to represent the unemployment data we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three intitial models, without regressors, we chose to retain model 1.  
-
-The univariate ARIMA models we began with seem to fit the data well and have the added strength of being relatively simple models. Nevertheless, in their simplicity univariate models are not equiped to accurately portray the asymmetric nature of unemployment data and have a tendency of underpredicting during economic slowdowns \citep{Montgomery1998}. Therefore, we repeaded the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were includedpotential predictors of unemployment. 
-
-Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, see Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. In fact of all 9 of our original models, model 7 has the lowest AIC overall, see Table \ref{tab:arimachoices}.  
-
-
-		    \begin{figure}[H]
-    	\centering
-    	\caption{Model 7: Residual Diagnostics}
-     	\includegraphics[width=\linewidth]{images/sarima1}
-     	\caption*{ARIMA(1,2,1) with no regressors}
-     	\label{fig:sarimamod1}
-     \end{figure}
-
-
-    \begin{figure}[H]
-    	\centering
-    	\caption{Model 7: Residual Diagnostics}
-     	\includegraphics[width=\linewidth]{images/sarima7}
-     	\caption*{ARIMA(1,2,1) with lagged regressors}
-     	\label{fig:sarimamod7}
-     \end{figure}
-     
-     
-     
-		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are high enough at all plotted lags, so there is no indication of lack of fit in the models. 
 
       
-      \subsubsection{VAR Models}
-      
-     Much of the recent literature on modeling unemployment trends has suggesting that vector autoregressive models (VAR) have the capacity to outperform ARIMA models and are widely used by professional forcasters \citep{Meyer2015, Tasci2015, Barnichon2016}. VAR models provide another mechanism for modeling complex, multivariate times series in the absense of a moving average term \citep{Chatfield2001} . The ACF and PACF plots shown in Figures \ref{fig:acfpacf} and \ref{fig:acfpacf2} do not conclusively demonstrate that the moving average term is necessary in this case, therefore we have decided to explore the potential in fitting VAR models to the unemployment data in order to improve the performance of our predictions.  
+     Much of the recent literature on modeling unemployment trends has suggesting that vector autoregressive models (VAR) have the capacity to outperform ARIMA models and are widely used by professional forcasters \citep{Meyer2015, Tasci2015, Barnichon2016}. VAR models provide a mechanism for modeling complex, multivariate times series in the absense of a moving average term \citep{Chatfield2001} . The ACF and PACF plots shown in Figures \ref{fig:acfpacf} and \ref{fig:acfpacf2} do not conclusively demonstrate that the moving average term is necessary in this case, therefore we have decided to explore the potential in fitting VAR models to the unemployment data in order to improve the performance of our predictions.  
 
-We started 6 inital VAR models to compare models 1, 2, \& 3 without lagged regressors, and models 4, 5, \& 6 with a variety of lag values.
+We started 6 inital VAR models to compare. Models 1, 2, and 3 use the predictors of construction spending and retail sales, without differencing. Model 1 is a VAR(1), model 2 is a VAR(2), and model 3 is a VAR(1) with the regression indicator included as well. Models 4, 5, and 6 repeat the analysis using the differenced version of the predictors. Table \ref{tab:varchoices} shows the AIC and BIC values for each of these models.  
+
+Model 3, the unlagged model with the regression indicator, has the lowest AIC and BIC values.  The diagram of the fit and residuals for model 3 is provided in Figure \ref{fig:varfitmodel3}. The blue line indicates that the actual and predicted values of unemployment are similar in this model. A timeplot of the residuals is consistent with a white noise series. The ACF and PACF of the residuals give no indication of lack of fit. Therefore, we have chosen to retain model 3 to compare with the ARIMA models developed earlier. 
 
 
-
-  \begin{figure}[H]
+   \begin{figure}[htb]
     	\centering
-     	\caption{with June 2016}
-     	\includegraphics[width=\linewidth]{images/varUnemresid}
+     	\caption{Model 3 fit and residuals for unemployment}
+     	\includegraphics[width=\linewidth]{images/varfitmodel3}
+     	\label{fig:varfitmodel3}
  \end{figure}
  
- Here is a plot of the unemployment series in the best performing model by AIC: Var(2) with lagged xregs.
- 
-   \begin{figure}[H]
-    	\centering
-     	\caption{fit and residuals}
-     	\includegraphics[width=\linewidth]{images/unem_rate_fit_resid}
- \end{figure}
- 
- There is also forecasting functionality in the package which is nice because in the case of an ARIMA model with xregs, you dont have to forecast the xregs. Vars will do that for you since all of they are essentially AR(p) models that only use lagged values to forecast.
- 
-    \begin{figure}[H]
-    	\centering
-     	\caption{Var(2) Forcast 5 mo}
-     	\includegraphics[width=\linewidth]{images/var25mo}
- \end{figure}
- 
-I also built a few VAR models. By VARselect, BIC suggests VAR(1) HQ suggest VAR(2). The VAR(1) results only show the \begin{verbatim}retail_sales_sa.l1 and recession_ind.l1\end{verbatim} besides \begin{verbatim}unem_rate_sa.l1\end{verbatim} were significant predictors. I checked the correlation among these predictors and found that variables \begin{verbatim}industrial_production, manufacturers_new_orders, \end{verbatim} \begin{verbatim}house_price_sa, construction_spend, and retail_sales\end{verbatim} are highly correlated.
-
-    \begin{figure}[H]
-    	\centering
-     	\caption{Scatterplot matrix}
-     	\includegraphics[width=\linewidth]{images/varcorrelation}
- \end{figure}
-
-It might be reasonable to leave out some highly correlated variables. Thus, I then fitted two models with only \begin{verbatim}unem_rate, retail_sales, and recession_ind\end{verbatim}. Here are the AICs and BICs.
-
-\begin{verbatim}
-AIC(M1$varresult$unem_rate_sa) # -253.317
-AIC(M2$varresult$unem_rate_sa) # -252.6457
-AIC(M3$varresult$unem_rate_sa) # -247.1147
-AIC(M4$varresult$unem_rate_sa) # -251.6351
-
-BIC(M1$varresult$unem_rate_sa) # -217.1493
-BIC(M2$varresult$unem_rate_sa) # -191.2225
-BIC(M3$varresult$unem_rate_sa) # -225.414
-BIC(M4$varresult$unem_rate_sa) # -219.117
-
-AICs suggest the original VAR(1) model. 
-The BICs suggest the VAR(1) with only three variables. 
-\end{verbatim}
-
-    \begin{figure}[H]
-    	\centering
-     	\caption{Plots of above}
-     	\includegraphics[width=\linewidth]{images/boplots}
- \end{figure}
-
-Yeah, i am not sure how appropriate it is to include the recession indicator, but that is very interesting that it improved AIC that much. I will add it to my version as well since I am probably using different lags for all of the variables... we will see how it shakes out.. either way I will add what you have done to the \begin{verbatim}All_Final_Moels.r\end{verbatim} and then we can decide as a group which to mention in the write up. Im finalizing some tables right now that compares all of the best performing models everyone has submitted.. i will post the results for discussion shortly.
-
-One point though that I read about... since VARs do not require data to be stationary maybe it is okay to include it... has anyone come across anything in the literature that might have looked at this?
-
-Thanks! This issue might need some discussion. Btw, I actually prefer the model 3 among the set I proposed. It has the smallest BIC and really simple (two leading variables and 1 lag). I also saw some problems of the acf plots. I tried to fit stationary data by differencing. But that didn't help much and ruined model fitting in terms AIC and BIC. Any suggestions to further explore on this issue would be appreciated.
-
-Okay, I have compiled all of the models we have considered into the AllFinalModels.r script... so far we have 2 model types ARIMA and VAR. I do not think we should actually talk about or show diagnostic plots on all of these models. Maybe just focus on the top 2 in the 3rd table, but I do think we should perhaps show tables of all of the models we considered.
-
-\textit{These tables are included earlier.}
-
-5 Month Forecasts for the 2 best Models
-
-Since we decomposed and adjusted the seasonal data ourselves, it differs slightly from what you would see on the BLS website so I applied the same seasonal adjustment to the first 5 months of unemployment that came with the original data set. Overall the two plots are very similar.
-
-It also looks like the VAR model produced a slightly better forecast over this period, however the confidence intervals of the models overlap substantially.
-
-The forecasts start to look significantly different when you look at the longer term forecasts. This plot shows a 36 month forecast for the two best models. We can see how the confidence interval of the ARIMA model quickly explodes, perhaps indicating that it is not a good choice for long term forecasts.
-
-\textit{All of the previously mentioned plots are already included earlier except for:}
-    \begin{figure}[H]
-    	\centering
-     	\caption{Other plot}
-     	\includegraphics[width=\linewidth]{images/arimavarforcastalso}
- \end{figure}
- 
-
-
-Updated the VAR to not include the insignificant variables I mentioned. The plots in \(All_Final_Models.r\) will reflect this... here are the updated tables now that those variables have been dropped. This matches the VAR equation i posted yesterday.
-
- 
- 
- Note on best VAR
-For the best VAR model shown in the 2nd table, all of the variables are present. The inclusion of the recession indicator significantly improves the overall fit as well as the look of the forecast plot. There are a few variables in the VAR model that do not measure as being significant. When taking those parameters out the longterm forecast looks a bit more aggressive. The AIC and BIC are both a couple points improved if you remove the insignificant variables though. I can strip them back out depending on what everyone thinks we should do. Here is a plot with the insignificant variables removed.
-
-As far as model choice goes, i tend to favor the VAR rather than the ARIMA based on the model fit and forecast plots. The ARIMA(1,2,1) has 2 parameters, and the VAR(1) has 9 parameters (7 if we remove the insignificant variables). The inclusion of the recession indicator really helps the fit. So far I have not seen anything online that says its inappropriate to use an indicator variable in a VAR model.
-
-Please everyone weigh in on the model selection. If we elect not to use recession indicator then on the second table, mdl.1 is the best BIC and model 5 is the best AIC. If we only use the significant variables then the mdl.1 VAR(1) becomes the best model with an AIC of -225 and BIC of -200 which is right there with the ARIMA(1,2,1) and it would have 6 parameters.
-
-This is very nice. I like the recession indicator. I think it is consistent with the literature. It is a way of dealing with the fact that we would expect unemployment to increase more rapidly during a recession than at other times. From: (Montgomery et al., 1998) "Evidently the unemployment rate has a strong tendency to move countercyclically, upward in general business slowdowns and contractions and downward in speedups and expansions. ...univariate linear models are not able to accurately represent these asymmetric cycles. ...the contraction phases in the U.S. economy tend to be shorter than the expansion phases. It should also be noted that forecasting unemployment is much more difficult during periods when it is rapidly increasing than during more stable periods."
-
-
-
-Here are the two equations without the insignificant variables. Im in favor of dropping out the insignificant variables even though it changes the long term forecast picture. If no one has a problem, im going to drop them in the code and rerun the tables (IndustrialProduction, ManufacturersNewOrders, HomePrices). Looks to me like the VAR(1) is the way to go.
-
-\begin{verbatim}
-VAR(1)
-Unemployment = .935 + .0041 t + .975 
-Unemployment_{t-1} + .004 ConstructionSpend_{t-1}
- - .005 RetailSales_{t-1} + .19 RecessionIndicator_{t-1}
- + w_t
-AIC: -256, BIC: -231
-
-ARIMA(1,2,1)
-Unemployment = -.2021 
-Unemployment_{t-1} - .8078 w_{t-1} + w_t
-AIC: -212, BIC: -201
-\end{verbatim}
-
-Even though there are more parameters, VAR(1) does seem the best. It incorporates some of our original ideas and beats everything else in AIC. On the other hand, RetailSales and ConstructionSpend have small coefficients; do they really add much to the model?
-
-Yeah. Keep in mind they are in different scales.
-
-I the VAR(1) is good, too. For our final discussion, do we want to just focus on one model, or were we going to discuss both. I think it might be easier just to stick with one.
-
-I think we want to present one model ultimately, but I also think that part of the process is how we went about selecting the model we chose. Maybe mention it more in the write up than the final presentation. I dont know.
-
-
-
-
-
 \subsection{Model comparisons}
 
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
 \begin{table}[H]
 \centering
-\begin{tabular}{lllll}
+\caption{Comparison of ARIMA and VAR models}
+\begin{tabular}{llll}
   \hline
-Model & Type & AIC & BIC & Best \\ 
+Model & Type & AIC & BIC \\ 
   \hline
-ARIMA(1,2,1) & NA &   -212.29 & -201.45 &  \\ 
-ARIMA(1,2,1) & LagX   & -222.45 & -193.69 &  \\ 
-VAR(1) & Ind & -256.76 & -231.45 & AIC/BIC \\ 
+ARIMA \#1 &Univ ARIMA(1,2,1) &   -212.29 & -201.45  \\ 
+ARIMA \#7 & Mult ARIMA(1,2,1)  & -222.45 & -193.69   \\ 
+VAR \#3 & VAR(1) & -256.76 & -231.45 \\ 
    \hline
 \end{tabular}
 \end{table}
 
 
-The professor seems to like the idea of splitting the data into training and validation sets. We didn't split the data but luckily we have the new 5 months data as a validation set. From looking at the plots, it seems hard to distinguish the performance of two models. I computed the mean squared error of forecasting of the two best models. 0.01505823 for ARIMA(1,2,1) and 0.009663836 for VAR(1). This quantitative measure also supports this VAR(1) model. Hope this would help a bit when we are comparing the two models. 
+In the previous model building process, we retained 3 models for further comparison. ARIMA model 1 is a univariate ARIMA(1,2,1) model without predictors, ARIMA model 7 is a multivariate ARIMA(1,2,1) model with lagged predictors, and 
+
+At first glance the VAR(1) model appears to be the best model.  It has the lowest values of both AIC and BIC.  Of the two ARIMA models the multivariate ARIMA(1,2,1) model has a lower AIC but a higher BIC. However, being a multivariate model, ARIMA \#7 allows us to leverage the additional information provided by indicators of the nature of the economy to refine our predictions about future unemployment rates.
 
 
 \section{Forcasting}
 
- \begin{figure}[H]
+ \begin{figure}[htb]
     	\centering
      	\caption{Forcasting with ARIMA and VAR models}
      	\includegraphics[width=\linewidth]{images/forcasts}
      	\label{fig:forcasts}
       \end{figure}
       
-       \begin{figure}[H]
+       \begin{figure}[htb]
     	\centering
      	\caption{3 year forcasts}
      	\includegraphics[width=\linewidth]{images/forcast3}
@@ -478,13 +403,13 @@ In case we go with the ARIMA(1, 2, 1) model for the seasonally adjusted data wit
 The graphs are for the h = 5, 12, and 24 step ahead forecasts. The first three were generated by sarima( ), and the last three by Arima( ). Personally, I think the last three look better. I think it's good to have a picture of the forecast in the context of all the data. I will play around with sarima( ) to see if I can adjust the default axes to accommodate all past data.
 
 
- \begin{figure}[H]
+ \begin{figure}[htb]
     	\centering
      	\caption{Plots described above}
      	\includegraphics[width=.9\linewidth]{images/fore1}
  \end{figure}
  
-  \begin{figure}[H]
+  \begin{figure}[htb]
     	\centering
      	\caption{Plots described above}
      	\includegraphics[width=.9\linewidth]{images/fore2}
@@ -492,7 +417,7 @@ The graphs are for the h = 5, 12, and 24 step ahead forecasts. The first three w
      	\includegraphics[width=.9\linewidth]{images/fore4}
  \end{figure}
 
-  \begin{figure}[H]
+  \begin{figure}[htb]
     	\centering
      	\caption{Plots described above}
      	\includegraphics[width=.8\linewidth]{images/fore5}
@@ -530,7 +455,7 @@ I uploaded all of my code as "forecasting 7_21_16".
 
 \end{verbatim}
 
-  \begin{figure}[H]
+  \begin{figure}[htb]
     	\centering
      	\caption{with June 2016}
      	\includegraphics[width=\linewidth]{images/forejune}
@@ -558,6 +483,87 @@ state programs, which are available weekly, are used as a leading indicator of u
 ``The estimation of unobserved components: trend-cycle, seasonal and irregular component was made with SEATS program based on ARIMA models. Seasonally adjusted series were obtained by removing the seasonal component from the original data. Trend was obtained by removing the irregular component from the seasonally adjusted series'' \citep{VOINEAGU2012}.
 
 ``A possible leading indicator variable for the unemployment rate is the number of initial claims of unemployment'' \citep{Montgomery1998}.
+
+\section{commentary moved to the end}
+
+  \begin{figure}[htb]
+    	\centering
+     	\caption{with June 2016}
+     	\includegraphics[width=\linewidth]{images/varUnemresid}
+ \end{figure}
+ 
+ Here is a plot of the unemployment series in the best performing model by AIC: Var(2) with lagged xregs.
+ 
+   \begin{figure}[htb]
+    	\centering
+     	\caption{fit and residuals}
+     	\includegraphics[width=\linewidth]{images/unem_rate_fit_resid}
+ \end{figure}
+ 
+ There is also forecasting functionality in the package which is nice because in the case of an ARIMA model with xregs, you dont have to forecast the xregs. Vars will do that for you since all of they are essentially AR(p) models that only use lagged values to forecast.
+ 
+    \begin{figure}[htb]
+    	\centering
+     	\caption{Var(2) Forcast 5 mo}
+     	\includegraphics[width=\linewidth]{images/var25mo}
+ \end{figure}
+ 
+I also built a few VAR models. By VARselect, BIC suggests VAR(1) HQ suggest VAR(2). The VAR(1) results only show the \begin{verbatim}retail_sales_sa.l1 and recession_ind.l1\end{verbatim} besides \begin{verbatim}unem_rate_sa.l1\end{verbatim} were significant predictors. I checked the correlation among these predictors and found that variables \begin{verbatim}industrial_production, manufacturers_new_orders, \end{verbatim} \begin{verbatim}house_price_sa, construction_spend, and retail_sales\end{verbatim} are highly correlated.
+
+    \begin{figure}[htb]
+    	\centering
+     	\caption{Scatterplot matrix}
+     	\includegraphics[width=\linewidth]{images/varcorrelation}
+ \end{figure}
+
+It might be reasonable to leave out some highly correlated variables. Thus, I then fitted two models with only \begin{verbatim}unem_rate, retail_sales, and recession_ind\end{verbatim}. Here are the AICs and BICs.
+
+\begin{verbatim}
+AIC(M1$varresult$unem_rate_sa) # -253.317
+AIC(M2$varresult$unem_rate_sa) # -252.6457
+AIC(M3$varresult$unem_rate_sa) # -247.1147
+AIC(M4$varresult$unem_rate_sa) # -251.6351
+
+BIC(M1$varresult$unem_rate_sa) # -217.1493
+BIC(M2$varresult$unem_rate_sa) # -191.2225
+BIC(M3$varresult$unem_rate_sa) # -225.414
+BIC(M4$varresult$unem_rate_sa) # -219.117
+
+AICs suggest the original VAR(1) model. 
+The BICs suggest the VAR(1) with only three variables. 
+\end{verbatim}
+
+    \begin{figure}[htb]
+    	\centering
+     	\caption{Plots of above}
+     	\includegraphics[width=\linewidth]{images/boplots}
+ \end{figure}
+
+
+\textit{These tables are included earlier.}
+
+5 Month Forecasts for the 2 best Models
+
+Since we decomposed and adjusted the seasonal data ourselves, it differs slightly from what you would see on the BLS website so I applied the same seasonal adjustment to the first 5 months of unemployment that came with the original data set. Overall the two plots are very similar.
+
+It also looks like the VAR model produced a slightly better forecast over this period, however the confidence intervals of the models overlap substantially.
+
+The forecasts start to look significantly different when you look at the longer term forecasts. This plot shows a 36 month forecast for the two best models. We can see how the confidence interval of the ARIMA model quickly explodes, perhaps indicating that it is not a good choice for long term forecasts.
+
+\textit{All of the previously mentioned plots are already included earlier except for:}
+    \begin{figure}[htb]
+    	\centering
+     	\caption{Other plot}
+     	\includegraphics[width=\linewidth]{images/arimavarforcastalso}
+ \end{figure}
+ 
+
+
+Updated the VAR to not include the insignificant variables I mentioned. The plots in \(All_Final_Models.r\) will reflect this... here are the updated tables now that those variables have been dropped. This matches the VAR equation i posted yesterday.
+
+
+The professor seems to like the idea of splitting the data into training and validation sets. We didn't split the data but luckily we have the new 5 months data as a validation set. From looking at the plots, it seems hard to distinguish the performance of two models. I computed the mean squared error of forecasting of the two best models. 0.01505823 for ARIMA(1,2,1) and 0.009663836 for VAR(1). This quantitative measure also supports this VAR(1) model. Hope this would help a bit when we are comparing the two models. 
+ 
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
