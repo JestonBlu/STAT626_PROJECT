@@ -131,9 +131,7 @@ The unemployment data being examined was obtained from the seasonaly adjusted, m
 
 Resession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as Aggregate hours of work in the total economy.
 
-We also explored several potential predictor variables that are potentially related to unemployment.  Industrial Production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of Manufacturers' New Orders for All Manufacturing Industries refers to manufacturer's sales and inventory, except for New Orders from the Semicondutor Industry \citep{vmno}. The Purchase Only House Price Index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}.
-
-
+We also explored several predictor variables that are potentially related to unemployment.  Industrial Production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of Manufacturers' New Orders for All Manufacturing Industries refers to manufacturer's sales and inventory, except for New Orders from the Semicondutor Industry \citep{vmno}. The Purchase Only House Price Index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}.
 
 %------------------------------------------------
 
@@ -224,180 +222,59 @@ The first, second, and third differences of the unemployment data were plotted f
 
 \subsection{Models Considered}
 
+% latex table generated in R 3.3.1 by xtable 1.8-2 package
+% Sun Jul 24 08:35:48 2016
+\begin{table}[ht]
+\centering
+\caption{ARIMA models considered}
+\label{tab:arimachoices}
+\begin{tabular}{cllrrl}
+  \hline
+ Model & Order & Reg  & AIC & BIC & Best \\ 
+  \hline
+1 & 1,2,1 &  NA &   -212.30 & -201.46 & BIC \\ 
+  2  & 2,2,2 & NA   & -211.81 & -193.74 &  \\ 
+  3  & 3,2,3 &  NA  & -215.48 & -190.19 &  \\ 
+  4  & 1,2,1 & X  & -211.56 & -182.65 &  \\ 
+  5  & 2,2,2 & X   & -209.83 & -177.32 &  \\ 
+  6  & 3,2,3 & X   & -215.10 & -171.74 &  \\ 
+  7  & 1,2,1 &  LagX & -222.45 & -193.69 & AIC \\ 
+  8  & 2,2,2 &  LagX & -220.70 & -188.35 &  \\ 
+  9  & 3,2,3 &  LagX & -217.89 & -174.76 &  \\ 
+   \hline
+\end{tabular}
+\end{table}
+
 \subsubsection{ARIMA Models}
 
 Given the potenial of ARIMA models to represent the unemployment data we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three intitial models, without regressors, we chose to retain model 1.  
 
     \begin{figure}[H]
     	\centering
-     	\caption{ARIMA(1,2,1) residual diagonostics.}
+    	\caption{Model 7: Residual Diagnostics}
      	\includegraphics[width=\linewidth]{images/sarima1}
+     	\caption*{ARIMA(1,2,1) with no regressors}
      	\label{fig:sarimamod1}
      \end{figure}
 
 
 Figure \ref{fig:sarimamod1} provides the residual diagnostics for model 1. The timeplot of the standardized residuals resembles a white noise series and largely stays within two standard deviations from the expected mean of 0.  The ACF of residuals does not deviate significantly from 0, although there is a potential spike at lag 24. The normal Q-Q plot is relatively straight giving no indication that the residuals are not normally distributed. The pvalues for the Ljung-Box statistic are all relatively large, giving no indication of autocorrelation in the residuals.  Overall, model 1 seems to represent the unemployment series well.
 
+The above analysis was repeated using Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending as potential predictors of unemployment. Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, see Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable with predictors that were not stationary, we chose to repeat the process using lagged regressors.
 
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Sun Jul 24 08:35:48 2016
-\begin{table}[ht]
-\centering
-\begin{tabular}{cllrrl}
-  \hline
- Model & Order & Reg  & AIC & BIC & Best \\ 
-  \hline
-1 & 1,2,1 &  NA &   -212.30 & -201.46 & BIC \\ 
-  2  & 2,2,2 & NA   & -211.81 & -193.74 &  \\ 
-  3  & 3,2,3 &  NA  & -215.48 & -190.19 &  \\ 
-  4  & 1,2,1 & X  & -211.56 & -182.65 &  \\ 
-  5  & 2,2,2 & X   & -209.83 & -177.32 &  \\ 
-  6  & 3,2,3 & X   & -215.10 & -171.74 &  \\ 
-  7  & 1,2,1 &  LagX & -222.45 & -193.69 & AIC \\ 
-  8  & 2,2,2 &  LagX & -220.70 & -188.35 &  \\ 
-  9  & 3,2,3 &  LagX & -217.89 & -174.76 &  \\ 
-   \hline
-\end{tabular}
-\end{table}
+Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. In fact of all 9 of our original models, model 7 has the lowest AIC overall, see Table \ref{tab:arimachoices}.  
 
+Figure \ref{fig:sarimamod7} provides the residual diagnostics for model 7. The residuals are very similar to those of modl 1. The standardized residuals appear to resemble white noise, based on a random timeplot, an ACF plot that does not deviate significantly from zero, and a relatively straight Q-Q plot.  The p-values for the Ljung-Box statistic are large, more so than with model 1, giving no indication of autocorrelation in the residuals.  Overall, model 7 seems to be an appropriate representation for the unemployment series.
 
-
-\begin{verbatim}
-model1 <- sarima(unem, p = 0, d = 2, 
-q = 1, P = 1, D = 1, Q = 0, S = 12)
-model2 <- sarima(unem, p = 0, d = 2, 
-q = 1, P = 3, D = 1, Q = 0, S = 12)
-model3 <- sarima(unem, p = 4, d = 2, 
-q = 1, P = 3, D = 1, Q = 0, S = 12)
-
-model1$AIC; model1$BIC
-[1] -2.283108
-[1] -3.244063
-
-model2$AIC; model2$BIC
-[1] -2.444084
-[1] -3.379008
-
-model3$AIC; model3$BIC
-[1] -2.44496
-[1] -3.327824
-\end{verbatim}
-
-
-
-The Q-statistic or Ljung-Box statistic
-Models 1 and 2 have similar results. Model 1 seems to perform better at the first few lags, but Model 2 does better after lag 15. Model 3 clearly perform better than the two models on the Q-statistic. Since the Model 3 is based on a reasoning our professor does not like, we may not present this model. However it at least informs us that some models based on the thought that both the ACF and PACF cuts off at certain lags might model our data better. I am not quite sure how to handle this situation. Any thoughts on this would be highly appreciated!
-
-While going through a bunch of models, the following model seems most appropriate as noted by everyone. sarima(econ[,2],0,2,1,1,1,0,12) with the following diagnostics: [image: Inline image 2] The adf test also suggests stationarity as follows: [image: Inline image 3] Also, I am working on other predictor variables to develop a preliminary regression model.
-
-Regarding the expectations for presentation, the professor has not
-mentioned yet. However, in the last two lectures (14 and 15), he talked a
-lot applied examples about model building. I'd assume that our presentation
-would be something similar to what he talked in the two lectures.
-Basically, it's the model building process. How do we preprocess our data
-to obtain a stationary process (difference order 2 and difference order 1
-in our case)? How do we identify the model (based on ACF and PACF)? What is
-the set of candidate models? How do you choose the best one (AIC, BIC,
-diagnostics)? I guess we might not need to present a regression model at
-this stage since he hasn't talked much about it. How do you guys think
-about this?
-
-
-
-"Best model," as far as I know, is pretty ambiguous right now. With what I have done before, I checked AIC and BIC (not really thinking about using R-squared for the time being). The model identification from P/ACF is outlined in the text by checking out the tail behavior to see if it decays asymptotically or cuts off. We should be checking inside the band for "cutoff" behavior.
-
-I actually missed today's live lecture since I had an engineering final to take; I'll relay other questions to him tomorrow.
-
-
-Sure, it's always hard to call a model "Best". I think in presentations, we
-may present several potential candidate models, and compare them from
-several perspectives. Hopefully, one model will gain relatively more
-evidence.
-
-I just uploaded my code for these preliminary models I played with.
-
-
- would like to propose an additional model. I have gone through the same exercise as \@trlilley12 and \@bopangpsy only I used the seasonally adjusted unemployment rate. It looks like the performance is definitely comparable to the seasonal models. I used sarima for the nice diagnostic plot it creates, but I left the seasonal parameters out.
-
-I committed a script here \begin{verbatim}RScripts/seasonally_adjusted.R\end{verbatim}
-
-I get an AICc \(= -2.672\) and BIC \(= -3.565\)
-
-Cool, Joseph! This model is simple and performs pretty well in terms of
-both fitting indices and diagnostics.
-
-
-
-Thanks, one thing I am wondering about in the preliminary models you guys created is in the differrencing... im wondering what the impact is of doing one or two differences and then doing a 12 lag difference.. that may make interpretation a little difficult... do you guys have any references or thoughts for going about differencing that way? Did you try doing the lag difference first? Maybe like this:
-
-diff(diff(unem, lag = 12), differences = 2)
-
-Even I have used the seasonally adjusted unemp rate while considering the
-models. Also , I have posted my script on github.
-
-Okay, i see it... can you explain the thought behind fitting a seasonal parameter to the seasonally adjusted data? I just switched it to 0 but it looks like it doesnt make a difference in the output. Also using the additional variables looks like it does improve the model slightly. Did you try playing with the lags to see if any of the explanatory variables can be used as leading variables? As a side note, in my last commit i added a recession indicator.. if you use \begin{verbatim}load("Data/data_prep.rda")\end{verbatim} then you shouldnt have to do all of the data prep in your first several steps.
-
-I have created a script \begin{verbatim}RScripts/All_Final_Models.R\end{verbatim} to combine everyone's currently proposed models into a single place. I grouped them by seasonal vs seasonally adjusted data and created this table to show the model differences and relative performance. I also have the latex equivalent pasted below in case we want to put that into beamer (hopefully its compatible). I would still like to see us play with the additional variables a bit and see if we can find the appropriate lags to improve the models further since sarima allows you to easily include them.
-
-Please take a look and let me know what you think. There are a few plots in the code which we can use for the presentation, but feel free to add more if you think we are missing something. We do probably need a few more.
-
-I have been working a bit more on fitting an arima model with regressors to the seasonally adjusted data. I believe I fixed the issue we were having with the xregs (they needed to be stationary as well). I also lagged the xregs based off of the cross correlation and lag plots and it looks like the model has improved from the AIC measure. It also looks like a few of the xregs are leading indicators of unemployment. The code is in RScripts/multivariate if you want to play with it. I think i will add this one to the \begin{verbatim}All_Final_Models.r\end{verbatim} script soon if no one makes improvements on it. 
-
-Right, but what I just proposed was lagging the xregs which you did not do. Also we had some differences in our differencing and model parameters choices. Our model diagnostics are a different as well.. it looks like a lot of the pvalues in your Ljung-Box statistic were significant suggesting error dependence.
-
-Of the models we have discussed so far, I think the ARIMA(1, 2, 1) is best. It had the best diagnostics and the lowest AIC.
-
-I added some predictors to the ARIMA(1, 2, 1), and only retail seemed significant. However, its coefficient is so small that I argue we don't need it.
-
-I then did some forecasting for the ARIMA(1, 2, 1) as well as two ARIMA(1, 2, 1) models with predictors. I then compared our predicted values for 2016 unemployment with the actual values:
-
-\begin{verbatim}
-Jan 2016: actual 5.3 , predicted = 5.0
-Feb 2016: actual 5.2 , predicted = 5.0
-
-Mar 2016: actual 5.1 , predicted = 4.9
-Apr 2016: actual 4.7 , predicted = 4.9
-May 2016: actual 4.5 , predicted = 4.9
-
-Overall, I think the ARIMA(1, 2, 1) is very good.
-
-I uploaded all of my code as "forecasting 7_21_16".
-
-\end{verbatim}
-
-@trlilley12 did you see the model I posted that was also an ARIMA(1,2,1)? I also added some xregs with different lags and in addition to retail, industrial production, and house price measure as significant. The script is in Rscripts/multivariate.R. 
-
-Oh, okay that looks like it lowers the AIC. Did you try the ARIMA(1, 2, 1) with different lags for retail, ipi, and house price (excluding the others)? The AIC might be even lower.
-Okay, I prefer the simpler ARIMA(1, 2, 1) with no predictors, since Dr. P prefers simpler models. It had the lowest BIC as well. Can everyone vote on it?
-
-ARIMA(1,2,1) looks good to me. Many people actually prefer BIC over AIC. Btw, do we need to look around for other candidate models? I plan to do it tomorrow night since I have other final on tomorrow afternoon. Sorry being late on this issue.
-
-
-      
-      The team visually analyzed the ACF and PACF plots within the first season (h = 1, 2, ..., 12), see Figure \ref{fig:secdiff2}. The PACF appears to decline slowly, while the ACF seems to fall off after 1. Therefore we began by letting p = 0, and q = 1. Several models were considered by making adjustments to variations resulting in the models found in Table \ref{tab:models}.\newline
+    \begin{figure}[H]
+    	\centering
+    	\caption{Model 7: Residual Diagnostics}
+     	\includegraphics[width=\linewidth]{images/sarima7}
+     	\caption*{ARIMA(1,2,1) with lagged regressors}
+     	\label{fig:sarimamod7}
+     \end{figure}
       
       \subsection{Model Fit}
-      
-% latex table generated in R 3.3.1 by xtable 1.8-2 package
-% Sun Jul 24 08:35:48 2016
-\begin{table}[ht]
-\centering
-\begin{tabular}{cllrrl}
-  \hline
- Model & Order & Reg  & AIC & BIC & Best \\ 
-  \hline
-1 & 1,2,1 &  NA &   -212.30 & -201.46 & BIC \\ 
-  2  & 2,2,2 & NA   & -211.81 & -193.74 &  \\ 
-  3  & 3,2,3 &  NA  & -215.48 & -190.19 &  \\ 
-  4  & 1,2,1 & X  & -211.56 & -182.65 &  \\ 
-  5  & 2,2,2 & X   & -209.83 & -177.32 &  \\ 
-  6  & 3,2,3 & X   & -215.10 & -171.74 &  \\ 
-  7  & 1,2,1 &  LagX & -222.45 & -193.69 & AIC \\ 
-  8  & 2,2,2 &  LagX & -220.70 & -188.35 &  \\ 
-  9  & 3,2,3 &  LagX & -217.89 & -174.76 &  \\ 
-   \hline
-\end{tabular}
-\end{table}
 
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
@@ -562,6 +439,27 @@ The graphs are for the h = 5, 12, and 24 step ahead forecasts. The first three w
 Here is a plot from Arima( ) that shows the predicted values through June 2016 (blue) and the observed values (black).
 
 I put all the code for my plots in the RSCript folder and named it ``forecasting plots.''
+
+
+Of the models we have discussed so far, I think the ARIMA(1, 2, 1) is best. It had the best diagnostics and the lowest AIC.
+
+I added some predictors to the ARIMA(1, 2, 1), and only retail seemed significant. However, its coefficient is so small that I argue we don't need it.
+
+I then did some forecasting for the ARIMA(1, 2, 1) as well as two ARIMA(1, 2, 1) models with predictors. I then compared our predicted values for 2016 unemployment with the actual values:
+
+\begin{verbatim}
+Jan 2016: actual 5.3 , predicted = 5.0
+Feb 2016: actual 5.2 , predicted = 5.0
+
+Mar 2016: actual 5.1 , predicted = 4.9
+Apr 2016: actual 4.7 , predicted = 4.9
+May 2016: actual 4.5 , predicted = 4.9
+
+Overall, I think the ARIMA(1, 2, 1) is very good.
+
+I uploaded all of my code as "forecasting 7_21_16".
+
+\end{verbatim}
 
   \begin{figure}[H]
     	\centering
