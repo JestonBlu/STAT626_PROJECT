@@ -227,20 +227,47 @@ VAR \#3 & VAR(1) & -256.76 & -231.45 \\
   	\begin{frame}{Comparison of ARIMA(1,2,1) and VAR(1) }
   		 \includegraphics[width=\linewidth]{images/arimavarforecast}
   	\end{frame}
+ %-------------------------------------------------------------------------------------------------- 
+ 
+ %-------------------------------------------------------------------------------------------------- 
+    \begin{frame}[fragile]{Estimation results for the final model}
+\begin{verbnobox}[\small]
+-------------------------------------------------------
+unem = unem.l1 + constr.l1 + retail.l1 + recession.l1 
+		+ const + trend 
+-------------------------------------------------------
+-------------------------------------------------------
+          Estimate Std. Error t value Pr(>|t|)    
+
+unem.l1       0.975191   0.009984  97.677  < 2e-16 ***
+constr.l1     0.004262   0.001249   3.412 0.000744 ***
+retail.l1    -0.005873   0.001121  -5.241 3.24e-07 ***
+recession.l1  0.192394   0.031793   6.051 4.80e-09 ***
+const         0.843825   0.201499   4.188 3.82e-05 ***
+trend         0.004488   0.000943   4.759 3.17e-06 ***
+-------------------------------------------------------
+\end{verbnobox}
+\end{frame}
  %--------------------------------------------------------------------------------------------------
  
- \section{Final model decision, forecast analysis}
- %-------------------------------------------------------------------------------------------------- 
+%--------------------------------------------------------------------------------------------------
+ 
+ 
   	\begin{frame}{Final Model: VAR(1)}
   		 The final model chose was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors:
   \begin{align*}
-  {Unemployment} & =.935 + .0041(t) + .975\text{Unemployment}_{t-1} \\
-  &+ .004\text{ConstructionSpend}_{t-1} - .005 RetailSales_{t-1} \\
-  &+ .19\text{RecessionIndicator}_{t-1}+ w_t
+  \widehat{\text{U}}\text{nemployment} &= 0.843825_{(0.201499)} +
+  0.004488(t)_{(0.000943)}\\ 		
+  &+ 0.975191\text{Unemployment}_{t-1 (0.009984)}\\
+  &+ 0.004262\text{ConstructionSpend}_{t-1(0.001249)}\\
+  &- 0.005873\text{RetailSales}_{t-1(0.001249)}\\
+  &+ 0.192394\text{Recession}_{t-1(0.001249)}
   \end{align*}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------
- 
+
+
+
   %-------------------------------------------------------------------------------------------------- 
   	\begin{frame}{Final Model: VAR(1): Predictions}
  \includegraphics[width=\textwidth]{images/zoomedvar}

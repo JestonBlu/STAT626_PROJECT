@@ -1,6 +1,0 @@
-\beamer@endinputifotherversion {3.36pt}
-\select@language {english}
-\beamer@sectionintoc {2}{Description of data}{3}{0}{1}
-\beamer@sectionintoc {3}{Models Considered}{14}{0}{2}
-\beamer@sectionintoc {4}{Forecast comparisons}{17}{0}{3}
-\beamer@sectionintoc {5}{Final model decision, forecast analysis}{20}{0}{4}
