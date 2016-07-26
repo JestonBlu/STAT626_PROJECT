@@ -36,7 +36,7 @@
 \usepackage{float, enumitem}
 \usepackage{amsmath, amssymb,amsfonts,textcomp}
 \usepackage{caption}
-\usepackage{lmodern}
+\usepackage{lmodern, microtype}
 \usepackage{booktabs} % Horizontal rules in tables
 
 \usepackage{hyperref} % For hyperlinks in the PDF
@@ -100,7 +100,7 @@
 }
 %\institute[Texas A\&M] % I'm not sure yet how to add this in with the way that I put in the author names.
 	%	{Texas A\&M \newline College Station, Texas}
-\date{July 25, 2016 \vspace*{.25 cm}} % Final write-up due date plus a bit of extra space
+\date{\today \vspace*{.25 cm}} % Final write-up due date plus a bit of extra space
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
 \noindent We still need to write up the abstract.
@@ -122,12 +122,12 @@
 
 
 \section{Introduction}
-		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and Undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full-reovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it has seemed to be in generations past.
+		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and ndergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full reovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not a guarantee, as it has seemed to be in past generations.
 		
 Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression and suicide, and even physical deterioration \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, reasearch into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
 
 \subsection{Goal}
-		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our goal is to forcast unemployment into 2016. 
+		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our primary goal is to forecast future unemployment rates. 
 
 \subsection{Data}
 
@@ -456,30 +456,39 @@ The unemployment rates for January 2016 to May 2016 was also forcast using the V
  
  
       Figure \ref{fig:arimavarforecast} provides a graphical comparison of the two candidate models.  The ARIMA(1, 2, 1) shows a steady, linear decrease of the unemployment rate over time, which is unrealistic in the long term.  The Var model predicts a decrease in unemployment followed by an increase, which is more consistent with actual unemployment patterns. The mean square error from the VAR(1) model (0.0097) is much lower than the mean square error of the ARIMA(1,2,1) model(0.0151). The implication of this is that  the confidence interval of the ARIMA model quickly explodes, suggesting that it may not a good choice for longer term forecasts.
+      
+In the long run the VAR(1) model seems to provide a much more accurate forecast than the ARIMA(1, 2, 1) model and with much narrower prediction intervals. The complex cyclical nature of unemployment necessitates the use of a more advanced model for longer time periods. However, in the short term VAR(1) is not dramatically more effective than ARIMA(1, 2, 1), suggesting that an VAR(1) model might be overfitting the data in this region. This may be evidence of overfitting, causing more degrees of freedom to be sacraficed than necessary.
 
- \section{Final model}
- 
- 
-Model strengths: In the long run (past one year), the VAR(1) model seems to provide a much more accurate forecast than the ARIMA(1, 2, 1) model and with much narrower prediction intervals. The complex cyclical nature of unemployment necessitates the use of a more advanced model for long forecasts.
 
-Model weaknesses: In the short term (the next six months to a year), VAR(1) is not dramatically more effective than ARIMA(1, 2, 1), suggesting that an VAR(1) model might be overfitting the data in this region, i. e., more parameters were estimated and more degrees of freedom were sacrificed than necessary.
+ \section{Final model: VAR(1)}
+
+ \subsection{Model estimates} \label{estimates}
 
 The final model chosen was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors.
+ The estimates of the coefficients for this model can be found in \ref{tab:estimates}. For this model, all predictors have small p-values, indicating that they add significantly to the model with the other variables included. The positive coefficient for trend suggests that, overall, unemployment has increased over the last 23 years, which is consistent with the overall trend in the time series plot, see Figure \ref{fig:unemployment}. 
  
- \subsection{Model estimates}
- {\small
- \begin{verbatim}
-Estimation results for equation unem: 
-============================================
-unem.l1       0.975191   0.009984  97.677  < 2e-16 ***
-constr.l1     0.004262   0.001249   3.412 0.000744 ***
-retail.l1    -0.005873   0.001121  -5.241 3.24e-07 ***
-recession.l1  0.192394   0.031793   6.051 4.80e-09 ***
-const         0.843825   0.201499   4.188 3.82e-05 ***
-trend         0.004488   0.000943   4.759 3.17e-06 ***
- \end{verbatim} }
+
+The coefficient for retail spending is negative, which makes practical sense. If people are spending more money, we would expect that business would have more capital to hire employees. Conversely, people tend to spend less when they are unemployed.  The positive coefficient for construction is a little harder to explain. Higher construction costs tend to be associated with higher unemployment rates, keeping all other variables constant.  This may be is just an artifact of the multivariate nature of the dataset. For a given amount of retail spending, more construction spending is associated with more unemployment. Perhaps this is an indication of the higher cost of resources, when construction materials cost more there is less capital to spend on human resources. Or, maybe it is an indication of income inequality, when unemployment is high builders may cater to wealthier clients to recoup costs. Finally, there is a high positive coefficient for the recession indicator, suggesting that during times of recession unemployment is expected to be higher than in times of economic strength.
  
- For the discussion, we can note that the coefficient for retail is negative, which makes sense, because if people are spending more, they are more likely to be employed. The positive coefficient for construction is a little harder to explain. The positive trend coefficient suggests that, overall, unemployment has increased over the last 23 years, and this seems to be supported from the original graph of the data. Also, the high positive coefficient for the recession indicator makes sense as well. The only one that is strange is maybe the construction coefficient, but we could argue that, while significant, it might not be practically significant, since it is so small.
+
+{\small
+\begin{table}[htb]
+\centering
+\caption{Estimation results for equation VAR(1) model}
+\label{tab:estimates}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+& Estimate & Std. Error & t value & Pr(\(>|t|\))     \\ \midrule
+unem.l1      & 0.9752  & 0.0010 & 97.677 & \textless  2e-16 \\
+constr.l1    & 0.0043 & 0.0012 & 3.412  & 0.000744 \\
+retail.l1    & -0.0059 & 0.0011 & -5.241 & 3.24e-07 \\
+recession.l1 & 0.1924  & 0.0318 & 6.051  & 4.80e-09 \\
+const        & 0.8438  & 0.2015 & 4.188  & 3.82e-05 \\
+trend        & 0.0045  & 0.0009 & 4.759  & 3.17e-06 \\ \bottomrule
+\end{tabular}
+\end{table}}
+
+The final equation for the VAR(1) model is:
  
  \begin{align*}
   \widehat{\text{U}}\text{nemployment} &= 0.8438_{(0.2015)} +
@@ -488,33 +497,29 @@ trend         0.004488   0.000943   4.759 3.17e-06 ***
   &+ 0.0043\text{ConstructionSpend}_{t-1(0.0012)}\\
   &- 0.0059\text{RetailSales}_{t-1(0.0012)}\\
   &+ 0.1924\text{Recession}_{t-1(0.0012)}
-  \end{align*}
+  \end{align*} 
  
- \subsection{Forcasts}
-
-\section{Discussion and Implications}
-
-\begin{figure}[hbt]
+ \subsection{Model Diagnostics}
+ \begin{figure}[hbt]
 	\centering
 	\caption{VAR Residual Plots}
 	\includegraphics[width=\linewidth]{images/CCFplots}
+	\label{fig:CCF}
 \end{figure}
 
-Here are the CCFs of the residuals. The first graph is the CCF of the unemployment residuals with themselves, which is just the ACF. The y-axes are labelled "ACF" but are really the CCF.
+Figure \ref{fig:CCF} shows the ACF and the CCF plots for the VAR(1) model of unemployment.  The ACF for the unemployment rate does not indicate any lack of fit for the model. However, the CCF for unemployment vs retail and unemployment vs recession suggest that there may be some left over pattern not captured by the VAR(1) model.   The Portmanteau Test, used to detect model mispecification for multivariate time series \citep{davies1979}, was conducted to test for stationarity in the residuals. Since the Portmanteau statistic was large (\(\chi^2=529.42\), \(df = 176\), \(p < .001\)), we rejected the null hypothesis. There is  strong evidence of nonstationarity in the VAR(1) residuals. This small p-value, along with the graphs above, suggests there is still some dependency left in our model.
 
-The Portmanteau Test, whose null hypothesis is that the residuals are stationary (basically the multivariate Q-test) , returned a p-value < 0.001. This small p-value, along with the graphs above, suggests there is still some dependence still left in our residuals. Clearly, our model is not perfect, and we would need to explore how to better account for the correlation between unemployment and other predictors in future models.
+\section{Discussion and Implications}
 
-It seems that Travis already posted the first row of this plot. As Travis mentioned, the Portmanteau Test rejected the null hypothesis (Chi-squared = 529.42, df = 176, p-value < 2.2e-16). From looking at the plot above, it appears that the ACF for the unemployment rate and the CCF between the unemployment rate and the three predictors do not indicate much evidence of dependency in the residuals. However, the ACFs for Construction Spend and Retail Sales indicate a great deal of dependence left in the residuals which might the main cause of the significance of the Portmanteau Test. Future work might resolve these issues to see whether a better forecasting could be achieved. Nevertheless, it might be a serious issue in the current since the focus is to predict unemployment rate instead of Construction Spend and Retail Sales. (A paragraph similar to this might be put into the last section as a discussion of the limitation the current work.)
+The VAR(1) model given in section \ref{estimates} is a strong model overal. However, given the leftover dependency in the residuals, further investigation may be necessary to create a more reliable model in the long term. Furthermore, there are many economic predictors we did not investigate in this project. Further research should explore these potential explanatory variables in more depth.
 
-Another interpretation is to include an indicator isElection or something.
+We were not able to analyze the effect that presidential transitions had on unemployment.  Visually it appears that each presidential term is accompanied by a sharp increase in unemployment, followed by a slower decline.   This could be investigated using an indicator variable for election year.  Furthermore, it would be interesting to evaluate the impact that party affiliation has on unemployment over time.  Using indicators for presidental party and variables indicating the number of democrats and republicans in congress, we may be able to detect a relationship between unemployment rate and political ideology.
 
-Next steps: Maybe we could try to come up with a model that somehow combines the simplicity of the ARIMA models in the short term, while incorporating the more complex structure needed for the long term. Also, there are countless more economic predictors (e.g., construction spending, retail spending, etc.) than the ones we included, so further investigation might reveal even more useful predictors.
+Additionally, a mixed model might be beneficial when modeling complex variables like unemployment rates.  ``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues'' researchers in Croatia utilized a ``multivariate singular spectrum model (MSSA) for modelling unemployment'' \citep{Skare2015}. It would be interesting to explore its potential for use in the U.S. which has a significantly larger economy and population.  Or, perhaps we could create a model that somehow combining the simplicity of the ARIMA models for short term predictions with the more complex structure needed for the long term. After further development, the model should be tested on the other unemployment rates, such as industry specific or local uneemployment rates.
 
-We were not able to analyze the effect that presidential transitions had on unemployment, but it seems that (just from the raw data) a new presidential term is accompanied by a sharp increase in unemployment, followed by a slower decline. This could offer a future avenue of research.
+\subsection{Conclusion}
 
-
-``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues (background noise) an multivariate singular spectrum model (MSSA) for modelling unemployment in Croatia is presented in this paper'' \citep{Skare2015}.
- 
+Unemployment in the United States is an issue that is complex and socially meaningful. Recent research has explored the use of VAR models and worker flow data to predict the direction of unemployment in the short term. This project has attempted to predict unemployment rates using other economic indicators, including spending and recession time period. While the model created was strong, with relatively precise short term accuracy, it could benefit from further refinement. Future research in this area should include more variables, spectral analysis, and a mixed model approach. 
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
@@ -523,8 +528,9 @@ We were not able to analyze the effect that presidential transitions had on unem
 \begin{flushleft}
 \bibliography{main} % refers to our bibliography
 \end{flushleft}
- 
+ \section{Appendix}
  \appendix
+ \section{R-code}
  \section{Project contributions}
  
 

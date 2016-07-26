@@ -41,6 +41,7 @@ theme_stat = function() {
     plot.title          = element_text(size = 20, face = "bold"),
     panel.background    = element_rect(fill = NA),
     panel.grid.major    = element_line(color = "gray", size = .2),
+    panel.grid.minor    = element_line(color = "gray", size = .1),
     panel.border        = element_rect(color = "gray", fill = NA, size = .2),
     axis.ticks          = element_line(size = 0),
     axis.text           = element_text(size = 18, color = "black"),
@@ -398,4 +399,17 @@ lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$manufacturers_new_orders_sa, max.l
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$house_price_sa, max.lag = 12)              ## Lag 5?
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$construction_spend_sa, max.lag = 12)       ## No real lag, setting to 3
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$retail_sales_sa, max.lag = 12)             ## No real lag, setting to 0
+
+## VAR Forcast
+
+par(mfrow = c(1,1))
+ggplot(pred.long, aes(x = dt)) + 
+  geom_line(aes(y = unemployment)) +
+  geom_point(aes(y = var.pred), color = "blue") +
+  geom_line(aes(y = var.pred.lwr), color = "blue", lty = 2) +
+  geom_line(aes(y = var.pred.upr), color = "blue", lty = 2) +
+  ggtitle("") +
+  scale_y_continuous("Unemployment Rate", limits = c(0,NA)) +
+  scale_x_date("", limits = c(as.Date("2015-01-01"), as.Date("2017-01-01"))) +
+  theme_stat()
 

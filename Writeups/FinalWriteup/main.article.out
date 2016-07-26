@@ -12,8 +12,11 @@
 \BOOKMARK [2][-]{subsection.5.1}{Multivariate ARIMA\(1,2,1\)}{section.5}% 12
 \BOOKMARK [2][-]{subsection.5.2}{VAR\(1\)}{section.5}% 13
 \BOOKMARK [2][-]{subsection.5.3}{Forcast comparisons}{section.5}% 14
-\BOOKMARK [1][-]{section.6}{Final model}{}% 15
+\BOOKMARK [1][-]{section.6}{Final model: VAR\(1\)}{}% 15
 \BOOKMARK [2][-]{subsection.6.1}{Model estimates}{section.6}% 16
-\BOOKMARK [2][-]{subsection.6.2}{Forcasts}{section.6}% 17
+\BOOKMARK [2][-]{subsection.6.2}{Model Diagnostics}{section.6}% 17
 \BOOKMARK [1][-]{section.7}{Discussion and Implications}{}% 18
-\BOOKMARK [1][-]{appendix.A}{Project contributions}{}% 19
+\BOOKMARK [2][-]{subsection.7.1}{Conclusion}{section.7}% 19
+\BOOKMARK [1][-]{section.8}{Appendix}{}% 20
+\BOOKMARK [1][-]{appendix.A}{R-code}{}% 21
+\BOOKMARK [1][-]{appendix.B}{Project contributions}{}% 22

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  25 JUL 2016 22:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  26 JUL 2016 08:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -300,25 +300,46 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
+\MT@toks=\toks23
+\MT@count=\count107
+LaTeX Info: Redefining \textls on input line 766.
+\MT@outer@kern=\dimen123
+LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
+\MT@listname@count=\count108
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
+
+LaTeX Info: Redefining \lsstyle on input line 915.
+LaTeX Info: Redefining \lslig on input line 915.
+\MT@outer@space=\skip47
+)
+Package microtype Info: Loading configuration file microtype.cfg.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
+))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
-\heavyrulewidth=\dimen123
-\lightrulewidth=\dimen124
-\cmidrulewidth=\dimen125
-\belowrulesep=\dimen126
-\belowbottomsep=\dimen127
-\aboverulesep=\dimen128
-\abovetopsep=\dimen129
-\cmidrulesep=\dimen130
-\cmidrulekern=\dimen131
-\defaultaddspace=\dimen132
-\@cmidla=\count107
-\@cmidlb=\count108
-\@aboverulesep=\dimen133
-\@belowrulesep=\dimen134
-\@thisruleclass=\count109
-\@lastruleclass=\count110
-\@thisrulewidth=\dimen135
+\heavyrulewidth=\dimen124
+\lightrulewidth=\dimen125
+\cmidrulewidth=\dimen126
+\belowrulesep=\dimen127
+\belowbottomsep=\dimen128
+\aboverulesep=\dimen129
+\abovetopsep=\dimen130
+\cmidrulesep=\dimen131
+\cmidrulekern=\dimen132
+\defaultaddspace=\dimen133
+\@cmidla=\count109
+\@cmidlb=\count110
+\@aboverulesep=\dimen134
+\@belowrulesep=\dimen135
+\@thisruleclass=\count111
+\@lastruleclass=\count112
+\@thisrulewidth=\dimen136
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
@@ -377,14 +398,14 @@ Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 )
-\@linkdim=\dimen136
-\Hy@linkcounter=\count111
-\Hy@pagecounter=\count112
+\@linkdim=\dimen137
+\Hy@linkcounter=\count113
+\Hy@pagecounter=\count114
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
 )
-\Hy@SavedSpaceFactor=\count113
+\Hy@SavedSpaceFactor=\count115
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -396,17 +417,17 @@ Package hyperref Info: Plain pages OFF on input line 4458.
 Package hyperref Info: Backreferencing OFF on input line 4463.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count114
+\c@Hy@tempcnt=\count116
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 5041.
-\XeTeXLinkMargin=\dimen137
-\Fld@menulength=\count115
-\Field@Width=\dimen138
-\Fld@charsize=\dimen139
+\XeTeXLinkMargin=\dimen138
+\Fld@menulength=\count117
+\Field@Width=\dimen139
+\Fld@charsize=\dimen140
 Package hyperref Info: Hyper figures OFF on input line 6295.
 Package hyperref Info: Link nesting OFF on input line 6300.
 Package hyperref Info: Hyper index ON on input line 6303.
@@ -416,24 +437,24 @@ Package hyperref Info: Link coloring with OCG OFF on input line 6320.
 Package hyperref Info: PDF/A mode OFF on input line 6325.
 LaTeX Info: Redefining \ref on input line 6365.
 LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count116
-\c@Item=\count117
-\c@Hfootnote=\count118
+\Hy@abspage=\count118
+\c@Item=\count119
+\c@Hfootnote=\count120
 )
 
 Package hyperref Message: Driver (autodetected): hpdftex.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hpdftex.def
 File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count119
-\c@bookmark@seq@number=\count120
+\Fld@listcount=\count121
+\c@bookmark@seq@number=\count122
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip47
+\Hy@SectionHShift=\skip48
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/blindtext/blindtext.sty
 Package: blindtext 2012/01/06 V2.0 blindtext-Package
@@ -441,29 +462,29 @@ Package: blindtext 2012/01/06 V2.0 blindtext-Package
 (/usr/local/texlive/2015/texmf-dist/tex/latex/tools/xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
 )
-\c@blindtext=\count121
-\c@Blindtext=\count122
-\c@blind@countparstart=\count123
-\blind@countxx=\count124
-\blindtext@numBlindtext=\count125
-\blind@countyy=\count126
-\c@blindlist=\count127
-\c@blindlistlevel=\count128
-\c@blindlist@level=\count129
-\blind@listitem=\count130
-\c@blind@listcount=\count131
-\c@blind@levelcount=\count132
-\blind@mathformula=\count133
-\blind@Mathformula=\count134
-\c@blind@randomcount=\count135
-\c@blind@randommax=\count136
-\c@blind@pangramcount=\count137
-\c@blind@pangrammax=\count138
+\c@blindtext=\count123
+\c@Blindtext=\count124
+\c@blind@countparstart=\count125
+\blind@countxx=\count126
+\blindtext@numBlindtext=\count127
+\blind@countyy=\count128
+\c@blindlist=\count129
+\c@blindlistlevel=\count130
+\c@blindlist@level=\count131
+\blind@listitem=\count132
+\c@blind@listcount=\count133
+\c@blind@levelcount=\count134
+\blind@mathformula=\count135
+\blind@Mathformula=\count136
+\c@blind@randomcount=\count137
+\c@blind@randommax=\count138
+\c@blind@pangramcount=\count139
+\c@blind@pangrammax=\count140
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2015/03/17 v1.2c Input encoding file
-\inpenc@prehook=\toks23
-\inpenc@posthook=\toks24
+\inpenc@prehook=\toks24
+\inpenc@posthook=\toks25
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/utf8x.def
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
@@ -474,57 +495,57 @@ Package: ucs 2013/05/11 v2.2 UCS: Unicode input support
 (/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-global.def
 File: uni-global.def 2013/05/13 UCS: Unicode global data
 )
-\uc@secondtry=\count139
-\uc@combtoks=\toks25
-\uc@combtoksb=\toks26
-\uc@temptokena=\toks27
+\uc@secondtry=\count141
+\uc@combtoks=\toks26
+\uc@combtoksb=\toks27
+\uc@temptokena=\toks28
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip48
-\bibsep=\skip49
+\bibhang=\skip49
+\bibsep=\skip50
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count140
+\c@NAT@ctr=\count142
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2010/09/12 v5.6 Page Geometry
-\Gm@cnth=\count141
-\Gm@cntv=\count142
-\c@Gm@tempcnt=\count143
-\Gm@bindingoffset=\dimen140
-\Gm@wd@mp=\dimen141
-\Gm@odd@mp=\dimen142
-\Gm@even@mp=\dimen143
-\Gm@layoutwidth=\dimen144
-\Gm@layoutheight=\dimen145
-\Gm@layouthoffset=\dimen146
-\Gm@layoutvoffset=\dimen147
-\Gm@dimlist=\toks28
+\Gm@cnth=\count143
+\Gm@cntv=\count144
+\c@Gm@tempcnt=\count145
+\Gm@bindingoffset=\dimen141
+\Gm@wd@mp=\dimen142
+\Gm@odd@mp=\dimen143
+\Gm@even@mp=\dimen144
+\Gm@layoutwidth=\dimen145
+\Gm@layoutheight=\dimen146
+\Gm@layouthoffset=\dimen147
+\Gm@layoutvoffset=\dimen148
+\Gm@dimlist=\toks29
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/abstract/abstract.sty
 Package: abstract 2009/06/08 v1.2a configurable abstracts
-\abstitleskip=\skip50
-\absleftindent=\skip51
-\absrightindent=\skip52
-\absparindent=\skip53
-\absparsep=\skip54
+\abstitleskip=\skip51
+\absleftindent=\skip52
+\absrightindent=\skip53
+\absparindent=\skip54
+\absparsep=\skip55
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip55
-\f@ncyO@elh=\skip56
-\f@ncyO@erh=\skip57
-\f@ncyO@olh=\skip58
-\f@ncyO@orh=\skip59
-\f@ncyO@elf=\skip60
-\f@ncyO@erf=\skip61
-\f@ncyO@olf=\skip62
-\f@ncyO@orf=\skip63
+\fancy@headwidth=\skip56
+\f@ncyO@elh=\skip57
+\f@ncyO@erh=\skip58
+\f@ncyO@olh=\skip59
+\f@ncyO@orh=\skip60
+\f@ncyO@elf=\skip61
+\f@ncyO@erf=\skip62
+\f@ncyO@olf=\skip63
+\f@ncyO@orf=\skip64
 )
 (/usr/local/texlive/2015/texmf-dist/tex/latex/titling/titling.sty
 Package: titling 2009/09/04 v2.1d maketitle typesetting
-\thanksmarkwidth=\skip64
-\thanksmargin=\skip65
-\droptitle=\skip66
+\thanksmarkwidth=\skip65
+\thanksmargin=\skip66
+\droptitle=\skip67
 )
 (./main.article.aux)
 \openout1 = `main.article.aux'.
@@ -567,17 +588,17 @@ File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count144
-\scratchdimen=\dimen148
+\scratchcounter=\count146
+\scratchdimen=\dimen149
 \scratchbox=\box31
-\nofMPsegments=\count145
-\nofMParguments=\count146
-\everyMPshowfont=\toks29
-\MPscratchCnt=\count147
-\MPscratchDim=\dimen149
-\MPnumerator=\count148
-\makeMPintoPDFobject=\count149
-\everyMPtoPDFconversion=\toks30
+\nofMPsegments=\count147
+\nofMParguments=\count148
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count149
+\MPscratchDim=\dimen150
+\MPnumerator=\count150
+\makeMPintoPDFobject=\count151
+\everyMPtoPDFconversion=\toks31
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -596,6 +617,21 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
+LaTeX Info: Redefining \microtypecontext on input line 114.
+Package microtype Info: Generating PDF output.
+Package microtype Info: Character protrusion enabled (level 2).
+Package microtype Info: Using default protrusion set `alltext'.
+Package microtype Info: Automatic font expansion enabled (level 2),
+(microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
+Package microtype Info: Using default expansion set `basictext'.
+Package microtype Info: No adjustment of tracking.
+Package microtype Info: No adjustment of interword spacing.
+Package microtype Info: No adjustment of character kerning.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
+(RS)
+)
 \AtBeginShipoutBox=\box32
 Package hyperref Info: Link coloring OFF on input line 114.
 
@@ -605,7 +641,7 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count150
+\c@section@level=\count152
 )
 LaTeX Info: Redefining \ref on input line 114.
 LaTeX Info: Redefining \pageref on input line 114.
@@ -759,10 +795,16 @@ LaTeX Font Info:    Try loading font information for U+msa on input line 117.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+)
 LaTeX Font Info:    Try loading font information for U+msb on input line 117.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Try loading font information for TS1+lmr on input line 117.
 
@@ -773,7 +815,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 117.
 
-<images/predictors.png, id=108, 1531.7225pt x 1186.4325pt>
+<images/predictors.png, id=120, 1531.7225pt x 1186.4325pt>
 File: images/predictors.png Graphic file (type png)
 
 <use images/predictors.png>
@@ -783,7 +825,7 @@ Package pdftex.def Info: images/predictors.png used on input line 142.
 
 
 ]
-<images/unemployment_total_sa.png, id=154, 1405.25pt x 638.385pt>
+<images/unemployment_total_sa.png, id=166, 1405.25pt x 638.385pt>
 File: images/unemployment_total_sa.png Graphic file (type png)
 
 <use images/unemployment_total_sa.png>
@@ -791,14 +833,14 @@ Package pdftex.def Info: images/unemployment_total_sa.png used on input line 15
 3.
 (pdftex.def)             Requested size: 242.94499pt x 110.36505pt.
 
-<images/presunemp.png, id=155, 2334.7225pt x 1280.785pt>
+<images/presunemp.png, id=167, 2334.7225pt x 1280.785pt>
 File: images/presunemp.png Graphic file (type png)
 
 <use images/presunemp.png>
 Package pdftex.def Info: images/presunemp.png used on input line 160.
 (pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
 
-<images/pred_scatt.png, id=163, 2334.7225pt x 1280.785pt>
+<images/pred_scatt.png, id=175, 2334.7225pt x 1280.785pt>
 File: images/pred_scatt.png Graphic file (type png)
 
 <use images/pred_scatt.png>
@@ -806,7 +848,7 @@ Package pdftex.def Info: images/pred_scatt.png used on input line 169.
 (pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
  [2 <./images/predictors.png> <./images/unemployment_total_sa.png> <./images/pr
 esunemp.png> <./images/pred_scatt.png>]
-<images/laggedunemployment.png, id=190, 2286.5425pt x 1220.56pt>
+<images/laggedunemployment.png, id=202, 2286.5425pt x 1220.56pt>
 File: images/laggedunemployment.png Graphic file (type png)
 
 <use images/laggedunemployment.png>
@@ -817,67 +859,80 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 186.
 
-<images/seasonalunem.png, id=193, 1493.58pt x 901.3675pt>
+<images/seasonalunem.png, id=205, 1493.58pt x 901.3675pt>
 File: images/seasonalunem.png Graphic file (type png)
 
 <use images/seasonalunem.png>
 Package pdftex.def Info: images/seasonalunem.png used on input line 191.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
-<images/StationaryPred.png, id=196, 1493.58pt x 901.3675pt>
+<images/StationaryPred.png, id=208, 1493.58pt x 901.3675pt>
 File: images/StationaryPred.png Graphic file (type png)
 
 <use images/StationaryPred.png>
 Package pdftex.def Info: images/StationaryPred.png used on input line 212.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
-<images/houseprice.png, id=198, 1493.58pt x 901.3675pt>
+<images/houseprice.png, id=210, 1493.58pt x 901.3675pt>
 File: images/houseprice.png Graphic file (type png)
 
 <use images/houseprice.png>
 Package pdftex.def Info: images/houseprice.png used on input line 223.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
-<images/acfpacf.png, id=199, 2304.61pt x 1300.86pt>
+<images/acfpacf.png, id=211, 2304.61pt x 1300.86pt>
 File: images/acfpacf.png Graphic file (type png)
  <use images/acfpacf.png>
 Package pdftex.def Info: images/acfpacf.png used on input line 256.
 (pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
 
-<images/acfpacf2d.png, id=200, 2295.57625pt x 830.10126pt>
+<images/acfpacf2d.png, id=212, 2295.57625pt x 830.10126pt>
 File: images/acfpacf2d.png Graphic file (type png)
 
 <use images/acfpacf2d.png>
 Package pdftex.def Info: images/acfpacf2d.png used on input line 259.
 (pdftex.def)             Requested size: 242.94499pt x 87.84085pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [3 <./images/laggedunemployment.png> <./images/seasonalunem.png> <./images/Sta
-tionaryPred.png>] [4 <./images/houseprice.png> <./images/acfpacf.png> <./images
-/acfpacf2d.png>]
+tionaryPred.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 296--297
-[]\OT1/lmr/m/n/10 Models 4 through 6 were ARIMA(1,2,1),
+[]\OT1/lmr/m/n/10 (+20) Models 4 through 6 were ARIMA(1,2,1),
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 296--297
-\OT1/lmr/m/n/10 ARIMA(2,2,2), and ARIMA(3,2,3) re-spec-tively.
+\OT1/lmr/m/n/10 (+20) ARIMA(2,2,2), and ARIMA(3,2,3) re-spec-tively.
  []
 
-<images/sarima1.png, id=235, 2304.61pt x 1130.2225pt>
+
+Underfull \hbox (badness 1603) in paragraph at lines 296--297
+\OT1/lmr/m/n/10 (+20) their orig-i-nal coun-ter-parts with-out re-gres-sors, se
+e
+ []
+
+
+Underfull \hbox (badness 1502) in paragraph at lines 296--297
+\OT1/lmr/m/n/10 (+20) re-sponse vari-able us-ing data that was po-ten-tially
+ []
+
+
+Underfull \hbox (badness 3019) in paragraph at lines 296--297
+\OT1/lmr/m/n/10 (+20) ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3)
+ []
+
+[4 <./images/houseprice.png> <./images/acfpacf.png> <./images/acfpacf2d.png>]
+<images/sarima1.png, id=246, 2304.61pt x 1130.2225pt>
 File: images/sarima1.png Graphic file (type png)
  <use images/sarima1.png>
 Package pdftex.def Info: images/sarima1.png used on input line 302.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-<images/sarima7.png, id=236, 2304.61pt x 1130.2225pt>
+<images/sarima7.png, id=247, 2304.61pt x 1130.2225pt>
 File: images/sarima7.png Graphic file (type png)
  <use images/sarima7.png>
 Package pdftex.def Info: images/sarima7.png used on input line 311.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
-<images/varfitmodel3.png, id=251, 472.46512pt x 425.61008pt>
+<images/varfitmodel3.png, id=262, 472.46512pt x 425.61008pt>
 File: images/varfitmodel3.png Graphic file (type png)
 
 <use images/varfitmodel3.png>
@@ -888,8 +943,11 @@ Overfull \hbox (7.27762pt too wide) in paragraph at lines 365--374
  [][] 
  []
 
-[5 <./images/sarima1.png> <./images/sarima7.png>]
-<images/ARIMApred.png, id=269, 1642.135pt x 885.3075pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./images/sarima1.png> <./images/sarima7.png>]
+<images/ARIMApred.png, id=280, 1642.135pt x 885.3075pt>
 File: images/ARIMApred.png Graphic file (type png)
 
 <use images/ARIMApred.png>
@@ -901,7 +959,7 @@ Overfull \hbox (18.61142pt too wide) in paragraph at lines 403--414
  []
 
 [6 <./images/varfitmodel3.png> <./images/ARIMApred.png>]
-<images/varpred.png, id=281, 1519.6775pt x 853.1875pt>
+<images/varpred.png, id=292, 1519.6775pt x 853.1875pt>
 File: images/varpred.png Graphic file (type png)
 
 <use images/varpred.png>
@@ -914,74 +972,55 @@ Overfull \hbox (3.49846pt too wide) in paragraph at lines 434--445
  [][] 
  []
 
-<images/arimavarforecast.png, id=284, 1423.3175pt x 829.0975pt>
+<images/arimavarforecast.png, id=295, 1423.3175pt x 829.0975pt>
 File: images/arimavarforecast.png Graphic file (type png)
 
 <use images/arimavarforecast.png>
 Package pdftex.def Info: images/arimavarforecast.png used on input line 453.
 (pdftex.def)             Requested size: 242.94499pt x 141.514pt.
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 471
-.
+ [7 <./images/varpred.png> <./images/arimavarforecast.png>]
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 482.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
-File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmr.fd
+File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 unem.l1       0.975191   0.009984  97.677  < 2e-16 ***[] 
+LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 482.
+
+Overfull \hbox (6.8888pt too wide) in paragraph at lines 479--489
+ [][] 
  []
 
-
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 constr.l1     0.004262   0.001249   3.412 0.000744 ***[] 
- []
-
-
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 retail.l1    -0.005873   0.001121  -5.241 3.24e-07 ***[] 
- []
-
-
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 recession.l1  0.192394   0.031793   6.051 4.80e-09 ***[] 
- []
-
-
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 const         0.843825   0.201499   4.188 3.82e-05 ***[] 
- []
-
-
-Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
-[]\OT1/lmtt/m/n/9 trend         0.004488   0.000943   4.759 3.17e-06 ***[] 
- []
-
-[7 <./images/varpred.png> <./images/arimavarforecast.png>]
-<images/CCFplots.png, id=298, 1493.58pt x 901.3675pt>
+<images/CCFplots.png, id=311, 1953.2975pt x 1180.41pt>
 File: images/CCFplots.png Graphic file (type png)
 
 <use images/CCFplots.png>
-Package pdftex.def Info: images/CCFplots.png used on input line 500.
-(pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
- (./main.article.bbl [8 <./images/CCFplots.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
+Package pdftex.def Info: images/CCFplots.png used on input line 506.
+(pdftex.def)             Requested size: 242.94499pt x 146.81241pt.
 
-[9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+ [8 <./images/CCFplots.png>] (./main.article.bbl)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 538.
+ [9] [10
+
+]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 538.
  (./main.article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 532.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 538.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 538.
 Package rerunfilecheck Info: File `main.article.out' has not changed.
-(rerunfilecheck)             Checksum: D18D88004DCAA3CC582C89FFF09B4A56;1136.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 532.
+(rerunfilecheck)             Checksum: 6B1C59126E81055362F7810F4AAFE39D;1302.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 538.
  ) 
 Here is how much of TeX's memory you used:
- 11016 strings out of 493027
- 172719 string characters out of 6134069
- 277975 words of memory out of 5000000
- 14268 multiletter control sequences out of 15000+600000
- 61876 words of font info for 62 fonts, out of 8000000 for 9000
+ 12597 strings out of 493027
+ 200157 string characters out of 6134069
+ 334993 words of memory out of 5000000
+ 15709 multiletter control sequences out of 15000+600000
+ 66472 words of font info for 116 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1102b,506s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1118b,378s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1003,28 +1042,26 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/te
 xlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2015
 /texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc}{/usr/local/texlive/2015/texmf-dis
-t/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/
-dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/l
-m-ts1.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm-rmsc.enc}</
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/local/texlive/20
-15/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
-lic/lm/lmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr1
-0.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr12.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texli
-ve/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2015/texm
-f-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts
-/type1/public/lm/lmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/publi
-c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
-.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.article.pdf (9 pages, 4207361 bytes).
+t/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/local/texlive/2015/texmf-dist/fonts/en
+c/dvips/lm/lm-ts1.enc}{/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/lm/lm
+-rmsc.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmbx12.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/lm/lmcsc10.pfb></usr/local/texlive
+/2015/texmf-dist/fonts/type1/public/lm/lmex10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/lm/lmmi10.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/lm/lmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pu
+blic/lm/lmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr
+12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmr7.pfb></usr/local/texli
+ve/2015/texmf-dist/fonts/type1/public/lm/lmr8.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/pub
+lic/lm/lmri9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy
+10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb>
+Output written on main.article.pdf (10 pages, 4221774 bytes).
 PDF statistics:
- 402 PDF objects out of 1000 (max. 8388607)
- 336 compressed objects within 4 object streams
- 82 named destinations out of 1000 (max. 500000)
- 238 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 422 PDF objects out of 1000 (max. 8388607)
+ 356 compressed objects within 4 object streams
+ 88 named destinations out of 1000 (max. 500000)
+ 20230 words of extra memory for PDF output out of 20736 (max. 10000000)
 
