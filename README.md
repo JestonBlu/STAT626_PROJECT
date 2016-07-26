@@ -1,20 +1,32 @@
-# Time Series Analysis Project
+# Forecasting US Unemployment
 
-#### Team Members and Responsibilities (edit as you wish)
+#### Reproducible Research
 
-- **Joseph**: Plots, Data Prep, Code Management, Modeling
-- **Alison**: Write up. I'd be happy to do writing.
-- **Sean**: Presentor, Write up?
-- **Travis**: I can do the diagnostics.
-- **Akarshan**: Final Write up and Model selection and fitting.
-- **Bo**: Model fitting, plots, final write up
+All of the findings, models, and graphs discussed in our writeup can be reproduced using scripts from this repository. The following are a few guidelines to make sure you can run our code with minimal effort:
 
+* Clone or download the project to your desktop, unzip if neccesary
+* Within R, set the working directory to `setwd("stat626_project location")`
+* Load the seasonally adjusted dataset `load("Data/Data_Prep.rda")`
+* `RScripts/All_Final_Models.R` creates the ARIMA and VAR models
+* `RScripts/Preso_Plots.R` creates all of the plots used in the write up.
 
-#### We can use this section to keep track of due dates and items to be completed
+#### Project Directory
+* Data:
+* Literature:
+* Plots:
+    * Preso_Plots:
+    * Data_Exploration:
+* RScripts:
+    * Archives:
+* Writeups:
 
-- **6/14**: 5 minute presentation on the chosen dataset with some introductory graphs
-    -  **Alison**: I put a link in the presentation topic to the skeletal presentation if anyone wants to make any comments or changes.
-- **7/11 ?**: Presentation and write-up.
-    - **Alison**: I am going to start taking what everyone has put in the issues forum and put it into a write-up. 
-        - I did a presentation with only the graphs generated from the rcode but thought text might be distracting. https://www.overleaf.com/5654811dmsqbs
-        - I have been looking at industry specific unemployment on my own. If I find anything interesting I will share before I add it in.
+#### Team Members and Responsibilities
+
+| Team Members         | Responsibilities                               |
+|:---------------------|:-----------------------------------------------|
+| **Joseph Blubaugh**: | Plots, Data Prep, Code Management, Modeling    |
+| **Alison Shelton**:  | Write up, Latex Management, Literature         |
+| **Sean Roberson**:   | Presenter, Talking Points, Literature          |
+| **Travis Lilley**:   | Model Diagnostics, Statistical Tests, Modeling |
+| **Akarshan Puri**:   | Modeling and Diagnostics                       |
+| **Bo pang**:         | Modeling and Diagnostics                       |
