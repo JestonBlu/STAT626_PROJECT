@@ -341,7 +341,7 @@ Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectivel
 
 
       
-     Much of the recent literature on modeling unemployment trends has suggesting that vector autoregressive models (VAR) have the capacity to outperform ARIMA models and are widely used by professional forcasters \citep{Meyer2015, Tasci2015, Barnichon2016}. VAR models provide a mechanism for modeling complex, multivariate times series in the absense of a moving average term \citep{Chatfield2001} . The ACF and PACF plots shown in Figures \ref{fig:acfpacf} and \ref{fig:acfpacf2} do not conclusively demonstrate that the moving average term is necessary in this case, therefore we have decided to explore the potential in fitting VAR models to the unemployment data in order to improve the performance of our predictions.  
+     Much of the recent literature on modeling unemployment trends has suggesting that vector autoregressive models (VAR) have the capacity to outperform ARIMA models and are widely used by professional forecasters \citep{Meyer2015, Tasci2015, Barnichon2016}. VAR models provide a mechanism for modeling complex, multivariate times series in the absense of a moving average term \citep{Chatfield2001} . The ACF and PACF plots shown in Figures \ref{fig:acfpacf} and \ref{fig:acfpacf2} do not conclusively demonstrate that the moving average term is necessary in this case, therefore we have decided to explore the potential in fitting VAR models to the unemployment data in order to improve the performance of our predictions.  
 
 We started 6 inital VAR models to compare. Models 1, 2, and 3 use the predictors of construction spending and retail sales, without differencing. Model 1 is a VAR(1), model 2 is a VAR(2), and model 3 is a VAR(1) with the regression indicator included as well. Models 4, 5, and 6 repeat the analysis using the differenced version of the predictors. Table \ref{tab:varchoices} shows the AIC and BIC values for each of these models.  
 
@@ -378,10 +378,10 @@ In the previous model building process, we retained 3 models for further compari
 
 At first glance the VAR(1) model appears to be the best model.  It has the lowest values of both AIC and BIC.  Of the two ARIMA models the multivariate ARIMA(1,2,1) model has a lower AIC but a higher BIC. However, being a multivariate model, ARIMA \#7 allows us to leverage the additional information provided by indicators of the nature of the economy to refine our predictions about future unemployment rates. 
 
-Since the rate of increasing unemployment is so different from the rate of decreasing unemployment, forcasing can be very difficult without some indicator of whether we are currently in a increasing or decreasing portion of the cycle \citep{Montgomery1998}. For this reason, we have chosen continue our model comparisons with only the two models that include predictors of economic strength. In the next section, we compare the forcasting performance of the best multivariate ARIMA model with best VAR model. These are the multivariate ARIMA(1,2,1) model and the VAR(1) with an indicator variable for recession among its predictors.
+Since the rate of increasing unemployment is so different from the rate of decreasing unemployment, forcasing can be very difficult without some indicator of whether we are currently in a increasing or decreasing portion of the cycle \citep{Montgomery1998}. For this reason, we have chosen continue our model comparisons with only the two models that include predictors of economic strength. In the next section, we compare the forecasting performance of the best multivariate ARIMA model with best VAR model. These are the multivariate ARIMA(1,2,1) model and the VAR(1) with an indicator variable for recession among its predictors.
 
 
-\section{Forcasting}
+\section{Forecasting}
 
 In the initial data setup, the 2016 values were initially excluded to provide a dataset with which to evaluate the performance of our predictions. Short-term predictions from the multivariate ARIMA(1,2,1) model and VAR(1) models were then compared compared with the actual unemployment rates for January 2016 through May 2016. These results were used to create our final model.
 
@@ -389,7 +389,7 @@ In the initial data setup, the 2016 values were initially excluded to provide a 
 
    \begin{figure}[htb]
     	\centering
-     	\caption{5 month forcast with ARIMA(1,2,1)}
+     	\caption{5 month forecast with ARIMA(1,2,1)}
      	\includegraphics[width=\linewidth]{images/ARIMApred}
      	\label{fig:arimapred}
  \end{figure}
@@ -413,13 +413,13 @@ May & 4.73 & 4.85 & (3.99 , 5.72) & -0.12 \\
 \end{tabular}
 \end{table}
 
-The unemployment rates for January 2016 to May 2016 were forcast using the Multivariate ARIMA(1,2,1) model, see Table \ref{tab:arimaforecast}.  This model did a good job overall, as all predicted values were within 0.3\% of the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:arimapred} shows the predicted values graphed against the actual unemployment rates. The model predicts a steady decrease in the unemployment rate over the 5 month period.  In general, the ARIMA model provided an overprediction of unemployment rate, except in April-16 when the rate spiked slightly. The confidence bands spread outward rapidly, suggesting an overall pattern of either falling or rising unemployment rate.
+The unemployment rates for January 2016 to May 2016 were forecast using the Multivariate ARIMA(1,2,1) model, see Table \ref{tab:arimaforecast}.  This model did a good job overall, as all predicted values were within 0.3\% of the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:arimapred} shows the predicted values graphed against the actual unemployment rates. The model predicts a steady decrease in the unemployment rate over the 5 month period.  In general, the ARIMA model provided an overprediction of unemployment rate, except in April-16 when the rate spiked slightly. The confidence bands spread outward rapidly, suggesting an overall pattern of either falling or rising unemployment rate.
 
 \subsection{VAR(1)}
 
    \begin{figure}[htb]
     	\centering
-     	\caption{5 month forcast with VAR(1)}
+     	\caption{5 month forecast with VAR(1)}
      	\includegraphics[width=\linewidth]{images/varpred}
      	\label{fig:varpred}
  \end{figure}
@@ -444,9 +444,9 @@ May & 4.73 & 4.86 & (4.12 , 5.60) & -0.13 \\
 \end{tabular}
 \end{table}
 
-The unemployment rates for January 2016 to May 2016 was also forcast using the Var(1) model, see Table \ref{tab:varforecast}.  At first glance the results look very similar to the ARIMA(1,2,1) model. All predicted values were within 0.3\% of the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:varpred} shows the predicted values graphed against the actual unemployment rates. The model predicts a nonlinear decrease in the unemployment rate over the 5 month period, with the rate of decrease slowing over time.  In general, the VAR model also provided an overprediction of unemployment rate, except in April-16. 
+The unemployment rates for January 2016 to May 2016 was also forecast using the Var(1) model, see Table \ref{tab:varforecast}.  At first glance the results look very similar to the ARIMA(1,2,1) model. All predicted values were within 0.3\% of the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:varpred} shows the predicted values graphed against the actual unemployment rates. The model predicts a nonlinear decrease in the unemployment rate over the 5 month period, with the rate of decrease slowing over time.  In general, the VAR model also provided an overprediction of unemployment rate, except in April-16. 
 
- \subsection{Forcast comparisons}
+ \subsection{Forecast comparisons}
     \begin{figure}[htb]
     	\centering
      	\caption{ARIMA and VAR Model comparison of 3 month forecast}
