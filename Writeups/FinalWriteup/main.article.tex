@@ -148,14 +148,14 @@ We also explored several predictor variables that are potentially related to une
 \section{Exploratory Analysis}
 		\begin{figure}[htb]
 		\centering
-		\caption{Plot of the original data}
+		\caption{Monthly unemployment, seasonally adjusted}
 		\label{fig:unemployment}
 		\includegraphics[width=\linewidth]{images/unemployment_total_sa}
 	\end{figure}
 	
 				\begin{figure}[htb]
 		\centering
-		\caption{Smoothed unemployment for the study time period}
+		\caption{Seasonally Adjusted Unemployment with sitting president backdrop}
 		\label{fig:presunemp}
 		\includegraphics[width=\linewidth]{images/presunemp}
 		\end{figure}
@@ -186,7 +186,7 @@ In analyzing the inital plots, it appears that the series could benefit from det
 The first, second, and third differences of the unemployment data were plotted for seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. All three sets of differencing, bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Futhermore, even though the ADF statistic is more negative for the \(3^{rd}\) differences there appears to be more variability in the model that includes third differences.  Therefore, the consensus in the group was to continue the model building process using second differences.
 	\begin{figure}[htb]
 		\centering
-		\caption{Timeplots with and without differencing}
+		\caption{Timeplots of lagged unemployment}
 		\label{fig:seasonalunem}
 		\includegraphics[width=\linewidth]{images/seasonalunem}
 	\end{figure}
@@ -496,6 +496,7 @@ trend         0.004488   0.000943   4.759 3.17e-06 ***
 
 \begin{figure}[hbt]
 	\centering
+	\caption{VAR Residual Plots}
 	\includegraphics[width=\linewidth]{images/CCFplots}
 \end{figure}
 

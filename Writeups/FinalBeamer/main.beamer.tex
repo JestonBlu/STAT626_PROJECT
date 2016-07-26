@@ -26,78 +26,37 @@
 \section{Description of data}
 
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Timplot of National Unemployment}
+  	\begin{frame}{US Unemployment}
 		\includegraphics[width=\textwidth]{images/unemployment_total_sa}
   	\end{frame}
  %-------------------------------------------------------------------------------------------------- 
  
  %--------------------------------------------------------------------------------------------------  	
-  	\begin{frame}{Smoothed unemployment for the study time period}
+  	\begin{frame}{Seasonally Adjusted Unemployment with sitting president backdrop}
 		\includegraphics[width=\linewidth]{images/presunemp}
   	\end{frame}
 %--------------------------------------------------------------------------------------------------  	
 
 %--------------------------------------------------------------------------------------------------  	
-\begin{frame}{Scatterplot matrix of unemployment and potential predictors}
+\begin{frame}{Scatterplot Matrix}
 		\includegraphics[width=\linewidth]{images/pred_scatt}
 \end{frame}
 %--------------------------------------------------------------------------------------------------  	
-
-
-%-------------------------------------------------------------------------------------------------- 
-    \begin{frame}[fragile]{Decomposition of Data}
-\begin{verbnobox}[\tiny]
-----------------------------------------------------------------------------------
-decom.unem = decompose(ts(data = econ$unem_rate, 
-             start = c(1993,1), frequency = 12), type = "additive")
-decom.ind = decompose(ts(data = econ$industrial_production_index, 
-                         start = c(1993,1), frequency = 12), type = "additive")
-decom.mno = decompose(ts(data = econ$manufacturers_new_orders, 
-                         start = c(1993,1), frequency = 12), type = "additive")
-decom.hpi = decompose(ts(data = econ$purchase_house_price_index, 
-                         start = c(1993,1), frequency = 12), type = "additive")
-decom.con = decompose(ts(data = econ$construction_spending, 
-                         start = c(1993,1), frequency = 12), type = "additive")
-decom.rts = decompose(ts(data = econ$retail_sales, 
-                         start = c(1993,1), frequency = 12), type = "additive")
-                         
-----------------------------------------------------------------------------------
-
-## Seasonally Adjust 2016 unemployment
-unem.16 = unem.16 - decom.unem$seasonal[1:5]
-
-----------------------------------------------------------------------------------
-## Add seasonally adjusted rate
-econ.sa = data.frame(
-  row.names = row.names(econ),
-  unem_rate_sa = econ$unem_rate - decom.unem$sea,
-  industrial_production_sa = econ$industrial_production_index - decom.ind$sea,
-  manufacturers_new_orders_sa = econ$manufacturers_new_orders - decom.mno$sea,
-  house_price_sa = econ$purchase_house_price_index - decom.hpi$sea,
-  construction_spend_sa = econ$construction_spending - decom.con$sea,
-  retail_sales_sa = econ$retail_sales - decom.rts$sea,
-  recession_ind = econ$recession_ind
-)
-----------------------------------------------------------------------------------
-\end{verbnobox}
-\end{frame}
- %--------------------------------------------------------------------------------------------------
- 
  %--------------------------------------------------------------------------------------------------  	
-\begin{frame}{Autocorrelation of unemployment data}
+\begin{frame}{Autocorrelation of Unemployment}
 		\includegraphics[width=\linewidth]{images/laggedunemployment}
 \end{frame}
 %--------------------------------------------------------------------------------------------------  	
  
 
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Timeplots with and without differencing}
+  	\begin{frame}{Differencing}
 		\includegraphics[width=\linewidth]{images/seasonalunem}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------
  
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{ADF Test Results for unemployment}
+  	\begin{frame}{ADF Test}
 		 \begin{table}[htb]
 		 \centering
 		 \begin{tabular}{lllll}
@@ -112,13 +71,13 @@ econ.sa = data.frame(
  %-------------------------------------------------------------------------------------------------- 
  
   %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Timeplots of differenced predictors}
+  	\begin{frame}{Differenced Predictors}
 		\includegraphics[width=\linewidth]{images/StationaryPred}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------
  
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{ADF Test Results for Predictors, \(d=2\)}
+  	\begin{frame}{ADF Test for Predictors, \(d=2\)}
 \begin{table}[htb]
 		 \centering
 		 \begin{tabular}{lllll}
@@ -150,7 +109,7 @@ econ.sa = data.frame(
  \section{Models Considered}
  
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{ARIMA Models Considered}
+  	\begin{frame}{ARIMA}
   		\begin{table}[htb]
 \centering
 \begin{tabular}{cllrrl}
@@ -173,7 +132,7 @@ econ.sa = data.frame(
  %--------------------------------------------------------------------------------------------------
  
   %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{VAR Models Considered}
+  	\begin{frame}{VAR}
  \begin{table}[htb]
 \centering
 \begin{tabular}{clllll}
@@ -193,7 +152,7 @@ econ.sa = data.frame(
  %--------------------------------------------------------------------------------------------------
  
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Comparison of best ARIMA and VAR models}
+  	\begin{frame}{ARIMA vs VAR}
 \begin{table}[htb]
 \begin{tabular}{llll}
   \hline
@@ -212,7 +171,7 @@ VAR \#3 & VAR(1) & -256.76 & -231.45 \\
  \section{Forecast comparisons}
  
  %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Multivariate ARIMA(1,2,1)}
+  	\begin{frame}{ARIMA(1,2,1)}
   		 \includegraphics[width=\linewidth]{images/ARIMApred}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------
@@ -224,13 +183,13 @@ VAR \#3 & VAR(1) & -256.76 & -231.45 \\
  %--------------------------------------------------------------------------------------------------
  
    %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Comparison of ARIMA(1,2,1) and VAR(1) }
+  	\begin{frame}{ARIMA(1,2,1) vs VAR(1) }
   		 \includegraphics[width=\linewidth]{images/arimavarforecast}
   	\end{frame}
  %-------------------------------------------------------------------------------------------------- 
  
  %-------------------------------------------------------------------------------------------------- 
-    \begin{frame}[fragile]{Estimation results for the final model}
+    \begin{frame}[fragile]{VAR(1) Estimates}
 \begin{verbnobox}[\small]
 -------------------------------------------------------
 unem = unem.l1 + constr.l1 + retail.l1 + recession.l1 
@@ -256,12 +215,12 @@ trend         0.004488   0.000943   4.759 3.17e-06 ***
   	\begin{frame}{Final Model: VAR(1)}
   		 The final model chose was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors:
   \begin{align*}
-  \widehat{\text{U}}\text{nemployment} &= 0.843825_{(0.201499)} +
-  0.004488(t)_{(0.000943)}\\ 		
-  &+ 0.975191\text{Unemployment}_{t-1 (0.009984)}\\
-  &+ 0.004262\text{ConstructionSpend}_{t-1(0.001249)}\\
-  &- 0.005873\text{RetailSales}_{t-1(0.001249)}\\
-  &+ 0.192394\text{Recession}_{t-1(0.001249)}
+  \widehat{\text{U}}\text{nemployment} &= 0.8438_{(0.2015)} +
+  0.0045_{(0.0009)}(t)\\ 		
+  &+ 0.9752_{(0.0010)}(\text{Unemployment}_{t-1})\\
+  &+ 0.0043_{(0.0012)}(\text{ConstructionSpend}_{t-1})\\
+  &- 0.0059_{(0.0012)}(\text{RetailSales}_{t-1})\\
+  &+ 0.1924_{(0.0012)}(\text{Recession}_{t-1})
   \end{align*}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------
@@ -269,7 +228,7 @@ trend         0.004488   0.000943   4.759 3.17e-06 ***
 
 
   %-------------------------------------------------------------------------------------------------- 
-  	\begin{frame}{Final Model: VAR(1): Predictions}
+  	\begin{frame}{VAR(1) Predictions}
  \includegraphics[width=\textwidth]{images/zoomedvar}
   	\end{frame}
  %--------------------------------------------------------------------------------------------------

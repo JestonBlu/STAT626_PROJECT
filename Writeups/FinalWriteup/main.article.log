@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  25 JUL 2016 15:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  25 JUL 2016 22:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -773,70 +773,70 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 117.
 
-<images/predictors.png, id=108, 2304.61pt x 1300.86pt>
+<images/predictors.png, id=108, 1531.7225pt x 1186.4325pt>
 File: images/predictors.png Graphic file (type png)
 
 <use images/predictors.png>
 Package pdftex.def Info: images/predictors.png used on input line 142.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 188.16756pt.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-<images/unemployment_total_sa.png, id=154, 2304.61pt x 1130.2225pt>
+<images/unemployment_total_sa.png, id=154, 1405.25pt x 638.385pt>
 File: images/unemployment_total_sa.png Graphic file (type png)
 
 <use images/unemployment_total_sa.png>
 Package pdftex.def Info: images/unemployment_total_sa.png used on input line 15
 3.
-(pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
+(pdftex.def)             Requested size: 242.94499pt x 110.36505pt.
 
-<images/presunemp.png, id=155, 2320.67pt x 1365.1pt>
+<images/presunemp.png, id=155, 2334.7225pt x 1280.785pt>
 File: images/presunemp.png Graphic file (type png)
 
 <use images/presunemp.png>
 Package pdftex.def Info: images/presunemp.png used on input line 160.
-(pdftex.def)             Requested size: 242.94499pt x 142.89189pt.
+(pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
 
-<images/pred_scatt.png, id=163, 2320.67pt x 1365.1pt>
+<images/pred_scatt.png, id=163, 2334.7225pt x 1280.785pt>
 File: images/pred_scatt.png Graphic file (type png)
 
 <use images/pred_scatt.png>
 Package pdftex.def Info: images/pred_scatt.png used on input line 169.
-(pdftex.def)             Requested size: 242.94499pt x 142.89189pt.
+(pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
  [2 <./images/predictors.png> <./images/unemployment_total_sa.png> <./images/pr
 esunemp.png> <./images/pred_scatt.png>]
-<images/laggedunemployment.png, id=190, 2254.4225pt x 1332.98pt>
+<images/laggedunemployment.png, id=190, 2286.5425pt x 1220.56pt>
 File: images/laggedunemployment.png Graphic file (type png)
 
 <use images/laggedunemployment.png>
 Package pdftex.def Info: images/laggedunemployment.png used on input line 184.
-(pdftex.def)             Requested size: 242.94499pt x 143.63832pt.
+(pdftex.def)             Requested size: 242.94499pt x 129.68045pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <10> on input line 186.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <7> on input line 186.
 
-<images/seasonalunem.png, id=193, 1750.54pt x 1355.0625pt>
+<images/seasonalunem.png, id=193, 1493.58pt x 901.3675pt>
 File: images/seasonalunem.png Graphic file (type png)
 
 <use images/seasonalunem.png>
 Package pdftex.def Info: images/seasonalunem.png used on input line 191.
-(pdftex.def)             Requested size: 242.94499pt x 188.05333pt.
+(pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
-<images/StationaryPred.png, id=196, 2304.61pt x 1300.86pt>
+<images/StationaryPred.png, id=196, 1493.58pt x 901.3675pt>
 File: images/StationaryPred.png Graphic file (type png)
 
 <use images/StationaryPred.png>
 Package pdftex.def Info: images/StationaryPred.png used on input line 212.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
-<images/houseprice.png, id=198, 2304.61pt x 1300.86pt>
+<images/houseprice.png, id=198, 1493.58pt x 901.3675pt>
 File: images/houseprice.png Graphic file (type png)
 
 <use images/houseprice.png>
 Package pdftex.def Info: images/houseprice.png used on input line 223.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
 <images/acfpacf.png, id=199, 2304.61pt x 1300.86pt>
 File: images/acfpacf.png Graphic file (type png)
@@ -889,23 +889,24 @@ Overfull \hbox (7.27762pt too wide) in paragraph at lines 365--374
  []
 
 [5 <./images/sarima1.png> <./images/sarima7.png>]
-<images/ARIMApred.png, id=269, 2304.61pt x 1300.86pt>
+<images/ARIMApred.png, id=269, 1642.135pt x 885.3075pt>
 File: images/ARIMApred.png Graphic file (type png)
 
 <use images/ARIMApred.png>
 Package pdftex.def Info: images/ARIMApred.png used on input line 393.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 130.96672pt.
 
 Overfull \hbox (18.61142pt too wide) in paragraph at lines 403--414
  [][] 
  []
 
 [6 <./images/varfitmodel3.png> <./images/ARIMApred.png>]
-<images/varpred.png, id=281, 2304.61pt x 1300.86pt>
+<images/varpred.png, id=281, 1519.6775pt x 853.1875pt>
 File: images/varpred.png Graphic file (type png)
- <use images/varpred.png>
+
+<use images/varpred.png>
 Package pdftex.def Info: images/varpred.png used on input line 423.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 136.39561pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <9> on input line 434.
 
@@ -913,12 +914,12 @@ Overfull \hbox (3.49846pt too wide) in paragraph at lines 434--445
  [][] 
  []
 
-<images/arimavarforecast.png, id=284, 2304.61pt x 1300.86pt>
+<images/arimavarforecast.png, id=284, 1423.3175pt x 829.0975pt>
 File: images/arimavarforecast.png Graphic file (type png)
 
 <use images/arimavarforecast.png>
 Package pdftex.def Info: images/arimavarforecast.png used on input line 453.
-(pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
+(pdftex.def)             Requested size: 242.94499pt x 141.514pt.
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 471
 .
 
@@ -955,28 +956,28 @@ Overfull \hbox (12.20451pt too wide) in paragraph at lines 480--480
  []
 
 [7 <./images/varpred.png> <./images/arimavarforecast.png>]
-<images/CCFplots.png, id=298, 2296.58pt x 1304.875pt>
+<images/CCFplots.png, id=298, 1493.58pt x 901.3675pt>
 File: images/CCFplots.png Graphic file (type png)
 
 <use images/CCFplots.png>
-Package pdftex.def Info: images/CCFplots.png used on input line 499.
-(pdftex.def)             Requested size: 242.94499pt x 138.02141pt.
+Package pdftex.def Info: images/CCFplots.png used on input line 500.
+(pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
  (./main.article.bbl [8 <./images/CCFplots.png>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 531.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 532.
 
 [9]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 531.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 532.
  (./main.article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 531.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 531.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 532.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 532.
 Package rerunfilecheck Info: File `main.article.out' has not changed.
 (rerunfilecheck)             Checksum: D18D88004DCAA3CC582C89FFF09B4A56;1136.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 531.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 532.
  ) 
 Here is how much of TeX's memory you used:
  11016 strings out of 493027
  172719 string characters out of 6134069
- 276949 words of memory out of 5000000
+ 277975 words of memory out of 5000000
  14268 multiletter control sequences out of 15000+600000
  61876 words of font info for 62 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1020,7 +1021,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt9.pfb>
-Output written on main.article.pdf (9 pages, 5269946 bytes).
+Output written on main.article.pdf (9 pages, 4207361 bytes).
 PDF statistics:
  402 PDF objects out of 1000 (max. 8388607)
  336 compressed objects within 4 object streams

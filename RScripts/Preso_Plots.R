@@ -4,6 +4,7 @@ rm(list = ls())
 library(ggplot2)
 library(plyr)
 library(scales)
+library(zoo)
 
 ## Each of these Chunk sections are independent of the rest of the script
 ## you shouldnt need to run the sections before each chunk
@@ -37,14 +38,16 @@ dta = join(econ.sa, usa, by = "date")
 ## Custom ggplot theme
 theme_stat = function() {
   theme(
-    plot.title          = element_text(size = 14, face = "bold"),
+    plot.title          = element_text(size = 20, face = "bold"),
     panel.background    = element_rect(fill = NA),
     panel.grid.major    = element_line(color = "gray", size = .2),
     panel.border        = element_rect(color = "gray", fill = NA, size = .2),
     axis.ticks          = element_line(size = 0),
-    axis.text           = element_text(color = "black"),
-    axis.title.x        = element_text(size = 12, color = "black"),
-    axis.title.y        = element_text(size = 12, color = "black")
+    axis.text           = element_text(size = 18, color = "black"),
+    axis.title.x        = element_text(size = 20, color = "black"),
+    axis.title.y        = element_text(size = 20, color = "black"),
+    legend.text         = element_text(size = 18, color = "black"), 
+    legend.title        = element_text(size = 20, color = "black")
   )
 }
 
@@ -97,15 +100,15 @@ lag.plot1 = function(data1, max.lag = 1, corr = TRUE, smooth = FALSE) {
   prow = ceiling(sqrt(max.lag))
   pcol = ceiling(max.lag / prow)
   a = acf(data1, max.lag, plot = FALSE)$acf[-1]
-  par(mfrow = c(prow, pcol), mar = c(2.5, 4, 2.5, 1), cex.main = 1.1, font.main = 1)
+  par(mfrow = c(prow, pcol), mar = c(2.5, 4, 2.5, 1), cex.main = 4, font.main = 1)
   for(h in 1:max.lag) {                       
     plot(lag(data1, -h), data1, xy.labels = FALSE, main = paste(name1, h, "",sep = ""), 
-         ylab = "", xlab = "", cex = 2, cex.main = 2) 
+         ylab = "", xlab = "", cex = 2.5, cex.axis = 2, cex.main = 2.5) 
     if (smooth == TRUE) 
       lines(lowess(ts.intersect(lag(data1, -h), data1)[, 1], ts.intersect(lag(data1, -h), data1)[, 2],
                    f = 1), col = "red")
     if (corr == TRUE)
-      legend("topright", legend = round(a[h], digits = 2), text.col = "blue", bg = "white", x.intersp = 0)
+      legend("topright", legend = round(a[h], digits = 2), text.col = "blue", bg = "white", cex=1.5, x.intersp = 0, y.intersp = 0)
   }
 }
 
@@ -127,12 +130,14 @@ econ = ts(econ[, 2:7], start = c(1993, 1), frequency = 12)
 ## Original Data, no seasonal adjustment
 plot.zoo(econ, ylab = c("Unemployment", "Industrial Production", "Man. New Orders", 
                         "House Price Index", "Constr. Spend", "Retail Sales"),
-         cex.main = 2, main = "",
+         cex.main = 3, main = "",
          xlab = "")
 
 ## Scatterplot
 plot(econ.sa[,1:6], c("Unemployment", "Industrial Production", "Man. New Orders", 
-                      "House Price Index", "Constr. Spend", "Retail Sales"))
+                      "House Price Index", "Constr. Spend", "Retail Sales"), cex.labels=1.5, gap=.5, 
+                    xaxt='n', yaxt='n')
+
 
 
 ############################################################3
@@ -156,8 +161,7 @@ library(forecast)
 load("Data/Data_Prep.rda")
 
 ## Unemployment Plot Differencing
-par(mfrow = c(2,2))
-plot(econ.sa$unem_rate_sa, main = "Unemployment", cex.main = 1.5, ylab = "", xlab = "")
+par(mfrow = c(1,2))
 plot(diff(econ.sa$unem_rate_sa, differences = 1), main = "1st Difference", cex.main = 1.5, ylab = "", xlab = "")
 plot(diff(econ.sa$unem_rate_sa, differences = 2), main = "2nd Difference", cex.main = 1.5, ylab = "", xlab = "")
 
@@ -270,7 +274,8 @@ ggplot(pred, aes(x = dt)) +
   geom_line(aes(y = arima.pred.upr), color = "blue", lty = 2) +
   ggtitle("") +
   scale_y_continuous("Unemployment Rate") +
-  scale_x_date("")
+  scale_x_date("")+
+  theme_stat()
 
 ## Best VAR Forecast
 ggplot(pred, aes(x = dt)) + 
@@ -280,7 +285,8 @@ ggplot(pred, aes(x = dt)) +
   geom_line(aes(y = var.pred.upr), color = "red", lty = 2) +
   ggtitle("") +
   scale_y_continuous("Unemployment Rate") +
-  scale_x_date("")
+  scale_x_date("")+
+  theme_stat()
 
 ## Shorten the plotted time range and plot both series together
 ## Best ARIMA Forecast
@@ -295,7 +301,8 @@ ggplot(pred, aes(x = dt)) +
   geom_line(aes(y = var.pred.upr), color = "red", lty = 2) +
   ggtitle("") +
   scale_y_continuous("Unemployment Rate", limits = c(4, 7)) +
-  scale_x_date("", limits = c(as.Date("2014-01-01"), NA))
+  scale_x_date("", limits = c(as.Date("2014-01-01"), NA)) +
+  theme_stat()
 
 
 
@@ -338,14 +345,15 @@ ggplot(pred.long, aes(x = dt)) +
   geom_line(aes(y = var.pred.upr), color = "red", lty = 2) +
   ggtitle("") +
   scale_y_continuous("Unemployment Rate", limits = c(0,NA)) +
-  scale_x_date("", limits = c(as.Date("1993-01-01"), NA))
+  scale_x_date("", limits = c(as.Date("1993-01-01"), NA)) +
+  theme_stat()
 
 
 #######################################################
 ## VAR Residual Plot
 
 par(mfrow = c(2,2))
-Acf(residuals(mdl.var3$varresult$unem_rate_sa), main = "Unemployment")
+Acf(residuals(mdl.var3$varresult$unem_rate_sa), main = "Unemployment", cex.main=2)
 Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$construction_spend_sa), main = "Unemployment vs Construction")
 Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$retail_sales_sa), main = "Unemployment vs Retail")
 Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$recession_ind), main = "Unemployment vs Recession")
@@ -390,3 +398,4 @@ lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$manufacturers_new_orders_sa, max.l
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$house_price_sa, max.lag = 12)              ## Lag 5?
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$construction_spend_sa, max.lag = 12)       ## No real lag, setting to 3
 lag2.plot(econ.sa.st$unem_rate_sa, econ.sa.st$retail_sales_sa, max.lag = 12)             ## No real lag, setting to 0
+
