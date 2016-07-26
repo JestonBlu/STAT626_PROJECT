@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  26 JUL 2016 10:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  26 JUL 2016 10:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1022,24 +1022,14 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 586.
 (./main.article.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 586.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 586.
-
-
-Package rerunfilecheck Warning: File `main.article.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.article.out':
-(rerunfilecheck)             Before: 1F6D0549A866A519430C2030A5364F7F;1157
-(rerunfilecheck)             After:  80FCAC177E9DDE79608788335C3E6CA3;1159.
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+Package rerunfilecheck Info: File `main.article.out' has not changed.
+(rerunfilecheck)             Checksum: 80FCAC177E9DDE79608788335C3E6CA3;1159.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 586.
  ) 
 Here is how much of TeX's memory you used:
  12901 strings out of 493027
  203909 string characters out of 6134069
- 335147 words of memory out of 5000000
+ 335149 words of memory out of 5000000
  16001 multiletter control sequences out of 15000+600000
  67402 words of font info for 120 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1083,7 +1073,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (10 pages, 4254850 bytes).
+Output written on main.article.pdf (10 pages, 4254846 bytes).
 PDF statistics:
  420 PDF objects out of 1000 (max. 8388607)
  353 compressed objects within 4 object streams
