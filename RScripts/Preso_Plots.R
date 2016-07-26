@@ -353,7 +353,7 @@ ggplot(pred.long, aes(x = dt)) +
 #######################################################
 ## VAR Residual Plot
 
-par(mfrow = c(2,2))
+par(mfrow = c(2,2), cex.main=2, cex.lab=1.5, cex.axis=1.5)
 Acf(residuals(mdl.var3$varresult$unem_rate_sa), main = "Unemployment", cex.main=2)
 Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$construction_spend_sa), main = "Unemployment vs Construction")
 Ccf(residuals(mdl.var3$varresult$unem_rate_sa), residuals(mdl.var3$varresult$retail_sales_sa), main = "Unemployment vs Retail")

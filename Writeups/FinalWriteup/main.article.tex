@@ -103,7 +103,7 @@
 \date{\today \vspace*{.25 cm}} % Final write-up due date plus a bit of extra space
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent We still need to write up the abstract.
+\noindent US unemployment rates follow a complex cyclical pattern, exhibiting smooth, sharp rises toward the beginning of presidential terms followed by much choppier, slower declines. Multiple ARIMA, SARIMA, and VAR models were developed and compared both to describe temporal unemployment trends from 1993-2015 and ultimately to predict unemployment rates from 2016-2018. SARIMA models proved to be least useful, because a second nonseasonal difference was enough to stationarize the data. The ARIMA(1, 2, 1) models with no exogenous predictors very accurately forecasted unemployment for six months and offered the greatest level of parsimony, but their predictions in the long term were infeasible and prone to explosively large error bounds. A VAR(1) model with the three most useful exogenous predictors—construction, retail sales, and recession presence—performed comparably to the ARIMA(1, 2, 1) in the short run, and more accurately and precisely predicted unemployment in the long run by accounting for the sharp upswings in unemployment. Overall, our analysis suggests that unemployment trends require a layer of multivariate model complexity in order to be fully described and forecasted.
 \end{abstract}
 }
 
@@ -122,7 +122,7 @@
 
 
 \section{Introduction}
-		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and ndergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full reovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not a guarantee, as it has seemed to be in past generations.
+		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full reovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not a guarantee, as it has seemed to be in past generations.
 		
 Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression and suicide, and even physical deterioration \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, reasearch into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
 
@@ -528,11 +528,59 @@ Unemployment in the United States is an issue that is complex and socially meani
 \begin{flushleft}
 \bibliography{main} % refers to our bibliography
 \end{flushleft}
- \section{Appendix}
+ \section*{Appendix}
  \appendix
- \section{R-code}
- \section{Project contributions}
- 
+ \section*{Project contributions}
+ \begin{itemize}
+ 	\item Joseph Blubaugh
+ 		\begin{itemize}
+ 			\item Plots
+ 			\item Data Prep
+ 			\item Code Management
+ 			\item Model refinement
+ 		\end{itemize}
+ 		
+ 	\item Sean Roberson
+ 	 		\begin{itemize}
+ 			\item Presentor
+ 			\item Key talking points
+ 			\item Model clarification
+ 			\item Literature
+ 		\end{itemize}
+ 	
+	\item Akarshan Puri
+			\begin{itemize}
+ 			\item Model selection
+ 			\item Model diagnostics
+ 			\item Model fitting
+ 		\end{itemize}
+ 	
+ 	\item Alison Shelton
+ 			\begin{itemize}
+ 				\item \LaTeX \ code management
+ 				\item Writing
+ 				\item Literature
+ 			\end{itemize}
+	
+	\item Travis Lilley
+			 \begin{itemize}
+			 \item Model building
+			 \item Model fitting
+			 \item Model diagnostics
+			 \item Abstract
+			 \end{itemize}
 
+	\item{Bo Pang}
+		\begin{itemize}
+					\item Model building
+		 			\item Model diagnostics
+		 			\item Model fitting
+		\end{itemize}
+ \end{itemize}
 
+Please note, this project was done in a collaborative fashion using GitHub as a tool for collaborative coding and writing. Therefore, the above list of contributions is only a rough estimate of how the workload was distributed. Each member worked on every component.  While the project was small we used Overleaf for collaborative writing, as it grew changes were pushed to GitHub.  Literature references were shared on GitHub and using Mendeley.  
+
+It is particularly important to note that once an intial file was placed on the repository, all members had access to and modified each other's code. We believe this brings strength to our project but it makes it difficult to definitively state who contributed to each portion in a consice manner.
+
+For  the R-code used in this project and more information about our project management process please see \url{https://github.com/JestonBlu/STAT626_PROJECT}.
 \end{document}
