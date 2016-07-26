@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  26 JUL 2016 13:35
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  26 JUL 2016 14:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -550,37 +550,37 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 (./main.article.aux)
 \openout1 = `main.article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 114.
-LaTeX Font Info:    Try loading font information for LGR+cmr on input line 114.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for LGR/cmr/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for LGR+cmr on input line 113.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/cbfonts-fd/lgrcmr.fd
 File: lgrcmr.fd 2016/03/04 v1.1 Greek European Computer Regular
 )
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 114.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 114.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 113.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 113.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 114.
-LaTeX Font Info:    ... okay on input line 114.
-LaTeX Font Info:    Try loading font information for OT1+lmr on input line 114.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 113.
+LaTeX Font Info:    ... okay on input line 113.
+LaTeX Font Info:    Try loading font information for OT1+lmr on input line 113.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmr.fd
@@ -617,7 +617,7 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \microtypecontext on input line 114.
+LaTeX Info: Redefining \microtypecontext on input line 113.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -633,7 +633,7 @@ File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman
 (RS)
 )
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring OFF on input line 114.
+Package hyperref Info: Link coloring OFF on input line 113.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -643,9 +643,9 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count152
 )
-LaTeX Info: Redefining \ref on input line 114.
-LaTeX Info: Redefining \pageref on input line 114.
-LaTeX Info: Redefining \nameref on input line 114.
+LaTeX Info: Redefining \ref on input line 113.
+LaTeX Info: Redefining \pageref on input line 113.
+LaTeX Info: Redefining \nameref on input line 113.
 
 (./main.article.out) (./main.article.out)
 \@outlinefile=\write3
@@ -767,30 +767,30 @@ fontencoding LGR patched
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-LaTeX Font Info:    Try loading font information for OML+lmm on input line 117.
+LaTeX Font Info:    Try loading font information for OML+lmm on input line 116.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 117
+LaTeX Font Info:    Try loading font information for OMS+lmsy on input line 116
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-LaTeX Font Info:    Try loading font information for OMX+lmex on input line 117
+LaTeX Font Info:    Try loading font information for OMX+lmex on input line 116
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 117.
+(Font)              <12> on input line 116.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 117.
+(Font)              <8> on input line 116.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 117.
-LaTeX Font Info:    Try loading font information for U+msa on input line 117.
+(Font)              <6> on input line 116.
+LaTeX Font Info:    Try loading font information for U+msa on input line 116.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -798,7 +798,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 117.
+LaTeX Font Info:    Try loading font information for U+msb on input line 116.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -806,7 +806,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-LaTeX Font Info:    Try loading font information for TS1+lmr on input line 117.
+LaTeX Font Info:    Try loading font information for TS1+lmr on input line 116.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
@@ -816,7 +816,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 117.
+(Font)              <5> on input line 116.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -825,7 +825,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 File: images/predictors.png Graphic file (type png)
 
 <use images/predictors.png>
-Package pdftex.def Info: images/predictors.png used on input line 142.
+Package pdftex.def Info: images/predictors.png used on input line 141.
 (pdftex.def)             Requested size: 242.94499pt x 188.16756pt.
 
 <images/unemployment_total_sa.png, id=150, 1405.25pt x 638.385pt>
@@ -833,21 +833,24 @@ File: images/unemployment_total_sa.png Graphic file (type png)
 
 <use images/unemployment_total_sa.png>
 Package pdftex.def Info: images/unemployment_total_sa.png used on input line 15
-3.
+2.
 (pdftex.def)             Requested size: 242.94499pt x 110.36505pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 
 <images/presunemp.png, id=151, 2334.7225pt x 1280.785pt>
 File: images/presunemp.png Graphic file (type png)
 
 <use images/presunemp.png>
-Package pdftex.def Info: images/presunemp.png used on input line 160.
+Package pdftex.def Info: images/presunemp.png used on input line 159.
 (pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
 
 <images/pred_scatt.png, id=159, 2334.7225pt x 1280.785pt>
 File: images/pred_scatt.png Graphic file (type png)
 
 <use images/pred_scatt.png>
-Package pdftex.def Info: images/pred_scatt.png used on input line 169.
+Package pdftex.def Info: images/pred_scatt.png used on input line 168.
 (pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
  [2 <./images/predictors.png> <./images/unemployment_total_sa.png> <./images/pr
 esunemp.png> <./images/pred_scatt.png>]
@@ -855,25 +858,25 @@ esunemp.png> <./images/pred_scatt.png>]
 File: images/laggedunemployment.png Graphic file (type png)
 
 <use images/laggedunemployment.png>
-Package pdftex.def Info: images/laggedunemployment.png used on input line 184.
+Package pdftex.def Info: images/laggedunemployment.png used on input line 183.
 (pdftex.def)             Requested size: 242.94499pt x 129.68045pt.
 
 <images/seasonalunem.png, id=195, 1493.58pt x 901.3675pt>
 File: images/seasonalunem.png Graphic file (type png)
 
 <use images/seasonalunem.png>
-Package pdftex.def Info: images/seasonalunem.png used on input line 191.
+Package pdftex.def Info: images/seasonalunem.png used on input line 190.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 198.
+(Font)              <10> on input line 197.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 198.
+(Font)              <7> on input line 197.
 
 <images/StationaryPred.png, id=198, 1493.58pt x 901.3675pt>
 File: images/StationaryPred.png Graphic file (type png)
 
 <use images/StationaryPred.png>
-Package pdftex.def Info: images/StationaryPred.png used on input line 213.
+Package pdftex.def Info: images/StationaryPred.png used on input line 212.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
  [3 <./images/laggedunemployment.png> <./images/seasonalunem.png> <./images/Sta
 tionaryPred.png>]
@@ -881,52 +884,52 @@ tionaryPred.png>]
 File: images/houseprice.png Graphic file (type png)
 
 <use images/houseprice.png>
-Package pdftex.def Info: images/houseprice.png used on input line 224.
+Package pdftex.def Info: images/houseprice.png used on input line 223.
 (pdftex.def)             Requested size: 242.94499pt x 146.61488pt.
 
 <images/acfpacf.png, id=217, 2304.61pt x 1300.86pt>
 File: images/acfpacf.png Graphic file (type png)
  <use images/acfpacf.png>
-Package pdftex.def Info: images/acfpacf.png used on input line 257.
+Package pdftex.def Info: images/acfpacf.png used on input line 256.
 (pdftex.def)             Requested size: 242.94499pt x 137.12035pt.
 
 <images/acfpacf2d.png, id=218, 2295.57625pt x 830.10126pt>
 File: images/acfpacf2d.png Graphic file (type png)
 
 <use images/acfpacf2d.png>
-Package pdftex.def Info: images/acfpacf2d.png used on input line 260.
+Package pdftex.def Info: images/acfpacf2d.png used on input line 259.
 (pdftex.def)             Requested size: 242.94499pt x 87.84085pt.
  [4 <./images/houseprice.png> <./images/acfpacf.png> <./images/acfpacf2d.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 []\OT1/lmr/m/n/10 (+20) Models 4 through 6 were ARIMA(1,2,1),
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 295--296
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
 \OT1/lmr/m/n/10 (+20) ARIMA(2,2,2), and ARIMA(3,2,3) re-spec-tively.
  []
 
 
-Underfull \hbox (badness 1259) in paragraph at lines 295--296
+Underfull \hbox (badness 1259) in paragraph at lines 294--295
 \OT1/lmr/m/n/10 (+20) their orig-i-nal coun-ter-parts with-out re-gres-sors, as
 h
  []
 
 
-Underfull \hbox (badness 3019) in paragraph at lines 295--296
+Underfull \hbox (badness 3019) in paragraph at lines 294--295
 \OT1/lmr/m/n/10 (+20) ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3)
  []
 
 <images/sarima1.png, id=238, 2304.61pt x 1130.2225pt>
 File: images/sarima1.png Graphic file (type png)
  <use images/sarima1.png>
-Package pdftex.def Info: images/sarima1.png used on input line 301.
+Package pdftex.def Info: images/sarima1.png used on input line 300.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
 <images/sarima7.png, id=239, 2304.61pt x 1130.2225pt>
 File: images/sarima7.png Graphic file (type png)
  <use images/sarima7.png>
-Package pdftex.def Info: images/sarima7.png used on input line 310.
+Package pdftex.def Info: images/sarima7.png used on input line 309.
 (pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
 
 [5 <./images/sarima1.png> <./images/sarima7.png>]
@@ -934,10 +937,10 @@ Package pdftex.def Info: images/sarima7.png used on input line 310.
 File: images/varfitmodel3.png Graphic file (type png)
 
 <use images/varfitmodel3.png>
-Package pdftex.def Info: images/varfitmodel3.png used on input line 353.
+Package pdftex.def Info: images/varfitmodel3.png used on input line 352.
 (pdftex.def)             Requested size: 242.94499pt x 218.85068pt.
 
-Overfull \hbox (7.27762pt too wide) in paragraph at lines 364--373
+Overfull \hbox (7.27762pt too wide) in paragraph at lines 363--372
  [][] 
  []
 
@@ -945,10 +948,10 @@ Overfull \hbox (7.27762pt too wide) in paragraph at lines 364--373
 File: images/ARIMApred.png Graphic file (type png)
 
 <use images/ARIMApred.png>
-Package pdftex.def Info: images/ARIMApred.png used on input line 392.
+Package pdftex.def Info: images/ARIMApred.png used on input line 391.
 (pdftex.def)             Requested size: 242.94499pt x 130.96672pt.
 
-Overfull \hbox (18.61142pt too wide) in paragraph at lines 402--413
+Overfull \hbox (18.61142pt too wide) in paragraph at lines 401--412
  [][] 
  []
 
@@ -957,12 +960,12 @@ Overfull \hbox (18.61142pt too wide) in paragraph at lines 402--413
 File: images/varpred.png Graphic file (type png)
 
 <use images/varpred.png>
-Package pdftex.def Info: images/varpred.png used on input line 422.
+Package pdftex.def Info: images/varpred.png used on input line 421.
 (pdftex.def)             Requested size: 242.94499pt x 136.39561pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 433.
+(Font)              <9> on input line 432.
 
-Overfull \hbox (3.49846pt too wide) in paragraph at lines 433--444
+Overfull \hbox (3.49846pt too wide) in paragraph at lines 432--443
  [][] 
  []
 
@@ -970,18 +973,18 @@ Overfull \hbox (3.49846pt too wide) in paragraph at lines 433--444
 File: images/arimavarforecast.png Graphic file (type png)
 
 <use images/arimavarforecast.png>
-Package pdftex.def Info: images/arimavarforecast.png used on input line 452.
+Package pdftex.def Info: images/arimavarforecast.png used on input line 451.
 (pdftex.def)             Requested size: 242.94499pt x 141.514pt.
  [7 <./images/varpred.png> <./images/arimavarforecast.png>]
-LaTeX Font Info:    Try loading font information for OML+lmr on input line 481.
+LaTeX Font Info:    Try loading font information for OML+lmr on input line 480.
 
  (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/omllmr.fd
 File: omllmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Font shape `OML/lmr/m/n' in size <10> not available
-(Font)              Font shape `OML/lmm/m/it' tried instead on input line 481.
+(Font)              Font shape `OML/lmm/m/it' tried instead on input line 480.
 
-Overfull \hbox (6.8888pt too wide) in paragraph at lines 478--488
+Overfull \hbox (6.8888pt too wide) in paragraph at lines 477--487
  [][] 
  []
 
@@ -989,11 +992,11 @@ Overfull \hbox (6.8888pt too wide) in paragraph at lines 478--488
 File: images/CCFplots.png Graphic file (type png)
 
 <use images/CCFplots.png>
-Package pdftex.def Info: images/CCFplots.png used on input line 505.
+Package pdftex.def Info: images/CCFplots.png used on input line 504.
 (pdftex.def)             Requested size: 242.94499pt x 146.81241pt.
  [8 <./images/CCFplots.png>] (./main.article.bbl
 [9])
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 584
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 583
 .
  (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -1002,25 +1005,25 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 584.
  [10]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 584.
 
 (./main.article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 584.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 584.
 Package rerunfilecheck Info: File `main.article.out' has not changed.
 (rerunfilecheck)             Checksum: 06FF1059B2DCDB998353F78D807C4D58;1159.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 584.
  ) 
 Here is how much of TeX's memory you used:
- 12901 strings out of 493027
- 203909 string characters out of 6134069
- 336127 words of memory out of 5000000
+ 12903 strings out of 493027
+ 203933 string characters out of 6134069
+ 336006 words of memory out of 5000000
  16001 multiletter control sequences out of 15000+600000
- 67402 words of font info for 120 fonts, out of 8000000 for 9000
+ 67529 words of font info for 121 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1233b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1114b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1060,7 +1063,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (10 pages, 4255708 bytes).
+Output written on main.article.pdf (10 pages, 4255307 bytes).
 PDF statistics:
  427 PDF objects out of 1000 (max. 8388607)
  360 compressed objects within 4 object streams
