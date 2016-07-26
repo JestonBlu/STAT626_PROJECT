@@ -7,7 +7,7 @@
 \BOOKMARK [2][-]{subsection.4.1}{Models Considered}{section.4}% 7
 \BOOKMARK [3][-]{subsubsection.4.1.1}{ARIMA Models}{subsection.4.1}% 8
 \BOOKMARK [3][-]{subsubsection.4.1.2}{VAR Models}{subsection.4.1}% 9
-\BOOKMARK [2][-]{subsection.4.2}{Initial Model comparisons}{section.4}% 10
+\BOOKMARK [2][-]{subsection.4.2}{Initial Model Comparisons}{section.4}% 10
 \BOOKMARK [1][-]{section.5}{Forecasting}{}% 11
 \BOOKMARK [2][-]{subsection.5.1}{Multivariate ARIMA\(1,2,1\)}{section.5}% 12
 \BOOKMARK [2][-]{subsection.5.2}{VAR\(1\)}{section.5}% 13

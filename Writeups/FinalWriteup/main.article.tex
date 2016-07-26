@@ -103,7 +103,7 @@
 \date{\today \vspace*{.25 cm}} % Final write-up due date plus a bit of extra space
 \renewcommand{\maketitlehookd}{%
 \begin{abstract}
-\noindent US unemployment rates follow a complex cyclical pattern, exhibiting smooth, sharp rises toward the beginning of presidential terms followed by much choppier, slower declines. Multiple ARIMA, SARIMA, and VAR models were developed and compared both to describe temporal unemployment trends from 1993-2015 and ultimately to predict unemployment rates from 2016-2018. SARIMA models proved to be least useful, because a second nonseasonal difference was enough to make the data stationary. The ARIMA(1, 2, 1) models with no exogenous predictors very accurately forecasted unemployment for six months and offered the greatest level of parsimony, but their predictions in the long term were unfeasible and prone to explosively large error bounds. A VAR(1) model with the three most useful exogenous predictors—construction, retail sales, and recession presence—performed comparably to the ARIMA(1, 2, 1) in the short run, and more accurately and precisely predicted unemployment in the long run by accounting for the sharp upswings in unemployment. Overall, our analysis suggests that unemployment trends require a layer of multivariate model complexity in order to be fully described and forecasted.
+\noindent US unemployment rates follow a complex countercyclical pattern, exhibiting smooth, sharp rises toward the beginning of presidential terms followed by much choppier, slower declines. Multiple ARIMA, SARIMA, and VAR models were developed and compared both to describe temporal unemployment trends from 1993-2015 and ultimately to predict unemployment rates from 2016-2018. SARIMA models proved to be least useful, because a second nonseasonal difference was enough to make the data stationary. The ARIMA(1, 2, 1) models with no exogenous predictors very accurately forecasted unemployment for six months and offered the greatest level of parsimony, but their predictions in the long term were unfeasible and prone to explosively large error bounds. A VAR(1) model with the three most useful exogenous predictors—construction, retail sales, and recession presence—performed comparably to the ARIMA(1, 2, 1) in the short run, and more accurately and precisely predicted unemployment in the long run by accounting for the sharp upswings in unemployment. Overall, our analysis suggests that unemployment trends require a layer of multivariate model complexity in order to be fully described and forecasted.
 \end{abstract}
 }
 
@@ -124,7 +124,7 @@
 \section{Introduction}
 		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full-recovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not a guarantee, as it has seemed to be in past generations.
 		
-Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression and suicide, and even physical deterioration \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, research into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
+Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression, physical deterioration, and even suicide  \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, research into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
 
 \subsection{Goal}
 		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our primary goal is to forecast future unemployment rates. 
@@ -133,7 +133,7 @@ Unemployment has far-reaching consequences that extends beyond financial securit
 
 The unemployment data being examined was obtained from the seasonally adjusted, monthly, Civilian Unemployment Rate Series (UNRATE), published by the Bureau of Labor Statistics (BLS).  This series includes unemployment figures from January of 1948 to  May of 2016 \citep{blsrefsa}.  The response variable being analyzed is the unemployment rate defined as the percentage of the labor force that is unemployed.  In defining this variable, the BLS restricts this to, ``people 16 years of age and older, who currently reside in 1 of the 50 states or the District of Columbia, who do not reside in institutions (e.g., penal and mental facilities, homes for the aged), and who are not on active duty in the Armed Forces''.
 
-Unemployment tends to follow a counter-cyclical pattern, increasing quickly during times of economic slowdowns and decreasing slowly in times of growth \citep{Montgomery1998}. To address this we have chosen to include a recession indicator as a possible predictor of unemployment. Recession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of less well known indicators such as aggregate hours of work in the total economy.
+Unemployment tends to follow a counter-cyclical pattern, increasing quickly during times of economic slowdowns and decreasing slowly in times of growth \citep{Montgomery1998}. To address this we have chosen to include a recession indicator as a possible predictor of unemployment. Recession dates were obtained from the National Bureau of Economic Research (NBER) \citep{NBER2016}. The NBER identifies recessions and US business cycles based upon a variety of economic indicators. These include Gross Domestic Product (GDP), Gross Domestic Income (GDI), and a variety of lesser known indicators such as aggregate hours of work in the total economy.
 
 \begin{figure}[H]
 	\centering
@@ -142,26 +142,26 @@ Unemployment tends to follow a counter-cyclical pattern, increasing quickly duri
 	\includegraphics[width=\linewidth]{images/predictors}
 \end{figure}
 
-We also explored several predictor variables that are potentially related to unemployment.  Industrial production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of manufacturers' new orders for all manufacturing industries refers to manufacturer's sales and inventory, except for new orders from the semiconductor industry \citep{vmno}. The purchase only house price index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}. Each of these predictors shows an overall increasing trend over time, see Figure \ref{fig:predictors}.
+We also explored several predictor variables related to unemployment.  Industrial production measures enterprise output of the U.S. establishments \citep{BGFS2016}. Value of manufacturers' new orders for all manufacturing industries refers to manufacturer's sales and inventory, except for new orders from the semiconductor industry \citep{vmno}. The purchase only house price index for the United States follows sales for a specific set of single-family homes \citep{fhfa2016}. We also included Retailers Sales \citep{retail2016} and Total Construction Spending \citep{construction2016}. Each of these predictors shows an overall increasing trend over time, see Figure \ref{fig:predictors}.
 %------------------------------------------------
 
 \section{Exploratory Analysis}
 		\begin{figure}[htb]
 		\centering
-		\caption{Monthly unemployment, seasonally adjusted}
+		\caption{Monthly unemployment, 1948-2015}
 		\label{fig:unemployment}
 		\includegraphics[width=\linewidth]{images/unemployment_total_sa}
 	\end{figure}
 	
 				\begin{figure}[htb]
 		\centering
-		\caption{Seasonally adjusted unemployment with sitting president backdrop}
+		\caption{Monthly unemployment, 1993 - 2015}
 		\label{fig:presunemp}
 		\includegraphics[width=\linewidth]{images/presunemp}
 		\end{figure}
 
 
-As a first step, the data was plotted over time to identify any obvious patterns visually, considering the seasonally adjusted version of the unemployment rate, see Figure \ref{fig:unemployment}.  Overall, unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This counter-cyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
+As indicated in Figure  \ref{fig:unemployment}, raw untransformed unemployment appears relatively volatile.  There are several time periods of sudden spikes in the unemployment rate, followed by a slower recovery period. This counter-cyclical movement is consistent with the descriptions of unemployment data found in the literature \citep{katz2010, Montgomery1998, shimer2012reassessing}. 
 	
 		\begin{figure}[htb]
 		\caption{Scatterplot matrix of unemployment and potential predictors}
@@ -175,7 +175,7 @@ Because of marked potential differences in the trend surrounding times of econom
 
 \section{Achieving Stationarity}
 
-In analyzing the initial plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coefficients, particularly through lag 6, further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The Dickey-Fuller test statistic for the unemployment data is -2.1377, with a lag order of 6, and a p-value of 0.518. The high p-values suggest that we do not have a stationary model with just the raw unemployment data.
+In analyzing the initial plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coefficients, particularly through lag 6, further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The high p-values suggest that we do not have a stationary model with just the raw unemployment data.
 			
 		\begin{figure}[htb]
 		\centering
@@ -204,7 +204,7 @@ The first and second differences of the unemployment data were plotted for the s
 		 2\textsuperscript{nd} difference 	&  -9.3595 				& 6 								& \( < 0.01\)\\	 \hline
 		 \end{tabular}
 		 \end{table}
-The predictor variables were also detrended using second differences. The timeplots of these second differences can be seen in Figure \ref{fig:statpred}. Although the housing prices still retains some non-constant variance, overall the differencing improves the stationarity of all the predictor variables.  Furthermore, the ADF test of the differenced data provides evidence of stationarity for each of the variables, see Table \ref{tab:ADF2}. 
+The predictor variables were also detrended using second differences. The timeplots of these second differences can be seen in Figure \ref{fig:statpred}. Although the housing prices still retain some non-constant variance, overall the differencing improves the stationarity of all the predictor variables.  Furthermore, the ADF test of the differenced data provides evidence of stationarity for each of the variables, see Table \ref{tab:ADF2}. 
 
 		\begin{figure}[htb]
 		\centering
@@ -219,7 +219,7 @@ An attempt to stabilize the variance of the housing prices, with a log transform
 		
 		\begin{figure}[htb]
 		\centering
-		\caption{Timeplot of transformed housing prices, d=2}
+		\caption{Timeplot of the housing price log transformation, d=2}
 		\label{fig:loghouse}
 		\includegraphics[width=\linewidth]{images/houseprice}
 	\end{figure}
@@ -261,7 +261,7 @@ An attempt to stabilize the variance of the housing prices, with a log transform
      	\label{fig:acfpacf2}
       \end{figure}
 
-  We began our model building process by inspecting the correlogram (ACF plot) and partial correlogram (PACF plot) of the unemployment data, shown in Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these initial plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible mixture model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model. Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models; therefore, models with regressors and vector autoregressive Models (VAR) were considered as well.
+  The correlogram (ACF plot) and partial correlogram (PACF plot) of the unemployment data is shown in Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these initial plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible integrated model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model. Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models; therefore, models with regressors and vector autoregressive Models (VAR) were considered as well.
 \subsection{Models Considered}
 
 \subsubsection{ARIMA Models}
@@ -288,11 +288,11 @@ An attempt to stabilize the variance of the housing prices, with a log transform
 \end{tabular}
 \end{table}
 
-Given the potential of ARIMA models to represent the unemployment data, we began by exploring three potential models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three initial models, without regressors, we chose to retain model 1.  
+We began by exploring three potential ARIMA models without regressors, ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3). Although model 3, ARIMA(3,2,3), has the lowest AIC of the three models, model 1, the ARIMA(1,2,1) model, has the lowest BIC. Model 1 is also the most parsimonious model of the three. So of the three initial models, without regressors, we chose to retain model 1.  
 
-The preliminary univariate ARIMA models seem to fit the data well and have the added strength of model parsimony. Nevertheless, in their simplicity univariate models are not equipped to accurately portray the asymmetric nature of unemployment data and have a tendency of underestimating unemployment during economic slowdowns \citep{Montgomery1998}. Therefore, we repeated the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were included as potential predictors of unemployment. 
+Although their parsimony is attractive, the ARIMA models are too simplistic to accurately portray the asymmetric nature of unemployment data and have a tendency to underestimating unemployment during economic slowdowns \citep{Montgomery1998}. Therefore, we repeated the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were included as potential predictors of unemployment. 
 
-Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, ash shown in Table \ref{tab:arimachoices}. Since, these models were predicting a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. Of the 9 original models, model 7 has the lowest AIC overall, as shown in Table \ref{tab:arimachoices}.  
+Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts without regressors, ash shown in Table \ref{tab:arimachoices}. Since these models had predicted a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. Of the 9 original models, model 7 has the lowest AIC overall, as shown in Table \ref{tab:arimachoices}.  
 
 
 		    \begin{figure}[htb]
@@ -314,7 +314,7 @@ Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectivel
      
      
      
-		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data, whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals show no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are well above 0.05 at all plotted lags, so there is no indication of lack of fit in the models. 
+		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data, whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals shows no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are well above 0.05 at all plotted lags, so there is no indication of lack of fit in the models. 
 
       
       \subsubsection{VAR Models}
@@ -354,7 +354,7 @@ Model 3, the unlagged model with the regression indicator, has the lowest AIC an
      	\label{fig:varfitmodel3}
  \end{figure}
  
-\subsection{Initial Model comparisons}
+\subsection{Initial Model Comparisons}
 
 % latex table generated in R 3.3.1 by xtable 1.8-2 package
 % Sun Jul 24 08:35:48 2016
@@ -377,7 +377,7 @@ In the previous model building process, we retained 3 models for further compari
 
 At first glance the VAR(1) model appears to be the best model.  It has the lowest values of both AIC and BIC.  Of the two ARIMA models the ARIMA(1,2,1) model with predictors has a lower AIC but a higher BIC. However, being a multivariate model it	 allows us to leverage the additional information provided by indicators of the nature of the economy to refine our predictions about future unemployment rates. 
 
-Since the rate of increasing unemployment is so different from the rate of decreasing unemployment, forecasting can be very difficult without some indicator of whether we are currently in a increasing or decreasing portion of the cycle \citep{Montgomery1998}. For this reason, we have chosen continue our model comparisons with only the two models that include predictors of economic strength. In the next section, we compare the forecasting performance of the best multivariate ARIMA model with best VAR model. These are the multivariate ARIMA(1,2,1) model and the VAR(1) with an indicator variable for recession among its predictors.
+Since the rate of increasing unemployment is so different from the rate of decreasing unemployment, forecasting can be very difficult without some indicator of whether we are currently in a increasing or decreasing portion of the cycle \citep{Montgomery1998}. For this reason, we have chosen to continue our model comparisons with only the two models that include predictors of economic strength. In the next section, we compare the forecasting performance of the best multivariate ARIMA model with best VAR model. These are the multivariate ARIMA(1,2,1) model and the VAR(1) with an indicator variable for recession among its predictors.
 
 
 \section{Forecasting}
@@ -412,7 +412,7 @@ May & 4.73 & 4.85 & (3.99 , 5.72) & -0.12 \\
 \end{tabular}
 \end{table}
 
-The unemployment rates for January 2016 to May 2016 were forecast using the Multivariate ARIMA(1,2,1) model, see Table \ref{tab:arimaforecast}.  This model did a good job overall, as all predicted values were within 0.3\% of the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:arimapred} shows the predicted values graphed against the actual unemployment rates. The model predicts a steady decrease in the unemployment rate over the 5 month period.  In general, the ARIMA model provided an overestimation of unemployment rate, except in April-16 when the rate spiked slightly. The confidence bands spread outward rapidly, making a definitive long term trend hard to predict.
+The unemployment rates for January 2016 to May 2016 were forecast using the Multivariate ARIMA(1,2,1) model, see Table \ref{tab:arimaforecast}.  This model did a good job overall, since all predicted values were relatively close to the actual unemployment rates and entirely inside the confidence bands.  Figure \ref{fig:arimapred} shows the predicted values graphed against the actual unemployment rates. The model predicts a steady decrease in the unemployment rate over the 5 month period.  In general, the ARIMA model provided an overestimation of unemployment rate, except in April-16 when the rate spiked slightly. The confidence bands spread outward rapidly, making a definitive long term trend hard to predict.
 
 \subsection{VAR(1)}
 
@@ -448,7 +448,7 @@ The unemployment rates for January 2016 to May 2016 were also forecast using the
  \subsection{Forecast comparisons}
     \begin{figure}[htb]
     	\centering
-     	\caption{ARIMA and VAR Model comparison of 3 month forecast}
+     	\caption{ARIMA and VAR Model comparison of 3 year  forecast}
      	\includegraphics[width=\linewidth]{images/arimavarforecast}
      	\label{fig:arimavarforecast}
  \end{figure}
@@ -456,7 +456,7 @@ The unemployment rates for January 2016 to May 2016 were also forecast using the
  
       Figure \ref{fig:arimavarforecast} provides a graphical comparison of the two candidate models.  The ARIMA(1, 2, 1) shows a steady, linear decrease of the unemployment rate over time, which is unrealistic in the long term.  The Var model predicts a decrease in unemployment followed by an increase, which is more consistent with actual unemployment patterns. The mean square error from the VAR(1) model (0.0097) is much lower than the mean square error of the ARIMA(1,2,1) model(0.0151). The implication of this is that  the confidence interval of the ARIMA model quickly explodes, suggesting that it may not a good choice for longer term forecasts.
       
-In the long run the VAR(1) model seems to provide a much more accurate forecast than the ARIMA(1, 2, 1) model and with much narrower prediction intervals. The complex cyclical nature of unemployment necessitates the use of a more advanced model for longer time periods. However, in the short term VAR(1) is not dramatically more effective than ARIMA(1, 2, 1), suggesting that an VAR(1) model might be over-fitting the data in this region. This may be evidence of over-fitting, causing more degrees of freedom to be sacrificed than necessary.
+In the long run the VAR(1) model seems to provide a much more accurate forecast than the ARIMA(1, 2, 1) model and with much narrower prediction intervals. The complex, countercyclical nature of unemployment necessitates the use of a more advanced model for longer time periods. However, in the short term VAR(1) is not dramatically more effective than ARIMA(1, 2, 1), suggesting that an VAR(1) model might be over-fitting the data in this region.
 
 
  \section{Final model: VAR(1)}
@@ -464,7 +464,7 @@ In the long run the VAR(1) model seems to provide a much more accurate forecast 
  \subsection{Model estimates} \label{estimates}
 
 The final model chosen was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors.
- The estimates of the coefficients for this model can be found in \ref{tab:estimates}. For this model, all predictors have small p-values, indicating that they add significantly to the model with the other variables included. The positive coefficient for trend suggests that, overall, unemployment has increased over the last 23 years, which is consistent with the overall trend in the time series plot, see Figure \ref{fig:unemployment}. 
+ The estimates of the coefficients for this model can be found in \ref{tab:estimates}. For this model, all predictors have p-values below .001, indicating that they add significantly to the model with the other variables included. The positive coefficient for trend suggests that, overall, unemployment has increased over the last 23 years, which is consistent with the overall trend in the timeplot of \ref{fig:unemployment}. 
  
 
 The coefficient for retail spending is negative, which makes practical sense. If people are spending more money, we would expect that business would have more capital to hire employees. Conversely, people tend to spend less when they are unemployed.  The positive coefficient for construction is a little harder to explain. Higher construction costs tend to be associated with higher unemployment rates, keeping all other variables constant.  This may be just an artifact of the multivariate nature of the dataset. For a given amount of retail spending, more construction spending is associated with more unemployment. Perhaps this is an indication of the higher cost of resources, when construction materials cost more there is less capital to spend on human resources. Or maybe it is an indication of income inequality, when unemployment is high builders may cater to wealthier clients to recoup costs. Finally, there is a high positive coefficient for the recession indicator, suggesting that during times of recession unemployment is expected to be higher than in times of economic strength.
@@ -506,19 +506,19 @@ The final equation for the VAR(1) model is:
 	\label{fig:CCF}
 \end{figure}
 
-Figure \ref{fig:CCF} shows the ACF and the CCF plots for the VAR(1) model of unemployment.  The ACF for the unemployment rate does not indicate any lack of fit for the model. However, the CCF for unemployment vs retail and unemployment vs recession suggest that there may be some left over pattern not captured by the VAR(1) model.   The Portmanteau Test, used to detect model mispecification for multivariate time series \citep{davies1979}, was conducted to test for stationarity in the residuals. Since the Portmanteau statistic was large (\(\chi^2=529.42\), \(df = 176\), \(p < .001\)), we rejected the null hypothesis. There is  strong evidence of nonstationarity in the VAR(1) residuals. This small p-value, along with the graphs above, suggests there is still some dependency left in our model.
+Figure \ref{fig:CCF} shows the ACF and the CCF plots for the VAR(1) model of unemployment.  The ACF for the unemployment rate does not indicate any lack of fit for the model. However, the CCF for unemployment vs retail and unemployment vs recession suggest that there may be some remaining dependency not captured by the VAR(1) model.   The Portmanteau Test, used to detect model mispecification for multivariate time series \citep{davies1979}, was conducted to test for stationarity in the residuals. Since the Portmanteau statistic was large (\(\chi^2=529.42\), \(df = 176\), \(p < .001\)), we rejected the null hypothesis. There is  strong evidence of nonstationarity in the VAR(1) residuals. This small p-value, along with the graphs above, suggests there is still some dependency left in our model.
 
 \section{Discussion and Implications}
 
-The VAR(1) model given in section \ref{estimates} is a strong model overall. However, given the leftover dependency in the residuals, further investigation may be necessary to create a more reliable model in the long term. Furthermore, there are many economic predictors we did not investigate in this project. Further research should explore these potential explanatory variables in more depth.
+The VAR(1) model given in section \ref{estimates} is a strong model overall. However, given the unexplained dependency in the residuals, further investigation may be necessary to create a more reliable model in the long term. Furthermore, there are many economic predictors we did not investigate in this project. Further research should explore these potential explanatory variables in more depth.
 
-We were not able to analyze the effect that presidential transitions had on unemployment.  Visually it appears that each presidential term is accompanied by a sharp increase in unemployment, followed by a slower decline.   This could be investigated using an indicator variable for election year.  Furthermore, it would be interesting to evaluate the impact that party affiliation has on unemployment over time.  Using indicators for presidential party and variables indicating the number of democrats and republicans in congress, we may be able to detect a relationship between unemployment rate and political ideology.
+We were not able to analyze the effect that presidential transitions had on unemployment.  Cursory visual inspection of both Figures \ref{fig:unemployment} and \ref{fig:presunemp} reveal a sharp increase in unemployment, followed by a slower decline.   This could be investigated using an indicator variable for election year.  Furthermore, it would be interesting to evaluate the impact that party affiliation has on unemployment over time.  Using measures for presidential party and variables indicating the number of democrats and republicans in Congress, we may be able to detect a relationship between unemployment rate and political climate.
 
 Additionally, a mixed model might be beneficial when modeling complex variables like unemployment rates.  ``Because of the evidence of fractional integration in the unemployment, stationarity and non-linearity issues'' researchers in Croatia utilized a ``multivariate singular spectrum model (MSSA) for modeling unemployment'' \citep{Skare2015}. It would be interesting to explore its potential for use in the U.S. which has a significantly larger economy and population.  Or, perhaps we could create a model that somehow combines the simplicity of the ARIMA models for short term predictions with the more complex structure needed for the long term. After further development, the model should be tested on the other unemployment rates, such as industry specific or local unemployment rates.
 
 \subsection{Conclusion}
 
-Unemployment in the United States is an issue that is complex and socially meaningful. Recent research has explored the use of VAR models and worker flow data to predict the direction of unemployment in the short term. This project has attempted to predict unemployment rates using other economic indicators, including spending and recession time period. While the model created was strong, with relatively precise short term accuracy, it could benefit from further refinement. Future research in this area should include more variables, spectral analysis, and a mixed model approach. 
+Unemployment in the United States is an issue that is complex and socially meaningful. Recent research has explored the use of VAR models and worker flow data to predict the direction of unemployment in the short term. This project has attempted to predict unemployment rates using other economic indicators, including spending levels and recession time period. While the model created was strong, with relatively precise short term accuracy, it could benefit from further refinement. Future research in this area should include more variables, spectral analysis, and a mixed model approach. 
 
 %----------------------------------------------------------------------------------------
 %	REFERENCE LIST
