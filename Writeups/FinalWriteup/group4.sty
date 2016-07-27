@@ -7,7 +7,13 @@
 \usepackage{lmodern}
 \usepackage{booktabs}
 
-
+% Put word "Appendix" before appendix number
+\def\appendix{\par
+  \setcounter{section}{0}%
+  \setcounter{subsection}{0}%
+  \rhsapptrue
+  \renewcommand\thesection{\Alph{section}}%
+}
 
 \title[Unemployment Trends] % (optional, use only with long paper titles)
 {US Unemployment Trends}

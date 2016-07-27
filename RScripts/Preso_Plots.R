@@ -118,10 +118,10 @@ with(econ.sa, lag.plot1(unem_rate_sa, 12, smooth = TRUE))
 ## Predictor Variable Plots
 econ2 = ts(econ.sa[, 1:6], start = c(1993, 1), frequency = 12)
 
-
+par(mfrow=c(1,1), cex=2, cex.lab=2, cex.axis=1.25)
 ## Seasonally Adjusted Plots
 plot.zoo(econ2, main = "", 
-         ylab = c("Unemployment", "Industrial Production", "Man. New Orders", 
+         ylab = c("Unemployment", "Ind. Production", "Man. New Orders", 
                   "House Price Index", "Constr. Spend", "Retail Sales"),
          cex.main = 2,
          xlab = "")
@@ -129,14 +129,15 @@ plot.zoo(econ2, main = "",
 econ = ts(econ[, 2:7], start = c(1993, 1), frequency = 12)
 
 ## Original Data, no seasonal adjustment
-plot.zoo(econ, ylab = c("Unemployment", "Industrial Production", "Man. New Orders", 
+plot.zoo(econ, ylab = c("Unemployment", "Ind. Production", "Man. New Orders", 
                         "House Price Index", "Constr. Spend", "Retail Sales"),
          cex.main = 3, main = "",
          xlab = "")
 
 ## Scatterplot
-plot(econ.sa[,1:6], c("Unemployment", "Industrial Production", "Man. New Orders", 
-                      "House Price Index", "Constr. Spend", "Retail Sales"), cex.labels=1.5, gap=.5, 
+par(mfrow = c(1,1), cex=2)
+plot(econ.sa[,1:6], c("Unemployment", "Ind. Production", "Man. New Orders", 
+                      "House Price Index", "Constr. Spend", "Retail Sales"), cex.labels=2, gap=.5, 
                     xaxt='n', yaxt='n')
 
 
