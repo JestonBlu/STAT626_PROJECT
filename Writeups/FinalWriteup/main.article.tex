@@ -121,9 +121,9 @@
 
 
 \section{Introduction}
-		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full-recovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not a guarantee, as it has seemed to be in past generations.
+		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full recovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it once was.
 
-Unemployment has far-reaching consequences that extends beyond financial security. Unemployment is linked to psychological difficulties, including depression, physical deterioration, and even suicide  \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, research into unemployment patterns an important part of developing policies to improve the welfare of the local, national, and global populace.
+Unemployment has far-reaching consequences that extend beyond financial security. Unemployment is linked to psychological difficulties, including depression, physical deterioration, and even suicide  \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, research into unemployment patterns 	 an important part of developing policies to improve the welfare of the local, national, and global populace.
 
 \subsection{Goal}
 		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our primary goal is to forecast future unemployment rates.
@@ -174,7 +174,7 @@ Because of marked potential differences in the trend surrounding times of econom
 
 \section{Achieving Stationarity}
 
-In analyzing the initial plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coefficients, particularly through lag 6, further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The high p-values suggest that we do not have a stationary model with just the raw unemployment data.
+In analyzing the initial plots, it appears that the series could benefit from detrending. A graph of various potential lagged values for unemployment can be seen in Figure \ref{fig:laggedunemployment}. The high values of the correlation coefficients, particularly through lag 6, further suggest a high degree of autocorrelation within the unemployment dataset.    An Augmented Dickey-Fuller (ADF) test for stationarity was conducted to verify the nonstationarity of the unemployment data.  The ADF tests the null hypothesis that the time series data has a unit root against the alternative that the data are stationary \citep{Shumway2006}. The high p-values suggest suggest that the raw unemployment data is highly nonstationary.
 
 		\begin{figure}[htb]
 		\centering
@@ -203,7 +203,7 @@ The first and second differences of the unemployment data were plotted for the s
 		 2\textsuperscript{nd} difference 	&  -9.3595 				& 6 								& \( < 0.01\)\\	 \hline
 		 \end{tabular}
 		 \end{table}
-The predictor variables were also detrended using second differences. The timeplots of these second differences can be seen in Figure \ref{fig:statpred}. Although the housing prices still retain some non-constant variance, overall the differencing improves the stationarity of all the predictor variables.  Furthermore, the ADF test of the differenced data provides evidence of stationarity for each of the variables, see Table \ref{tab:ADF2}.
+The predictors were also transformed using second differences. The timeplots of these second differences can be seen in Figure \ref{fig:statpred}. Although the housing prices still retain some non-constant variance, overall the differencing improves the stationarity of all the predictor variables.  Furthermore, the ADF test of the differenced data provides evidence of stationarity for each of the variables, see Table \ref{tab:ADF2}.
 
 		\begin{figure}[htb]
 		\centering
@@ -212,7 +212,7 @@ The predictor variables were also detrended using second differences. The timepl
 		\includegraphics[width=\linewidth]{images/StationaryPred}
 		\end{figure}
 
-An attempt to stabilize the variance of the housing prices, with a log transformation, does not improve this stationarity much (ADF changes from -9.104 to -9.5211) and a scatterplot of the differenced logs still shows evidence of heteroscedasticity in the variance over time, see Figure \ref{fig:loghouse}.
+An attempt to stabilize the variance of the housing prices, utilizing a log transformation, does not improve the stationarity much (ADF changes from -9.104 to -9.5211) and a scatterplot of the differenced logs still shows evidence of heteroscedasticity in the variance over time, see Figure \ref{fig:loghouse}.
 
 
 
@@ -313,7 +313,7 @@ Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectivel
 
 
 
-		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data, whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals shows no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals  The p-values for the  Ljung-Box statistic are well above 0.05 at all plotted lags, so there is no indication of lack of fit in the models.
+		Based on the AIC and BIC values, the two ARIMA models that show the most promise are models 1 and 7.  Model 1 includes only the time series data, whereas model 7 also includes some lagged versions of the predictors of interest.  The diagnostic plots for these models are shown in Figures \ref{fig:sarimamod1} and \ref{fig:sarimamod7}. Both models show a great deal of promise.  The standardized residuals show no apparent pattern. The ACF of the residuals shows no departure from normality. Although the Normal Q-Q plot of the standardized residuals shows some slight departure from normality in the tails, for both models, there is no strong evidence of lack of normality in the residuals.  The p-values for the  Ljung-Box statistic are well above 0.05 at all plotted lags, so there is no indication of lack of fit in the models.
 
 
       \subsubsection{VAR Models}
