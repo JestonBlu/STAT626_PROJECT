@@ -242,6 +242,7 @@ mdl.7 = sarima(econ.sa.lag$unem_rate_sa, p = 1, d = 2, q = 1, xreg = econ.sa.lag
 ## Var Model
 mdl.var3 = VAR(y = econ.sa[, c(1,5,6,7)], type = "both", p = 1)
 
+mdl.var3
 
 ## Prediction
 unem = c(econ.sa.lag$unem_rate_sa, unem.16)
@@ -418,4 +419,5 @@ ggplot(pred.long, aes(x = dt)) +
   scale_x_date("", limits = c(as.Date("2015-01-01"), as.Date("2017-01-01"))) +
   theme_stat()
 
-#Full unemployment plot
+
+

@@ -121,12 +121,12 @@
 
 
 \section{Introduction}
-		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full recovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it once was.
+		Unemployment has been a topic of concern throughout the United States in recent years.  The Great Recession that started in December of 2007 was accompanied by the worst unemployment crises seen since the 1930s \citep{wanberg2012individual}.   The results have been enduring. In 2010 the US job deficit was estimated to be over 10 million \citep{katz2010}. Graduate and undergraduate college students alike are concerned over their employment prospects, wondering if their degrees will be enough to gain them a job after graduation.  These worries are well-founded as full recovery of college graduate employment rates and earning is expected to be a slow process \citep{carnevale2015hard}.  In these times of economic uncertainty, obtaining an income generating position is not the guarantee it once was.
 
 Unemployment has far-reaching consequences that extend beyond financial security. Unemployment is linked to psychological difficulties, including depression, physical deterioration, and even suicide  \citep{wanberg2012individual, insecure, suicide}. A study of Greek students found a relationship between parental unemployment and PTSD symptoms related to bullying \citep{kanellopoulos2014epa}. In Nigeria, unemployment has been linked to insurgency and terrorism \citep{terrorism}. Given the impact that unemployment has on fiscal, mental, and physical health, research into unemployment patterns forms an important part of developing policies to improve the welfare of the local, national, and global populace.
 
 \subsection{Goal}
-		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession of 2007, 1992 to 2015.  Our primary goal is to forecast future unemployment rates.
+		The purpose of our project is to examine trends in unemployment in the United States. We will focus on the years surrounding the Great Recession, 1992 to 2015.  Our primary goal is to forecast future unemployment rates.
 
 \subsection{Data}
 
@@ -168,7 +168,7 @@ As indicated in Figure  \ref{fig:unemployment}, raw untransformed unemployment a
 		\includegraphics[width=\linewidth]{images/pred_scatt}
 	\end{figure}
 
-Because of marked potential differences in the trend surrounding times of economic downturn, such as those that occurred after World War II and in the 70s and the 80s, we have chosen to limit our analysis to a more recent set of unemployment data. Ultimately, we decided to focus the time preceding and following the Great Recession of 2007. We limited our initial analysis to 1993 to 2015, which encompasses the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the beginning of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes that represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot matrix  of these predictors can be seen in Figure \ref{fig:pred_scatt}.
+Because of marked potential differences in the trend surrounding times of economic downturn, such as those that occurred after World War II and in the 70s and the 80s, we have chosen to limit our analysis to a more recent set of unemployment data. Ultimately, we decided to focus the time preceding and following the Great Recession of 2008. We limited our initial analysis to 1993 to 2015, which encompasses the presidential terms of Bill Clinton, George W. Bush, and Barack Obama, each serving eight years in office.  Initial graphs of the data seem to indicate that, in general, unemployment spiked at the beginning of each president's term and fell gradually over the time he was in office, see Figure \ref{fig:presunemp}. There are also two noticeable spikes that represent that recessions of 2001 and 2008, respectively.  The 2008 recession also follows the burst of a housing market bubble.  These are all explanatory variables that can potentially inform unemployment patterns. A scatterplot matrix  of these predictors can be seen in Figure \ref{fig:pred_scatt}.
 
 %------------------------------------------------
 
@@ -182,7 +182,7 @@ In analyzing the initial plots, it appears that the series could benefit from de
 		\label{fig:laggedunemployment}
 		\includegraphics[width=\linewidth]{images/laggedunemployment}
 	\end{figure}
-The first and second differences of the unemployment data were plotted for the seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. Both sets of differencing, bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Therefore, the consensus in the group was to continue the model building process using second differences.
+The first and second differences of the unemployment data were plotted for the seasonally adjusted unemployment data, see Figure \ref{fig:seasonalunem}. Both sets of differencing bring the data closer to stationarity with a consistent mean and more constant variance. The associated ADF test results are given in Table \ref{tab:ADF}. Based on the p-values, there is significant evidence of stationarity with each of the differenced models. Visually, the second differences best approximate a white noise series. Therefore, the consensus in the group was to continue the model building process using second differences.
 	\begin{figure}[htb]
 		\centering
 		\caption{Timeplots of lagged unemployment}
@@ -260,7 +260,7 @@ An attempt to stabilize the variance of the housing prices, utilizing a log tran
      	\label{fig:acfpacf2}
       \end{figure}
 
-  The correlogram (ACF plot) and partial correlogram (PACF plot) of the unemployment data is shown in Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these initial plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible integrated model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 with a PACF that is dominated by an exponential decay pattern after lag 1 would be evidence of an ARIMA(1,\(d\),1) model. Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Of course predictor variables may help to improve the predictive strength of our models; therefore, models with regressors and vector autoregressive Models (VAR) were considered as well.
+  The correlogram (ACF plot) and partial correlogram (PACF plot) of the unemployment data is shown in Figure \ref{fig:acfpacf}. The ACF seems to tail off and the PACF seems to cut off at either 1 or 3.  A tailing ACF function with a PACF that cuts off at \(p\) suggests an AR(\(p\)) model \citep{Box2008}. Therefore, these initial plots suggest a possible AR(1) or AR(3) model. When looking at the ACF and PACF of the second differences, we have evidence of a possible integrated model with \(d=2\). For example, an ACF of difference \(d\) that decays exponentially after lag 1 accompanied by a PACF that is dominated by an exponential decay pattern after lag 1 provides evidence of an ARIMA(1,\(d\),1) model \citep{Box2008}. Therefore, it is worthwhile considering ARIMA models such as ARIMA(1,2,1). Also, the inclusion of predictor variables may help to improve the overall strength of our models; therefore, models with regressors and vector autoregressive Models (VAR) were considered as well.
 \subsection{Models Considered}
 
 \subsubsection{ARIMA Models}
@@ -291,7 +291,7 @@ We began by exploring three potential ARIMA models without regressors, ARIMA(1,2
 
 Although their parsimony is attractive, the ARIMA models are too simplistic to accurately portray the asymmetric nature of unemployment data and have a tendency to underestimating unemployment during economic slowdowns \citep{Montgomery1998}. Therefore, we repeated the above analysis using multivariate ARIMA models.  The variables Industrial Production, Value of Manufacturers' New Orders, Purchase Only House Price Index,  Retailers Sales, and Total Construction Spending were included as potential predictors of unemployment.
 
-Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts, as shown in Table \ref{tab:arimachoices}. Since these models had predicted a lagged response variable using data that was potentially nonstationary, we chose to repeat the process using lagged regressors.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. Of the 9 original models, model 7 has the lowest AIC overall, as shown in Table \ref{tab:arimachoices}.
+Models 4 through 6 were ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) respectively.  These predictors had lower AIC and BIC values than their original counterparts, as shown in Table \ref{tab:arimachoices}.  Models 7, 8, and 9 refer to the ARIMA(1,2,1), ARIMA(2,2,2), and ARIMA(3,2,3) models with lagged predictor variables.  Of these three new models, model 7 has both the smallest AIC and the smallest BIC values. Of the 9 original models, model 7 has the lowest AIC overall, as shown in Table \ref{tab:arimachoices}.
 
 
 		    \begin{figure}[htb]
@@ -381,7 +381,7 @@ Since the rate of increasing unemployment is so different from the rate of decre
 
 \section{Forecasting}
 
-In the initial data setup, the 2016 values were initially excluded to provide a dataset with which to evaluate the performance of our predictions. Short-term predictions from the multivariate ARIMA(1,2,1) model and VAR(1) models were then compared compared with the actual unemployment rates for January 2016 through May 2016. These results were used to create our final model.
+In the initial data setup, the 2016 values were initially excluded to provide a dataset with which to evaluate the performance of our predictions. Short-term predictions from the multivariate ARIMA(1,2,1) model and VAR(1) models were then compared with the actual unemployment rates for January 2016 through May 2016. These results were used to create our final model.
 
 \subsection{Multivariate ARIMA(1,2,1)}
 
@@ -465,14 +465,10 @@ In the long run the VAR(1) model seems to provide a much more accurate forecast 
 The final model chosen was the VAR(1) with construction spending, retail sales, and the recession indicator as predictors.
  The estimates of the coefficients for this model can be found in \ref{tab:estimates}. For this model, all predictors have p-values below .001, indicating that they add significantly to the model with the other variables included. The positive coefficient for trend suggests that, overall, unemployment has increased over the last 23 years, which is consistent with the overall trend in the timeplot of \ref{fig:unemployment}.
 
-
-The coefficient for retail spending is negative, which makes practical sense. If people are spending more money, we would expect that business would have more capital to hire employees. Conversely, people tend to spend less when they are unemployed.  The positive coefficient for construction is a little harder to explain. Higher construction costs tend to be associated with higher unemployment rates, keeping all other variables constant.  This may be just an artifact of the multivariate nature of the dataset. For a given amount of retail spending, more construction spending is associated with more unemployment. Perhaps this is an indication of the higher cost of resources, when construction materials cost more there is less capital to spend on human resources. Or maybe it is an indication of income inequality, when unemployment is high builders may cater to wealthier clients to recoup costs. Finally, there is a high positive coefficient for the recession indicator, suggesting that during times of recession unemployment is expected to be higher than in times of economic strength.
-
-
 {\small
 \begin{table}[htb]
 \centering
-\caption{Estimation results for equation VAR(1) model}
+\caption{VAR(1) model estimates}
 \label{tab:estimates}
 \begin{tabular}{@{}ccccc@{}}
 \toprule
@@ -485,6 +481,8 @@ const        & 0.8438  & 0.2015 & 4.188  & 3.82e-05 \\
 trend        & 0.0045  & 0.0009 & 4.759  & 3.17e-06 \\ \bottomrule
 \end{tabular}
 \end{table}}
+
+The coefficient for retail spending is negative, which makes practical sense. If people are spending more money, we would expect that business would have more capital to hire employees. Conversely, people tend to spend less when they are unemployed.  The positive coefficient for construction is a little harder to explain. Higher construction costs tend to be associated with higher unemployment rates, keeping all other variables constant.  This may be just an artifact of the multivariate nature of the dataset. For a given amount of retail spending, more construction spending is associated with more unemployment. Perhaps this is an indication of the higher cost of resources, when construction materials cost more there is less capital to spend on human resources. Or maybe it is an indication of income inequality; when unemployment is high builders may cater to wealthier clients to recoup costs. Finally, there is a high positive coefficient for the recession indicator, suggesting that during times of recession unemployment is expected to be higher than in times of economic strength.
 
 The final equation for the VAR(1) model is:
 
