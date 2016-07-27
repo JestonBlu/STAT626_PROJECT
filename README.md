@@ -22,11 +22,11 @@ All of the findings, models, and graphs discussed in our writeup can be reproduc
 
 #### Team Members and Responsibilities
 
-| Team Members         | Responsibilities                               |
-|:---------------------|:-----------------------------------------------|
-| **Joseph Blubaugh**: | Plots, Data Prep, Code Management, Modeling    |
-| **Alison Shelton**:  | Write up, Latex Management, Literature         |
-| **Sean Roberson**:   | Presenter, Talking Points, Literature          |
-| **Travis Lilley**:   | Model Diagnostics, Statistical Tests, Modeling |
-| **Akarshan Puri**:   | Modeling and Diagnostics                       |
-| **Bo pang**:         | Modeling and Diagnostics                       |
+| Team Members         | Responsibilities                                        |
+|:---------------------|:--------------------------------------------------------|
+| **Joseph Blubaugh**: | Plots, Data Prep, Code Management, Modeling             |
+| **Alison Shelton**:  | Write-up, Plot Revision, LaTeX Management, Literature   |
+| **Sean Roberson**:   | Presenter, Talking Points, Literature                   |
+| **Travis Lilley**:   | Model Diagnostics, Statistical Tests, Modeling, Abstract|
+| **Akarshan Puri**:   | Modeling and Diagnostics                                |
+| **Bo pang**:         | Modeling and Diagnostics                                |
