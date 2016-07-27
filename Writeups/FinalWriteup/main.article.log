@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 09:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 09:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -825,13 +825,13 @@ File: images/predictors.png Graphic file (type png)
 Package pdftex.def Info: images/predictors.png used on input line 141.
 (pdftex.def)             Requested size: 242.94499pt x 138.10905pt.
 
-<images/unemployment_total_sa.png, id=150, 1405.25pt x 638.385pt>
+<images/unemployment_total_sa.png, id=150, 2409.0pt x 1067.99pt>
 File: images/unemployment_total_sa.png Graphic file (type png)
 
 <use images/unemployment_total_sa.png>
 Package pdftex.def Info: images/unemployment_total_sa.png used on input line 15
 2.
-(pdftex.def)             Requested size: 242.94499pt x 110.36505pt.
+(pdftex.def)             Requested size: 242.94499pt x 107.70154pt.
 
 <images/presunemp.png, id=151, 2334.7225pt x 1280.785pt>
 File: images/presunemp.png Graphic file (type png)
@@ -984,7 +984,7 @@ Package pdftex.def Info: images/CCFplots.png used on input line 504.
 Underfull \vbox (badness 6016) has occurred while \output is active []
 
  [8 <./images/CCFplots.png>]) [9]
-LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 584
+LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 585
 .
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
@@ -994,18 +994,22 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             `lmtt' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 585.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 586.
  [10
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 585.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 586.
 
 (./main.article.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 585.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 585.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 586.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 586.
 Package rerunfilecheck Info: File `main.article.out' has not changed.
 (rerunfilecheck)             Checksum: 06FF1059B2DCDB998353F78D807C4D58;1159.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 586.
  ) 
 Here is how much of TeX's memory you used:
  12657 strings out of 493027
@@ -1014,7 +1018,7 @@ Here is how much of TeX's memory you used:
  15756 multiletter control sequences out of 15000+600000
  67700 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1119b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1119b,508s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1054,7 +1058,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (10 pages, 4729930 bytes).
+Output written on main.article.pdf (10 pages, 4815202 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  358 compressed objects within 4 object streams

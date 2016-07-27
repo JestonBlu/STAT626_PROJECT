@@ -35,6 +35,8 @@ usa$date = as.Date(usa$date)
 dta = join(econ.sa, usa, by = "date")
 
 
+
+
 ## Custom ggplot theme
 theme_stat = function() {
   theme(
@@ -109,7 +111,7 @@ lag.plot1 = function(data1, max.lag = 1, corr = TRUE, smooth = FALSE) {
       lines(lowess(ts.intersect(lag(data1, -h), data1)[, 1], ts.intersect(lag(data1, -h), data1)[, 2],
                    f = 1), col = "red")
     if (corr == TRUE)
-      legend("topright", legend = round(a[h], digits = 2), text.col = "blue", bg = "white", cex=1.5, x.intersp = 0, y.intersp = 0)
+      legend("topleft", legend = round(a[h], digits = 2), text.col = "blue", bg = "white", cex=2.5, x.intersp = -.5, y.intersp = -.75)
   }
 }
 
@@ -163,29 +165,29 @@ library(forecast)
 load("Data/Data_Prep.rda")
 
 ## Unemployment Plot Differencing
-par(mfrow = c(1,2))
-plot(diff(econ.sa$unem_rate_sa, differences = 1), main = "1st Difference", cex.main = 1.5, ylab = "", xlab = "")
-plot(diff(econ.sa$unem_rate_sa, differences = 2), main = "2nd Difference", cex.main = 1.5, ylab = "", xlab = "")
+par(mfrow = c(1,2), cex=1.5)
+plot(diff(econ.sa$unem_rate_sa, differences = 1), main = "1st Difference", cex.main = 2, ylab = "", xlab = "", ylim=c(-.6, .6))
+plot(diff(econ.sa$unem_rate_sa, differences = 2), main = "2nd Difference", cex.main = 2, ylab = "", xlab = "", ylim=c(-.6, .6))
 
 ## Predictor Variable differencing
-par(mfrow = c(2,3))
-plot(diff(econ.sa$industrial_production_sa, differences = 2), main = "Ind. Production", cex.main = 1.5, ylab = "", xlab = "")
-plot(diff(econ.sa$manufacturers_new_orders_sa, differences = 2), main = "Man. New Orders", cex.main = 1.5, ylab = "", xlab = "")
-plot(diff(econ.sa$house_price_sa, differences = 2), main = "House Price Index", cex.main = 1.5, ylab = "", xlab = "")
-plot(diff(econ.sa$construction_spend_sa, differences = 2), main = "Constr. Spend", cex.main = 1.5, ylab = "", xlab = "")
-plot(diff(econ.sa$retail_sales_sa, differences = 2), main = "Retail Sales", cex.main = 1.5, ylab = "", xlab = "")
+par(mfrow = c(2,3), cex.lab=2, cex.main=2, cex.axis=2)
+plot(diff(econ.sa$industrial_production_sa, differences = 2), main = "Ind. Production", ylab = "", xlab = "")
+plot(diff(econ.sa$manufacturers_new_orders_sa, differences = 2), main = "Man. New Orders",  ylab = "", xlab = "")
+plot(diff(econ.sa$house_price_sa, differences = 2), main = "House Price Index",  ylab = "", xlab = "")
+plot(diff(econ.sa$construction_spend_sa, differences = 2), main = "Constr. Spend",  ylab = "", xlab = "")
+plot(diff(econ.sa$retail_sales_sa, differences = 2), main = "Retail Sales",  ylab = "", xlab = "")
 
 ## House Price Differecing
-par(mfrow = c(1,1))
-plot(diff(log(econ.sa$house_price_sa), differences = 2), main = "House Price Index", cex.main = 1.5, ylab = "", xlab = "")
+par(mfrow = c(1,1), cex=1.5)
+plot(diff(log(econ.sa$house_price_sa), differences = 2), main = "Log(House Price Index)", ylab = "", xlab = "")
 
 ## ACF/PACF Unemployment
-par(mfrow = c(1,2))
-Acf(econ.sa$unem_rate_sa, main = "ACF")
-Pacf(econ.sa$unem_rate_sa, main = "PACF")
+par(mfrow = c(1,2), cex=1.25, lwd=1.5, cex.lab=1.5)
+Acf(econ.sa$unem_rate_sa, main = "")
+Pacf(econ.sa$unem_rate_sa, main = "")
 
 ## ACF/PACF Unemployment, 2nd difference
-par(mfrow = c(1,2))
+par(mfrow = c(1,2), cex=1.25, lwd=1.5, cex.lab=1.5)
 Acf(diff(econ.sa$unem_rate_sa, differences = 2), main = "ACF")
 Pacf(diff(econ.sa$unem_rate_sa, differences = 2), main = "PACF")
 
@@ -217,6 +219,7 @@ load("Data/Data_Prep.rda")
 ###########################################################333
 ## ARIMA Models
 
+par(mfrow = c(1,1), cex=2, cex.axis=1.5 lwd=1.5, cex.lab=2)
 ## Models with no regressors
 mdl.1 = sarima(econ.sa$unem_rate_sa, p = 1, d = 2, q = 1)
 
@@ -234,6 +237,7 @@ econ.sa.lag$recession_ind = econ.sa$recession_ind[6:276]
 
 ## Models with lagged Regressors
 mdl.7 = sarima(econ.sa.lag$unem_rate_sa, p = 1, d = 2, q = 1, xreg = econ.sa.lag[, 2:6])
+
 
 ## Var Model
 mdl.var3 = VAR(y = econ.sa[, c(1,5,6,7)], type = "both", p = 1)
@@ -414,3 +418,4 @@ ggplot(pred.long, aes(x = dt)) +
   scale_x_date("", limits = c(as.Date("2015-01-01"), as.Date("2017-01-01"))) +
   theme_stat()
 
+#Full unemployment plot
