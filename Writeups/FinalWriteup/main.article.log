@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 06:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 06:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -812,9 +812,6 @@ LaTeX Font Info:    Try loading font information for TS1+lmr on input line 116.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/ucs/data/uni-32.def
-File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
-)
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <5> on input line 116.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -836,15 +833,15 @@ Package pdftex.def Info: images/unemployment_total_sa.png used on input line 15
 2.
 (pdftex.def)             Requested size: 242.94499pt x 110.36505pt.
 
+Underfull \vbox (badness 2980) has occurred while \output is active []
+
+
 <images/presunemp.png, id=151, 2334.7225pt x 1280.785pt>
 File: images/presunemp.png Graphic file (type png)
 
 <use images/presunemp.png>
 Package pdftex.def Info: images/presunemp.png used on input line 159.
 (pdftex.def)             Requested size: 242.94499pt x 133.26494pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 <images/pred_scatt.png, id=159, 2334.7225pt x 1280.785pt>
 File: images/pred_scatt.png Graphic file (type png)
@@ -899,9 +896,6 @@ File: images/acfpacf2d.png Graphic file (type png)
 <use images/acfpacf2d.png>
 Package pdftex.def Info: images/acfpacf2d.png used on input line 259.
 (pdftex.def)             Requested size: 242.94499pt x 87.84085pt.
-
-Underfull \vbox (badness 1496) has occurred while \output is active []
-
  [4 <./images/houseprice.png> <./images/acfpacf.png> <./images/acfpacf2d.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 294--295
 []\OT1/lmr/m/n/10 (+20) Models 4 through 6 were ARIMA(1,2,1),
@@ -1011,13 +1005,13 @@ Package rerunfilecheck Info: File `main.article.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 584.
  ) 
 Here is how much of TeX's memory you used:
- 12905 strings out of 493027
- 203955 string characters out of 6134069
- 336000 words of memory out of 5000000
- 16001 multiletter control sequences out of 15000+600000
- 67656 words of font info for 122 fonts, out of 8000000 for 9000
+ 12659 strings out of 493027
+ 201117 string characters out of 6134069
+ 335997 words of memory out of 5000000
+ 15756 multiletter control sequences out of 15000+600000
+ 67783 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1114b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1119b,549s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1057,7 +1051,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (10 pages, 4255329 bytes).
+Output written on main.article.pdf (10 pages, 4255140 bytes).
 PDF statistics:
  427 PDF objects out of 1000 (max. 8388607)
  360 compressed objects within 4 object streams
