@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 08:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.5.30)  27 JUL 2016 09:14
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -905,20 +905,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 294--295
  []
 
 [4 <./images/houseprice.png> <./images/acfpacf.png> <./images/acfpacf2d.png>]
-<images/sarima1.png, id=238, 2304.61pt x 1130.2225pt>
+<images/sarima1.png, id=238, 2409.0pt x 1067.99pt>
 File: images/sarima1.png Graphic file (type png)
  <use images/sarima1.png>
 Package pdftex.def Info: images/sarima1.png used on input line 300.
-(pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
+(pdftex.def)             Requested size: 242.94499pt x 107.70154pt.
 
-<images/sarima7.png, id=239, 2304.61pt x 1130.2225pt>
+<images/sarima7.png, id=239, 2409.0pt x 1067.99pt>
 File: images/sarima7.png Graphic file (type png)
  <use images/sarima7.png>
 Package pdftex.def Info: images/sarima7.png used on input line 309.
-(pdftex.def)             Requested size: 242.94499pt x 119.13388pt.
-
-Underfull \vbox (badness 8056) has occurred while \output is active []
-
+(pdftex.def)             Requested size: 242.94499pt x 107.70154pt.
 
 <images/varfitmodel3.png, id=254, 472.46512pt x 425.61008pt>
 File: images/varfitmodel3.png Graphic file (type png)
@@ -957,7 +954,7 @@ Overfull \hbox (3.49846pt too wide) in paragraph at lines 432--443
  []
 
 [6 <./images/varfitmodel3.png> <./images/ARIMApred.png>]
-<images/arimavarforecast.png, id=287, 1423.3175pt x 829.0975pt>
+<images/arimavarforecast.png, id=288, 1423.3175pt x 829.0975pt>
 File: images/arimavarforecast.png Graphic file (type png)
 
 <use images/arimavarforecast.png>
@@ -983,11 +980,14 @@ File: images/CCFplots.png Graphic file (type png)
 <use images/CCFplots.png>
 Package pdftex.def Info: images/CCFplots.png used on input line 504.
 (pdftex.def)             Requested size: 242.94499pt x 146.81241pt.
- [8 <./images/CCFplots.png>] (./main.article.bbl)
-[9]
+ (./main.article.bbl
+Underfull \vbox (badness 6016) has occurred while \output is active []
+
+ [8 <./images/CCFplots.png>]) [9]
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 584
 .
- (/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 Package microtype Info: Loading generic settings for font family
@@ -1010,11 +1010,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 585.
 Here is how much of TeX's memory you used:
  12657 strings out of 493027
  201095 string characters out of 6134069
- 335004 words of memory out of 5000000
+ 336004 words of memory out of 5000000
  15756 multiletter control sequences out of 15000+600000
  67700 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,43p,1119b,555s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,12n,43p,1119b,554s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1054,7 +1054,7 @@ c/lm/lmri10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmri9
 .pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy10.pfb></usr
 /local/texlive/2015/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texl
 ive/2015/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on main.article.pdf (10 pages, 4650919 bytes).
+Output written on main.article.pdf (10 pages, 4729930 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  358 compressed objects within 4 object streams
